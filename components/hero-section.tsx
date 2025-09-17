@@ -14,8 +14,8 @@ export function HeroSection() {
 
   return (
     <section
-      className="flex flex-col items-center text-center relative mx-auto rounded-2xl overflow-hidden my-6 py-0 px-4
-         w-full h-[500px] md:w-[1220px] md:h-[650px] lg:h-[750px] md:px-0"
+      className="flex flex-col items-center text-center relative mx-auto rounded-2xl overflow-hidden my-4 md:my-6 py-0 px-4
+         w-full h-[600px] sm:h-[650px] md:w-[1220px] md:h-[650px] lg:h-[750px] md:px-0"
     >
       {/* Ultra-Clean Background with Subtle Creative Touch */}
       <div className="absolute inset-0 z-0">
@@ -55,7 +55,7 @@ export function HeroSection() {
       </div>
 
       {/* Main Content - Ultra Premium Typography */}
-      <div className="flex flex-col justify-center items-center text-center space-y-8 md:space-y-10 relative z-10 px-6 md:px-12 max-w-6xl mx-auto mt-28 md:mt-36 lg:mt-44">
+      <div className="flex flex-col justify-center items-center text-center space-y-6 md:space-y-8 lg:space-y-10 relative z-10 px-4 md:px-6 lg:px-12 max-w-6xl mx-auto mt-20 md:mt-28 lg:mt-36 xl:mt-44">
         <div className="space-y-6 md:space-y-8">
           <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light text-foreground leading-[1.1] tracking-tight">
             How Strong Is Your Founder Signal?
@@ -83,17 +83,17 @@ export function HeroSection() {
         </div>
         
         {/* Trusted by Founders & Brands */}
-        <div className="mt-8 md:mt-12">
-          <p className="text-sm text-muted-foreground font-medium tracking-wide uppercase mb-6">Trusted by Founders & Brands</p>
-          <div className="flex items-center justify-center gap-6 md:gap-8 opacity-60 flex-wrap">
-            <div className="text-muted-foreground font-semibold text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">BBC</div>
-            <div className="text-muted-foreground font-semibold text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">Netflix</div>
-            <div className="text-muted-foreground font-semibold text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">TED</div>
-            <div className="text-muted-foreground font-semibold text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">National Geographic</div>
-            <div className="text-muted-foreground font-semibold text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">Arte</div>
-            <div className="text-muted-foreground font-semibold text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">Black Magic</div>
-            <div className="text-muted-foreground font-semibold text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">Aaron Abke</div>
-            <div className="text-muted-foreground font-semibold text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">J-Griff</div>
+        <div className="mt-6 md:mt-8 lg:mt-12">
+          <p className="text-xs md:text-sm text-muted-foreground font-medium tracking-wide uppercase mb-4 md:mb-6">Trusted by Founders & Brands</p>
+          <div className="flex items-center justify-center gap-3 md:gap-4 lg:gap-6 xl:gap-8 opacity-60 flex-wrap">
+            <div className="text-muted-foreground font-semibold text-xs md:text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">BBC</div>
+            <div className="text-muted-foreground font-semibold text-xs md:text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">Netflix</div>
+            <div className="text-muted-foreground font-semibold text-xs md:text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">TED</div>
+            <div className="text-muted-foreground font-semibold text-xs md:text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">National Geographic</div>
+            <div className="text-muted-foreground font-semibold text-xs md:text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">Arte</div>
+            <div className="text-muted-foreground font-semibold text-xs md:text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">Black Magic</div>
+            <div className="text-muted-foreground font-semibold text-xs md:text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">Aaron Abke</div>
+            <div className="text-muted-foreground font-semibold text-xs md:text-sm hover:opacity-100 transition-opacity duration-300 cursor-default">J-Griff</div>
           </div>
         </div>
       </div>

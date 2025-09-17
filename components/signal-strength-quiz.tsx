@@ -111,15 +111,15 @@ export function SignalStrengthQuiz() {
   const currentAnswer = answers[currentQ.id] || 0
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="space-y-8">
+    <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
+      <div className="space-y-6 md:space-y-8">
         {/* Intro */}
         {currentQuestion === 0 && (
-          <div className="text-center space-y-6">
-            <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+          <div className="text-center space-y-4 md:space-y-6">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
               Signal Strength Quiz
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
               Answer these quick questions to see how strong your founder signal really is. Be honest—it's the only way to reveal your blind spots. Takes 2 minutes.
             </p>
           </div>
@@ -127,7 +127,7 @@ export function SignalStrengthQuiz() {
 
         {/* Progress */}
         <div className="space-y-2">
-          <div className="flex justify-between text-sm text-muted-foreground">
+          <div className="flex justify-between text-sm text-muted-foreground px-2">
             <span>Question {currentQuestion + 1} of {quizQuestions.length}</span>
             <span>{Math.round(progress)}% Complete</span>
           </div>
@@ -135,11 +135,11 @@ export function SignalStrengthQuiz() {
         </div>
 
         {/* Question */}
-        <div className="bg-muted/5 border border-border/20 rounded-xl p-8">
-          <div className="space-y-6">
+        <div className="bg-muted/5 border border-border/20 rounded-xl p-6 md:p-8">
+          <div className="space-y-4 md:space-y-6">
             <div>
               <div className="text-sm font-medium text-primary mb-2">{currentQ.section}</div>
-              <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-bold text-foreground mb-2">
                 {currentQ.question}
               </h2>
               <p className="text-sm text-muted-foreground">{currentQ.scale}</p>
@@ -296,34 +296,34 @@ function QuizResults({ score, level }: { score: number; level: string }) {
   const content = getResultContent()
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-12">
-      <div className="space-y-8">
+    <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
+      <div className="space-y-6 md:space-y-8">
         {/* Score Header */}
-        <div className="text-center space-y-4">
-          <div className="text-6xl">{content.icon}</div>
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+        <div className="text-center space-y-3 md:space-y-4">
+          <div className="text-4xl md:text-6xl">{content.icon}</div>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
             {content.headline}
           </h1>
-          <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 inline-block">
-            <span className="text-2xl font-bold text-primary">Your Score: {score}/50</span>
+          <div className="bg-primary/10 border border-primary/20 rounded-lg p-3 md:p-4 inline-block">
+            <span className="text-xl md:text-2xl font-bold text-primary">Your Score: {score}/50</span>
           </div>
         </div>
 
         {/* Main Copy */}
-        <div className="bg-muted/5 border border-border/20 rounded-xl p-8">
-          <p className="text-lg text-muted-foreground leading-relaxed">
+        <div className="bg-muted/5 border border-border/20 rounded-xl p-6 md:p-8">
+          <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
             {content.copy}
           </p>
         </div>
 
         {/* Specific Insights */}
-        <div className="bg-primary/5 border border-primary/20 rounded-xl p-8">
-          <h3 className="text-xl font-bold text-primary mb-6">What This Means for Your Business</h3>
-          <div className="space-y-4">
+        <div className="bg-primary/5 border border-primary/20 rounded-xl p-6 md:p-8">
+          <h3 className="text-lg md:text-xl font-bold text-primary mb-4 md:mb-6">What This Means for Your Business</h3>
+          <div className="space-y-3 md:space-y-4">
             {content.specificInsights.map((insight, index) => (
               <div key={index} className="flex items-start gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                <p className="text-muted-foreground">{insight}</p>
+                <p className="text-sm md:text-base text-muted-foreground">{insight}</p>
               </div>
             ))}
           </div>
