@@ -31,7 +31,9 @@ export default function LandingPage() {
         </AnimatedSection>
         
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.15}>
-          <SignalDNAIntroSection />
+          <div id="signal-dna-intro">
+            <SignalDNAIntroSection />
+          </div>
         </AnimatedSection>
         
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.175}>
@@ -55,7 +57,9 @@ export default function LandingPage() {
         </AnimatedSection>
         
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.4}>
-          <TestimonialGridSection />
+          <div id="testimonials">
+            <TestimonialGridSection />
+          </div>
         </AnimatedSection>
         
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.425}>
@@ -67,7 +71,9 @@ export default function LandingPage() {
         </AnimatedSection>
         
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.5}>
-          <AboutYouSection />
+          <div id="about-you">
+            <AboutYouSection />
+          </div>
         </AnimatedSection>
         
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.55}>

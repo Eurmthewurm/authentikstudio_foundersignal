@@ -9,12 +9,19 @@ import Link from "next/link" // Import Link for client-side navigation
 
 export function Header() {
   const navItems = [
-    { name: "Method", href: "#features-section" },
-    { name: "Results", href: "#testimonials-section" },
-    { name: "Pricing", href: "#pricing-section" },
+    { name: "Quiz", href: "/quiz" },
+    { name: "Method", href: "#signal-dna-intro" },
+    { name: "Results", href: "#testimonials" },
+    { name: "About", href: "#about-you" },
   ]
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // If it's an external link (starts with /), let it navigate normally
+    if (href.startsWith('/')) {
+      return // Let Next.js Link handle the navigation
+    }
+    
+    // If it's an internal anchor link, handle smooth scrolling
     e.preventDefault()
     if (typeof window !== 'undefined') {
       const targetId = href.substring(1) // Remove '#' from href
