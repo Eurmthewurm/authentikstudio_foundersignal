@@ -4,42 +4,42 @@
 
 @layer base {
   :root {
-    /* Themeable Colors - Restored to Original Vibe */
-    --background: 210 11% 7%; /* #0f1211 */
-    --foreground: 160 14% 93%; /* #e7eceb */
+    /* Premium Dark Theme - Sophisticated & Minimal */
+    --background: 210 11% 6%; /* #0a0d0c - deeper, more premium */
+    --foreground: 160 14% 96%; /* #f0f4f3 - cleaner white */
 
-    --muted: 240 2% 16%; /* #27272a */
-    --muted-foreground: 160 14% 93% / 0.7; /* rgba(231, 236, 235, 0.7) */
-    --muted-foreground-light: 160 14% 93% / 0.5; /* rgba(231, 236, 235, 0.5) */
-    --muted-foreground-dark: 160 14% 93% / 0.6; /* rgba(231, 236, 235, 0.6) */
+    --muted: 240 2% 12%; /* #1e1e20 - subtler muted */
+    --muted-foreground: 160 14% 96% / 0.65; /* More refined opacity */
+    --muted-foreground-light: 160 14% 96% / 0.45; /* Lighter for subtlety */
+    --muted-foreground-dark: 160 14% 96% / 0.55; /* Darker for contrast */
 
-    --card: 220 17% 98% / 0.01;
-    --card-foreground: 160 14% 93%;
+    --card: 220 17% 98% / 0.02; /* Slightly more visible cards */
+    --card-foreground: 160 14% 96%;
 
-    --popover: 210 11% 7%;
-    --popover-foreground: 160 14% 93%;
+    --popover: 210 11% 6%;
+    --popover-foreground: 160 14% 96%;
 
-    /* Signal DNA Primary Colors - Blue/Teal for trust, communication, clarity */
-    --primary: 200 100% 50%; /* #0084ff - vibrant blue */
-    --primary-foreground: 200 100% 98%; /* #f0f9ff - light blue for contrast */
-    --primary-dark: 200 100% 40%; /* #0066cc - darker blue */
-    --primary-light: 200 100% 90%; /* #e6f3ff - lighter blue shade */
+    /* Refined Signal DNA Primary - More sophisticated blue */
+    --primary: 200 100% 55%; /* #0099ff - brighter, more vibrant */
+    --primary-foreground: 200 100% 98%; /* #f0f9ff */
+    --primary-dark: 200 100% 45%; /* #007acc - deeper blue */
+    --primary-light: 200 100% 92%; /* #e8f4ff - lighter blue */
 
-    /* Secondary Accent Colors (for buttons, etc.) */
-    --secondary: 160 14% 93%; /* #e7eceb */
-    --secondary-foreground: 165 14% 8%; /* #141a18 */
+    /* Enhanced Secondary Colors */
+    --secondary: 160 14% 96%; /* #f0f4f3 */
+    --secondary-foreground: 165 14% 6%; /* #0f1412 */
 
-    --accent: 240 2% 25%; /* #3f3f42 */
-    --accent-foreground: 240 2% 96%; /* #f4f4f5 */
+    --accent: 240 2% 20%; /* #323234 - refined accent */
+    --accent-foreground: 240 2% 98%; /* #fafafa */
 
-    --border: 240 100% 100% / 0.08; /* rgba(255, 255, 255, 0.08) */
-    --border-light: 210 17% 6% / 0.1; /* rgba(16,24,40,0.1) */
-    --border-dark: 210 17% 6% / 0.05; /* rgba(16,24,40,0.05) */
+    /* Refined Borders - More subtle */
+    --border: 240 100% 100% / 0.06; /* More subtle borders */
+    --border-light: 210 17% 6% / 0.08;
+    --border-dark: 210 17% 6% / 0.04;
 
-    /* Updated ring color to match new Signal DNA blue */
-    --ring: 200 100% 50%;
+    --ring: 200 100% 55%; /* Match primary */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly more rounded for modern feel */
   }
 }
 

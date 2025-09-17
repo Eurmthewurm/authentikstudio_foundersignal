@@ -18,71 +18,68 @@ import { AnimatedSection } from "@/components/animated-section"
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden pb-0">
-      {/* Subtle Signal Line - Creative Touch */}
-      <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/20 to-transparent z-0" />
+      {/* Enhanced Signal Line - More Sophisticated */}
+      <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-primary/15 to-transparent z-0" />
       
       <div className="relative z-10">
         <main className="max-w-[1320px] mx-auto relative">
           <HeroSection />
         </main>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.1}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.1}>
           <FounderCrisisSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.15}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.15}>
           <SignalDNAIntroSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.175}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.175}>
           <JGriffHighlight />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.2}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.2}>
           <SignalStrengthQuizSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.25}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.25}>
           <SignalDNAIntensiveSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.3}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.3}>
           <FoundersCircleSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.35}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.35}>
           <WhySignalDNAWorksSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.4}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.4}>
           <TestimonialGridSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.425}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.425}>
           <UrgencySection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.45}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.45}>
           <ScarcityGuaranteeSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.5}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.5}>
           <AboutYouSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.55}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.55}>
           <FAQSection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.6}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.6}>
           <CTASection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-6 py-12 md:py-16" delay={0.65}>
-          <FooterSection />
-        </AnimatedSection>
+        <FooterSection />
       </div>
     </div>
   )
 }
-
