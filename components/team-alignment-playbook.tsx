@@ -335,7 +335,7 @@ export function TeamAlignmentPlaybook() {
                     <div className="space-y-2 text-sm text-muted-foreground">
                       <div>• High-priority leads (score ≥80): Contact within 1 hour</div>
                       <div>• Medium-priority leads (score 60-79): Contact within 4 hours</div>
-                      <div>• Low-priority leads (score <60): Contact within 24 hours</div>
+                      <div>• Low-priority leads (score &lt;60): Contact within 24 hours</div>
                       <div>• Use archetype-specific scripts for personalized outreach</div>
                     </div>
                   </div>
@@ -353,7 +353,7 @@ export function TeamAlignmentPlaybook() {
                   <div className="p-4 border border-border rounded-lg">
                     <h4 className="font-semibold mb-3">Escalation Procedures</h4>
                     <div className="space-y-2 text-sm text-muted-foreground">
-                      <div>• High-value prospects (>€10K potential): Escalate to Ermo</div>
+                      <div>• High-value prospects (&gt;€10K potential): Escalate to Ermo</div>
                       <div>• Technical issues: Contact development team</div>
                       <div>• Client complaints: Immediate escalation to success team</div>
                       <div>• System outages: Notify all teams via Slack</div>
