@@ -1,5 +1,6 @@
 import React from "react"
 import { Clock, Mail, Calendar, CheckCircle, Users, TrendingUp } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function CustomerSuccessWorkflowSection() {
@@ -174,9 +175,11 @@ export function CustomerSuccessWorkflowSection() {
           <p className="text-muted-foreground mb-6">
             Join 2,847+ founders who've transformed their Signal DNA
           </p>
-          <Button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg rounded-xl">
-            Begin Your Transformation
-          </Button>
+          <Link href="/quiz">
+            <Button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg rounded-xl">
+              Begin Your Transformation
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

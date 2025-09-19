@@ -71,7 +71,7 @@ export function ContentStrategySection() {
             </p>
             <div className="flex items-center justify-between">
               <span className="text-xs text-muted-foreground">12 min read</span>
-              <Link href="/intensive" className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-semibold text-sm">
+              <Link href="/audit" className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-semibold text-sm">
                 Read Case Study <ArrowRight className="w-4 h-4" />
               </Link>
             </div>

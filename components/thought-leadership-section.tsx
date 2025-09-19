@@ -1,5 +1,6 @@
 import React from "react"
 import { Mic, Video, PenTool, Share2, Calendar, Users } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function ThoughtLeadershipSection() {
@@ -251,9 +252,11 @@ export function ThoughtLeadershipSection() {
           <p className="text-muted-foreground mb-6">
             Join our thought leadership program and become the go-to expert on founder storytelling
           </p>
-          <Button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg rounded-xl">
-            Start Your Authority Journey
-          </Button>
+          <Link href="/audit">
+            <Button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg rounded-xl">
+              Start Your Authority Journey
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

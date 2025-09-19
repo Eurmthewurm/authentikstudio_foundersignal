@@ -2,6 +2,7 @@
 
 import React from "react"
 import { Check, Clock, Target, TrendingUp, Award } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function PricingSection() {
@@ -73,9 +74,11 @@ export function PricingSection() {
               </ul>
             </div>
 
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl shadow-none">
-              Take Free Quiz →
-            </Button>
+            <Link href="/quiz">
+              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl shadow-none">
+                Take Free Quiz →
+              </Button>
+            </Link>
           </div>
 
           {/* Signal DNA Audit - Mid-Level Intensive */}
@@ -133,9 +136,11 @@ export function PricingSection() {
               </ul>
             </div>
 
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl shadow-none">
-              Claim Your FREE Audit →
-            </Button>
+            <Link href="/audit">
+              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl shadow-none">
+                Claim Your FREE Audit →
+              </Button>
+            </Link>
           </div>
 
           {/* Signature Signal DNA Intensive - Flagship */}
@@ -187,9 +192,11 @@ export function PricingSection() {
               </ul>
             </div>
 
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl shadow-none">
-              Apply for Intensive →
-            </Button>
+            <Link href="/audit">
+              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl shadow-none">
+                Apply for Intensive →
+              </Button>
+            </Link>
           </div>
         </div>
 

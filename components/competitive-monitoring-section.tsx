@@ -1,5 +1,6 @@
 import React from "react"
 import { Eye, TrendingUp, Calendar, AlertTriangle, CheckCircle, BarChart3 } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function CompetitiveMonitoringSection() {
@@ -247,9 +248,11 @@ export function CompetitiveMonitoringSection() {
           <p className="text-muted-foreground mb-6">
             Join our competitive intelligence program and maintain your market leadership
           </p>
-          <Button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg rounded-xl">
-            Start Monitoring
-          </Button>
+          <Link href="/audit">
+            <Button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg rounded-xl">
+              Start Monitoring
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React from "react"
 import { Target, Users, BookOpen, MessageCircle, CheckCircle, TrendingUp } from "lucide-react"
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 
 export function SalesEnablementSection() {
@@ -208,9 +209,11 @@ export function SalesEnablementSection() {
           <p className="text-muted-foreground mb-6">
             Schedule a 1-hour sales enablement workshop for your team
           </p>
-          <Button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg rounded-xl">
-            Schedule Workshop
-          </Button>
+          <Link href="/audit">
+            <Button className="px-8 py-4 bg-primary text-primary-foreground hover:bg-primary/90 font-semibold text-lg rounded-xl">
+              Schedule Workshop
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
