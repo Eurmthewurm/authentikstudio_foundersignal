@@ -29,14 +29,14 @@ export function PricingSection() {
         {/* Pricing Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
           {/* Free Audit Card */}
-          <div className="bg-primary rounded-2xl p-6 text-primary-foreground relative hover:scale-105 transition-all duration-300 hover:shadow-xl">
+          <div className="bg-primary rounded-2xl p-4 text-primary-foreground relative hover:scale-105 transition-all duration-300 hover:shadow-xl flex flex-col">
             <div className="absolute top-4 right-4">
               <span className="bg-white/20 px-3 py-1 rounded-full text-xs font-medium">Most Popular</span>
             </div>
             
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold mb-3">Free Signal DNA Audit</h3>
-              <div className="flex items-center gap-2 mb-3">
+            <div className="mb-3">
+              <h3 className="text-2xl font-bold mb-2">Free Signal DNA Audit</h3>
+              <div className="flex items-center gap-2 mb-2">
                 <span className="text-3xl font-bold">FREE</span>
                 <span className="text-lg line-through opacity-70">€500</span>
               </div>
@@ -46,7 +46,7 @@ export function PricingSection() {
               </div>
             </div>
 
-            <div className="mb-3">
+            <div className="mb-3 flex-grow">
               <h4 className="font-semibold mb-2">What's included:</h4>
               <ul className="space-y-1 text-sm">
                 <li className="flex items-start gap-2">
@@ -72,27 +72,27 @@ export function PricingSection() {
               </ul>
             </div>
 
-            <Button className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold py-3 rounded-xl border border-primary/20 transition-colors duration-300">
+            <Button className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold py-3 rounded-xl border border-primary/20 transition-colors duration-300 shadow-none">
               Claim Your FREE Audit
             </Button>
           </div>
 
           {/* Main Offer Card */}
-          <div className="bg-card border-2 border-primary rounded-2xl p-6 relative lg:scale-105 hover:scale-110 transition-all duration-300 hover:shadow-2xl">
-            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-semibold">
+          <div className="bg-card border-2 border-primary rounded-2xl p-4 relative lg:scale-105 hover:scale-110 transition-all duration-300 hover:shadow-2xl flex flex-col">
+            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-semibold">
                 The Legendary Transformation
               </span>
             </div>
             
-            <div className="mb-3 pt-1">
+            <div className="mb-2 pt-1">
               <h3 className="text-2xl font-bold text-foreground mb-1">Signal DNA Discovery™</h3>
               <div className="text-4xl font-bold text-primary mb-1">€12,500</div>
               <p className="text-muted-foreground mb-1">Transform From Invisible Founder to Industry Legend in 90 Days</p>
               <p className="text-sm text-muted-foreground">The Complete Legendary Transformation Package</p>
             </div>
 
-            <div className="mb-2">
+            <div className="mb-2 flex-grow">
               <h4 className="font-semibold text-foreground mb-1">The Legendary Transformation Method:</h4>
               
               <div className="space-y-1">
@@ -189,20 +189,20 @@ export function PricingSection() {
               </div>
             </div>
 
-            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl">
+            <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl shadow-none">
               Apply for Legendary Transformation
             </Button>
           </div>
 
           {/* Full Journey Card */}
-          <div className="bg-card border border-border rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-primary/50">
+          <div className="bg-card border border-border rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-primary/50 flex flex-col">
             <div className="mb-3">
               <h3 className="text-2xl font-bold text-foreground mb-1">Full Journey Program</h3>
               <div className="text-3xl font-bold text-foreground mb-1">€5,000+</div>
               <p className="text-muted-foreground">Complete founder story transformation</p>
             </div>
 
-            <div className="mb-3">
+            <div className="mb-3 flex-grow">
               <h4 className="font-semibold text-foreground mb-2">What's included:</h4>
               <ul className="space-y-1 text-sm">
                 <li className="flex items-start gap-2">
@@ -240,7 +240,7 @@ export function PricingSection() {
               </ul>
             </div>
 
-            <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold py-3 rounded-xl">
+            <Button className="w-full bg-accent text-accent-foreground hover:bg-accent/90 font-semibold py-3 rounded-xl shadow-none">
               Schedule Strategy Call
             </Button>
           </div>
