@@ -66,7 +66,7 @@ export function HeroSection() {
                 "Walk into any room and watch heads nod before you finish your first sentence."
               </p>
               <div className="mt-4 text-sm sm:text-base text-primary font-semibold">
-                — J-Griff, €2M to €8M Revenue Growth
+                — J-Griff, €2M to €8M Revenue Growth in 18 Months
               </div>
             </div>
           </div>

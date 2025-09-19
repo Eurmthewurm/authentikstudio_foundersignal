@@ -56,7 +56,7 @@ export function AboutSection() {
           
           <div className="max-w-3xl mx-auto space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I've spent years studying what makes founders magnetic, working directly with breakthrough entrepreneurs like <strong className="text-foreground">Aaron Abke</strong> (spiritual teacher/entrepreneur with 1M+ following) and <strong className="text-foreground">J-Griff</strong> (€2M to €8M growth story).
+              I've spent years studying what makes founders magnetic, working directly with breakthrough entrepreneurs like <strong className="text-foreground">Aaron Abke</strong> (spiritual teacher/entrepreneur with 1M+ following) and <strong className="text-foreground">J-Griff</strong> (€2M to €8M growth story in 18 months).
             </p>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
