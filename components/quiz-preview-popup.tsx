@@ -15,7 +15,7 @@ export function QuizPreviewPopup() {
       options: ["They don't understand my vision", "My story feels generic", "I can't build emotional connection", "They focus on metrics over impact"]
     },
     {
-      question: "How do you currently communicate your founder story?",
+      question: "How do you currently communicate your Signal DNA?",
       options: ["Through data and metrics", "Personal anecdotes", "Company milestones", "I don't have a clear story"]
     }
   ]
@@ -93,7 +93,7 @@ export function QuizPreviewPopup() {
               <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
               <div>
                 <div className="font-medium text-foreground">Signal DNA Report</div>
-                <div className="text-sm text-muted-foreground">Personalized insights for your unique story</div>
+                <div className="text-sm text-muted-foreground">Personalized insights for your unique Signal DNA</div>
               </div>
             </div>
             <div className="flex items-start gap-3">
