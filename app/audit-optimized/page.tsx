@@ -183,7 +183,7 @@ export default function AuditPage() {
               Schedule Your Free Audit Call
             </h3>
             <div className="calendly-inline-widget" 
-                 data-url="https://calendly.com/your-calendly-link" 
+                 data-url="https://calendly.com/ermo/authentik-studio-audit-review" 
                  style={{ minWidth: '320px', height: '700px' }}>
             </div>
           </div>
