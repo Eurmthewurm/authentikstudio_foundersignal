@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 
 export function PricingSection() {
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-background">
+    <section className="w-full py-12 sm:py-16 lg:py-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-8">
@@ -46,9 +46,9 @@ export function PricingSection() {
               </div>
             </div>
 
-            <div className="mb-6">
-              <h4 className="font-semibold mb-4">What's included:</h4>
-              <ul className="space-y-3 text-sm">
+            <div className="mb-3">
+              <h4 className="font-semibold mb-2">What's included:</h4>
+              <ul className="space-y-1 text-sm">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 mt-0.5 flex-shrink-0" />
                   <span>15-Minute AI-Powered Story Analysis</span>
@@ -72,7 +72,7 @@ export function PricingSection() {
               </ul>
             </div>
 
-            <Button className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold py-3 rounded-xl shadow-none border border-primary/20">
+            <Button className="w-full bg-primary-foreground text-primary hover:bg-primary-foreground/90 font-semibold py-3 rounded-xl border border-primary/20 transition-colors duration-300">
               Claim Your FREE Audit
             </Button>
           </div>
@@ -85,18 +85,18 @@ export function PricingSection() {
               </span>
             </div>
             
-            <div className="mb-4 pt-2">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Signal DNA Discovery™</h3>
-              <div className="text-4xl font-bold text-primary mb-2">€12,500</div>
-              <p className="text-muted-foreground mb-2">Transform From Invisible Founder to Industry Legend in 90 Days</p>
+            <div className="mb-3 pt-1">
+              <h3 className="text-2xl font-bold text-foreground mb-1">Signal DNA Discovery™</h3>
+              <div className="text-4xl font-bold text-primary mb-1">€12,500</div>
+              <p className="text-muted-foreground mb-1">Transform From Invisible Founder to Industry Legend in 90 Days</p>
               <p className="text-sm text-muted-foreground">The Complete Legendary Transformation Package</p>
             </div>
 
-            <div className="mb-3">
-              <h4 className="font-semibold text-foreground mb-2">The Legendary Transformation Method:</h4>
+            <div className="mb-2">
+              <h4 className="font-semibold text-foreground mb-1">The Legendary Transformation Method:</h4>
               
-              <div className="space-y-2">
-                <div className="p-3 bg-primary/5 rounded-lg border border-primary/20">
+              <div className="space-y-1">
+                <div className="p-2 bg-primary/5 rounded-lg border border-primary/20">
                   <h5 className="font-semibold text-primary mb-1">PHASE 1: Archaeological Story Excavation</h5>
                   <div className="text-xs font-semibold text-primary mb-1">€8,000 value</div>
                   <ul className="space-y-1 text-sm text-muted-foreground">
@@ -115,7 +115,7 @@ export function PricingSection() {
                   </ul>
                 </div>
 
-                <div className="p-3 bg-primary/5 rounded-lg border border-primary/20">
+                <div className="p-2 bg-primary/5 rounded-lg border border-primary/20">
                   <h5 className="font-semibold text-primary mb-1">PHASE 2: Cinematic Story Engineering</h5>
                   <div className="text-xs font-semibold text-primary mb-1">€15,000 value</div>
                   <ul className="space-y-1 text-sm text-muted-foreground">
@@ -134,7 +134,7 @@ export function PricingSection() {
                   </ul>
                 </div>
 
-                <div className="p-3 bg-primary/5 rounded-lg border border-primary/20">
+                <div className="p-2 bg-primary/5 rounded-lg border border-primary/20">
                   <h5 className="font-semibold text-primary mb-1">PHASE 3: Multi-Audience Signal Amplification</h5>
                   <div className="text-xs font-semibold text-primary mb-1">€12,000 value</div>
                   <ul className="space-y-1 text-sm text-muted-foreground">
@@ -157,7 +157,7 @@ export function PricingSection() {
                   </ul>
                 </div>
 
-                <div className="p-3 bg-primary/10 rounded-lg border border-primary/30">
+                <div className="p-2 bg-primary/10 rounded-lg border border-primary/30">
                   <h5 className="font-semibold text-primary mb-1">EXCLUSIVE BONUSES:</h5>
                   <ul className="space-y-1 text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
@@ -196,15 +196,15 @@ export function PricingSection() {
 
           {/* Full Journey Card */}
           <div className="bg-card border border-border rounded-2xl p-6 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-primary/50">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold text-foreground mb-3">Full Journey Program</h3>
-              <div className="text-3xl font-bold text-foreground mb-3">€5,000+</div>
+            <div className="mb-3">
+              <h3 className="text-2xl font-bold text-foreground mb-1">Full Journey Program</h3>
+              <div className="text-3xl font-bold text-foreground mb-1">€5,000+</div>
               <p className="text-muted-foreground">Complete founder story transformation</p>
             </div>
 
-            <div className="mb-6">
-              <h4 className="font-semibold text-foreground mb-4">What's included:</h4>
-              <ul className="space-y-3 text-sm">
+            <div className="mb-3">
+              <h4 className="font-semibold text-foreground mb-2">What's included:</h4>
+              <ul className="space-y-1 text-sm">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                   <span>Everything in Signal DNA Discovery™</span>
@@ -247,7 +247,7 @@ export function PricingSection() {
         </div>
 
         {/* Guarantees Section */}
-        <div className="mb-8">
+        <div className="mb-6">
           <h3 className="text-3xl font-bold text-center text-foreground mb-8">The Triple Guarantee</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 bg-card border border-primary/20 rounded-2xl text-center hover:scale-105 transition-all duration-300 hover:shadow-lg hover:border-primary/40">
@@ -275,12 +275,12 @@ export function PricingSection() {
         </div>
 
         {/* Scarcity Section */}
-        <div className="mb-8 p-6 bg-card border border-primary/20 rounded-2xl hover:border-primary/40 transition-colors duration-300">
-          <h3 className="text-2xl font-bold text-primary mb-6 text-center">The Legend Admission Process</h3>
+        <div className="mb-6 p-6 bg-card border border-primary/20 rounded-2xl hover:border-primary/40 transition-colors duration-300">
+          <h3 className="text-2xl font-bold text-primary mb-4 text-center">The Legend Admission Process</h3>
           <div className="max-w-4xl mx-auto">
-            <p className="text-muted-foreground mb-6 text-center">We accept only 12 founders per quarter into our Signal DNA intensive.</p>
+            <p className="text-muted-foreground mb-4 text-center">We accept only 12 founders per quarter into our Signal DNA intensive.</p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h4 className="text-lg font-bold text-primary mb-4">Why so selective?</h4>
                 <ul className="space-y-2 text-muted-foreground">
@@ -302,30 +302,30 @@ export function PricingSection() {
               </div>
             </div>
             
-            <p className="text-center text-primary font-medium italic mt-6">
+            <p className="text-center text-primary font-medium italic mt-4">
               We turn down 60%+ of applicants. This process only works for founders ready to embrace authentic vulnerability as competitive advantage. Are you one of the legendary 12?
             </p>
           </div>
         </div>
 
         {/* Social Proof */}
-        <div className="mb-8 p-6 bg-card border border-primary/20 rounded-2xl hover:border-primary/40 transition-colors duration-300">
-          <h3 className="text-2xl font-bold text-primary mb-6 text-center">Legendary Founder Transformations</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div className="p-4 bg-primary/5 rounded-lg border border-primary/10">
-              <h4 className="font-bold text-primary mb-2">J-GRIFF (Tech Founder)</h4>
-              <p className="text-muted-foreground mb-2">Investment: €12,500 → Result: €6M revenue increase → ROI: 48,000%</p>
+        <div className="mb-6 p-6 bg-card border border-primary/20 rounded-2xl hover:border-primary/40 transition-colors duration-300">
+          <h3 className="text-2xl font-bold text-primary mb-4 text-center">Legendary Founder Transformations</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+              <h4 className="font-bold text-primary mb-1">J-GRIFF (Tech Founder)</h4>
+              <p className="text-muted-foreground mb-1">Investment: €12,500 → Result: €6M revenue increase → ROI: 48,000%</p>
               <p className="text-sm italic text-muted-foreground">"The story framework didn't just help with investors - it transformed how we attract customers and talent."</p>
             </div>
-            <div className="p-4 bg-primary/5 rounded-lg border border-primary/10">
-              <h4 className="font-bold text-primary mb-2">AARON ABKE (Spiritual Entrepreneur)</h4>
-              <p className="text-muted-foreground mb-2">Investment: €12,500 → Result: 1M+ authentic following → ROI: Immeasurable</p>
+            <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+              <h4 className="font-bold text-primary mb-1">AARON ABKE (Spiritual Entrepreneur)</h4>
+              <p className="text-muted-foreground mb-1">Investment: €12,500 → Result: 1M+ authentic following → ROI: Immeasurable</p>
               <p className="text-sm italic text-muted-foreground">"Working with Ermo transformed how I communicate my message. The documentary approach created something I never could have achieved alone."</p>
             </div>
           </div>
           
-          <div className="p-4 bg-primary/5 rounded-lg border border-primary/10">
-            <h4 className="font-bold text-primary mb-4 text-center">Emerging Patterns From All Clients:</h4>
+          <div className="p-3 bg-primary/5 rounded-lg border border-primary/10">
+            <h4 className="font-bold text-primary mb-2 text-center">Emerging Patterns From All Clients:</h4>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div>
                 <div className="text-2xl font-bold text-primary">89%</div>
