@@ -1,31 +1,129 @@
 import { NextRequest, NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
+import { supabase } from '@/lib/supabase'
 
 export async function GET(request: NextRequest) {
   try {
-    // Simple authentication check - you can make this more secure
-    const authHeader = request.headers.get('authorization')
-    if (authHeader !== `Bearer ${process.env.ADMIN_TOKEN || 'admin123'}`) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
-    }
+    const client = supabase()
+    
+    // Get all leads with scoring
+    const { data: quizSubmissions } = await client
+      .from('quiz_submissions')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(100)
 
-    const filePath = path.join(process.cwd(), 'data', 'leads.json')
+    const { data: auditSubmissions } = await client
+      .from('audit_submissions')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(100)
+
+    // Combine and score leads
+    const leads = []
     
-    if (!fs.existsSync(filePath)) {
-      return NextResponse.json({ leads: [], count: 0 })
-    }
-    
-    const fileContent = fs.readFileSync(filePath, 'utf8')
-    const leads = JSON.parse(fileContent)
-    
-    return NextResponse.json({ 
-      leads, 
-      count: leads.length,
-      lastUpdated: new Date().toISOString()
+    // Process quiz submissions
+    quizSubmissions?.forEach(submission => {
+      const score = calculateLeadScore(submission)
+      leads.push({
+        id: submission.id,
+        name: submission.first_name ? `${submission.first_name} ${submission.last_name}` : 'Unknown',
+        email: submission.email,
+        archetype: submission.archetype || 'unknown',
+        score,
+        source: submission.utm_source || 'direct',
+        submittedAt: submission.created_at,
+        status: submission.status || 'new',
+        priority: getPriority(score),
+        type: 'quiz'
+      })
     })
+
+    // Process audit submissions
+    auditSubmissions?.forEach(submission => {
+      const score = calculateAuditScore(submission)
+      leads.push({
+        id: submission.id,
+        name: `${submission.first_name} ${submission.last_name}`,
+        email: submission.email,
+        archetype: submission.archetype || 'unknown',
+        score,
+        source: submission.utm_source || 'direct',
+        submittedAt: submission.created_at,
+        status: submission.status || 'new',
+        priority: getPriority(score),
+        type: 'audit'
+      })
+    })
+
+    // Sort by score and priority
+    leads.sort((a, b) => {
+      if (a.priority === 'high' && b.priority !== 'high') return -1
+      if (b.priority === 'high' && a.priority !== 'high') return 1
+      return b.score - a.score
+    })
+
+    return NextResponse.json(leads)
+
   } catch (error) {
-    console.error('Error reading leads:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error('Error fetching leads:', error)
+    return NextResponse.json(
+      { error: 'Failed to fetch leads' },
+      { status: 500 }
+    )
   }
+}
+
+function calculateLeadScore(submission: any): number {
+  const archetypeScores = {
+    'visionary': 90,
+    'builder': 85,
+    'scholar': 80,
+    'connector': 75
+  }
+  
+  const sourceScores = {
+    'email': 100,
+    'youtube': 90,
+    'reddit': 70,
+    'direct': 60
+  }
+
+  const archetypeScore = archetypeScores[submission.archetype] || 50
+  const sourceScore = sourceScores[submission.utm_source] || 50
+  
+  // Time bonus for recent submissions (within 1 hour)
+  const submissionTime = new Date(submission.created_at)
+  const now = new Date()
+  const hoursDiff = (now.getTime() - submissionTime.getTime()) / (1000 * 60 * 60)
+  const timeBonus = hoursDiff <= 1 ? 10 : 0
+  
+  return Math.min(100, archetypeScore + sourceScore + timeBonus)
+}
+
+function calculateAuditScore(submission: any): number {
+  // Audit submissions get higher base scores
+  const baseScore = 85
+  
+  const sourceScores = {
+    'email': 15,
+    'youtube': 10,
+    'reddit': 5,
+    'direct': 0
+  }
+
+  const sourceBonus = sourceScores[submission.utm_source] || 0
+  
+  // Time bonus for recent submissions
+  const submissionTime = new Date(submission.created_at)
+  const now = new Date()
+  const hoursDiff = (now.getTime() - submissionTime.getTime()) / (1000 * 60 * 60)
+  const timeBonus = hoursDiff <= 1 ? 10 : 0
+  
+  return Math.min(100, baseScore + sourceBonus + timeBonus)
+}
+
+function getPriority(score: number): 'high' | 'medium' | 'low' {
+  if (score >= 80) return 'high'
+  if (score >= 60) return 'medium'
+  return 'low'
 }
