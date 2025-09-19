@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { Analytics as GoogleAnalytics } from '@/components/analytics'
 import { PerformanceMonitor } from '@/components/performance-monitor'
 import { GDPRConsentBanner } from '@/components/gdpr-consent-banner'
+import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -91,6 +92,10 @@ export default function RootLayout({
         <GoogleAnalytics />
         <PerformanceMonitor />
         <GDPRConsentBanner />
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )
