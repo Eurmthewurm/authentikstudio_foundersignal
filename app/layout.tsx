@@ -9,20 +9,20 @@ import Script from 'next/script'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'AuthentikStudio - Signal DNA Discovery™ Method',
-  description: 'Transform your founder story into an unstoppable competitive advantage with AuthentikStudio\'s AI-powered Signal DNA Discovery™ method.',
+  title: 'Signal DNA Founder Quiz | AuthentikStudio - Free 2-Minute Assessment',
+  description: 'Discover your founder archetype with the Signal DNA Method. Free 2-minute quiz reveals your storytelling strengths and blind spots. Transform from invisible founder to industry legend.',
   generator: 'AuthentikStudio',
   keywords: [
-    'founder story',
+    'founder storytelling framework',
+    'founder archetype quiz',
+    'Signal DNA Method',
+    'AI narrative analysis',
+    'founder story development',
     'startup storytelling',
-    'brand psychology',
-    'signal DNA',
-    'founder narrative',
-    'startup marketing',
-    'brand positioning',
-    'founder authenticity',
-    'startup growth',
-    'founder story development'
+    'founder archetypes',
+    'storytelling psychology',
+    'founder communication',
+    'startup narrative'
   ],
   authors: [{ name: 'Ermo Egberts' }],
   creator: 'AuthentikStudio',

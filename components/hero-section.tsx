@@ -50,9 +50,8 @@ export function HeroSection() {
             <span className="gradient-text font-semibold">Industry Legend</span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-5xl mx-auto leading-relaxed font-light">
-            The only founder storytelling framework that works across investors, customers, and talent. 
-            <span className="text-foreground font-medium"> Discover your founder archetype in just 2 minutes.</span>
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
+            The Signal DNA Method: Discover your founder archetype in 2 minutes.
           </p>
           
           {/* 3-Step Progress Visual */}
@@ -73,17 +72,32 @@ export function HeroSection() {
             </div>
           </div>
           
+          {/* Value Proposition Snapshot */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <h3 className="font-semibold text-foreground mb-2">Discover Your Archetype</h3>
+              <p className="text-sm text-muted-foreground">AI-powered analysis reveals your unique founder story pattern</p>
+            </div>
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <h3 className="font-semibold text-foreground mb-2">Identify Strengths</h3>
+              <p className="text-sm text-muted-foreground">Uncover storytelling advantages you never knew you had</p>
+            </div>
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <h3 className="font-semibold text-foreground mb-2">Spot Blind Spots</h3>
+              <p className="text-sm text-muted-foreground">Find gaps that prevent you from connecting with key audiences</p>
+            </div>
+          </div>
           
-          {/* Premium Quote Card */}
-          <div className="relative max-w-4xl mx-auto">
-            <div className="glass rounded-3xl p-8 md:p-12 border border-primary/10">
-              <div className="absolute top-4 left-4 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                <div className="w-3 h-3 bg-primary rounded-full"></div>
+          {/* Supporting Quote - Moved to Secondary Position */}
+          <div className="relative max-w-3xl mx-auto mt-8">
+            <div className="glass rounded-2xl p-6 md:p-8 border border-primary/10">
+              <div className="absolute top-3 left-3 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
+                <div className="w-2 h-2 bg-primary rounded-full"></div>
               </div>
-              <p className="text-lg sm:text-xl md:text-2xl text-foreground italic leading-relaxed font-medium">
+              <p className="text-base sm:text-lg md:text-xl text-foreground italic leading-relaxed font-medium pl-4">
                 "Walk into any room and watch heads nod before you finish your first sentence."
               </p>
-              <div className="mt-4 text-sm sm:text-base text-primary font-semibold">
+              <div className="mt-3 text-sm text-primary font-semibold pl-4">
                 — J-Griff, €2M to €8M Revenue Growth in 18 Months
               </div>
             </div>
@@ -93,7 +107,7 @@ export function HeroSection() {
         <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
           <Link href="/quiz" rel="noopener noreferrer" className="w-full">
             <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full">
-              <span className="relative z-10">Discover Your Story (2-min quiz)</span>
+              <span className="relative z-10">Start Free Quiz</span>
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
             </Button>
           </Link>
@@ -106,7 +120,7 @@ export function HeroSection() {
         <div className="flex flex-col items-center gap-3 w-full max-w-sm mx-auto mt-6">
           <Link href="/audit" rel="noopener noreferrer" className="w-full">
             <Button variant="outline" className="w-full bg-transparent border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105">
-              Request Free Audit
+              Book Free Audit
             </Button>
           </Link>
           <p className="text-xs text-muted-foreground font-medium text-center">
