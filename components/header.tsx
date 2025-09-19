@@ -54,7 +54,7 @@ export function Header() {
             : 'py-6 bg-transparent'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
             {/* Logo Section */}
             <div className="flex items-center gap-8">
@@ -89,7 +89,7 @@ export function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={(e) => handleScroll(e, item.href)}
-                    className="relative text-muted-foreground hover:text-foreground px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:bg-accent/50 group"
+                    className="relative text-muted-foreground hover:text-foreground px-4 py-2 rounded-xl font-medium text-sm transition-all duration-300 hover:bg-accent/50 group hover:scale-105"
                   >
                     {item.name}
                     {/* Hover underline effect */}
@@ -147,7 +147,7 @@ export function Header() {
                         key={item.name}
                         href={item.href}
                         onClick={(e) => handleScroll(e, item.href)}
-                        className="text-muted-foreground hover:text-foreground hover:bg-accent/50 justify-start text-lg py-3 px-4 rounded-xl font-medium transition-all duration-300"
+                        className="text-muted-foreground hover:text-foreground hover:bg-accent/50 justify-start text-lg py-3 px-4 rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:translate-x-2"
                       >
                         {item.name}
                       </Link>

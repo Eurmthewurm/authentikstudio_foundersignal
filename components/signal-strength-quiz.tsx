@@ -137,6 +137,19 @@ interface QuizQuestion {
 }
 
 const quizQuestions: QuizQuestion[] = [
+  // Qualifying Questions (Added for Lead Scoring)
+  {
+    id: "qualify_revenue",
+    section: "Business Context",
+    question: "What's your current annual revenue range?",
+    scale: "This helps us personalize your recommendations"
+  },
+  {
+    id: "qualify_timeline",
+    section: "Business Context", 
+    question: "When do you need to see results from your founder story transformation?",
+    scale: "Timeline helps us prioritize recommendations"
+  },
   // Customer Attraction
   {
     id: "customer_1",
@@ -219,8 +232,8 @@ function EmailCaptureForm({
   isSending: boolean 
 }) {
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
-      <div className="space-y-6 md:space-y-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
+      <div className="space-y-4 sm:space-y-6 md:space-y-8">
         {/* Header */}
         <div className="text-center space-y-4 md:space-y-6">
           <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full border border-primary/20 mb-4">
@@ -273,9 +286,9 @@ function EmailCaptureForm({
         </div>
 
         {/* Lead Capture Form */}
-        <form onSubmit={onSubmit} className="bg-muted/5 border border-border/20 rounded-xl p-6 md:p-8">
-          <div className="space-y-4 md:space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form onSubmit={onSubmit} className="bg-muted/5 border border-border/20 rounded-xl p-4 sm:p-6 md:p-8">
+          <div className="space-y-4 sm:space-y-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
                   First Name *
@@ -353,7 +366,7 @@ function EmailCaptureForm({
             
             <Button 
               type="submit" 
-              className="w-full bg-primary text-primary-foreground hover:bg-primary-dark px-8 py-6 rounded-xl font-medium text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary-dark px-6 sm:px-8 py-4 sm:py-6 rounded-xl font-medium text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20"
               disabled={!email || !email.includes('@') || !firstName || !lastName || !linkedinProfile || isSending}
             >
               {isSending ? (
@@ -502,12 +515,19 @@ export function SignalStrengthQuiz() {
       const investorScore = (answers.investor_1 || 0) + (answers.investor_2 || 0)
       const consistencyScore = (answers.consistency_1 || 0) + (answers.consistency_2 || 0)
       
+      // Calculate lead score based on qualifying questions
+      const revenueScore = getRevenueScore(answers.qualify_revenue)
+      const timelineScore = getTimelineScore(answers.qualify_timeline)
+      const leadScore = revenueScore + timelineScore + (customerScore + talentScore + investorScore + consistencyScore) / 4
+      
       const totalScores = { 
         customerAttraction: customerScore, 
         talentAttraction: talentScore, 
         investorAttraction: investorScore, 
         consistency: consistencyScore,
-        total: customerScore + talentScore + investorScore + consistencyScore
+        total: customerScore + talentScore + investorScore + consistencyScore,
+        leadScore: leadScore,
+        qualification: getLeadQualification(leadScore)
       }
       setScores({ customer: customerScore, talent: talentScore, investor: investorScore, consistency: consistencyScore })
       
@@ -516,6 +536,35 @@ export function SignalStrengthQuiz() {
       
       setShowEmailCapture(true)
     }
+  }
+
+  // Lead scoring functions
+  const getRevenueScore = (revenue: number) => {
+    switch (revenue) {
+      case 1: return 1 // Under €100K
+      case 2: return 2 // €100K-500K
+      case 3: return 3 // €500K-1M
+      case 4: return 4 // €1M-5M
+      case 5: return 5 // €5M+
+      default: return 1
+    }
+  }
+
+  const getTimelineScore = (timeline: number) => {
+    switch (timeline) {
+      case 1: return 5 // 30 days (urgent)
+      case 2: return 4 // 90 days (high priority)
+      case 3: return 3 // 6 months (medium priority)
+      case 4: return 2 // 12 months (low priority)
+      case 5: return 1 // No timeline (very low priority)
+      default: return 1
+    }
+  }
+
+  const getLeadQualification = (leadScore: number) => {
+    if (leadScore >= 8) return "HIGH"
+    if (leadScore >= 6) return "MEDIUM"
+    return "LOW"
   }
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -659,8 +708,8 @@ export function SignalStrengthQuiz() {
   const currentAnswer = answers[currentQ.id] || 0
 
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
-      <div className="space-y-6 md:space-y-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
+      <div className="space-y-4 sm:space-y-6 md:space-y-8">
         {/* Intro */}
         {currentQuestion === 0 && (
           <div className="text-center space-y-4 md:space-y-6">
@@ -731,36 +780,93 @@ export function SignalStrengthQuiz() {
 
             {/* Scale */}
             <div className="space-y-4">
-              <div className="grid grid-cols-5 gap-4">
-                {[1, 2, 3, 4, 5].map((value) => (
-                  <button
-                    key={value}
-                    onClick={() => handleAnswer(currentQ.id, value)}
-                    className={`p-4 rounded-lg border transition-all ${
-                      currentAnswer === value
-                        ? 'bg-primary text-primary-foreground border-primary'
-                        : 'bg-background border-border hover:border-primary/50'
-                    }`}
-                  >
-                    <div className="text-2xl font-bold">{value}</div>
-                  </button>
-                ))}
-              </div>
+              {currentQ.id.startsWith('qualify_') ? (
+                // Special handling for qualifying questions
+                <div className="space-y-3">
+                  {currentQ.id === 'qualify_revenue' ? (
+                    <>
+                      {[
+                        { value: 1, label: "Under €100K", desc: "Early stage startup" },
+                        { value: 2, label: "€100K-500K", desc: "Growing business" },
+                        { value: 3, label: "€500K-1M", desc: "Established company" },
+                        { value: 4, label: "€1M-5M", desc: "Scaling business" },
+                        { value: 5, label: "€5M+", desc: "Enterprise level" }
+                      ].map((option) => (
+                        <button
+                          key={option.value}
+                          onClick={() => handleAnswer(currentQ.id, option.value)}
+                          className={`w-full p-4 rounded-lg border transition-all text-left ${
+                            currentAnswer === option.value
+                              ? 'bg-primary text-primary-foreground border-primary'
+                              : 'bg-background border-border hover:border-primary/50'
+                          }`}
+                        >
+                          <div className="font-semibold">{option.label}</div>
+                          <div className="text-sm opacity-80">{option.desc}</div>
+                        </button>
+                      ))}
+                    </>
+                  ) : (
+                    <>
+                      {[
+                        { value: 1, label: "30 days", desc: "Urgent - immediate results needed" },
+                        { value: 2, label: "90 days", desc: "High priority - quick transformation" },
+                        { value: 3, label: "6 months", desc: "Medium priority - steady progress" },
+                        { value: 4, label: "12 months", desc: "Long-term planning" },
+                        { value: 5, label: "No timeline", desc: "Exploring options" }
+                      ].map((option) => (
+                        <button
+                          key={option.value}
+                          onClick={() => handleAnswer(currentQ.id, option.value)}
+                          className={`w-full p-4 rounded-lg border transition-all text-left ${
+                            currentAnswer === option.value
+                              ? 'bg-primary text-primary-foreground border-primary'
+                              : 'bg-background border-border hover:border-primary/50'
+                          }`}
+                        >
+                          <div className="font-semibold">{option.label}</div>
+                          <div className="text-sm opacity-80">{option.desc}</div>
+                        </button>
+                      ))}
+                    </>
+                  )}
+                </div>
+              ) : (
+                // Standard 1-5 scale for other questions
+                <div className="grid grid-cols-5 gap-4">
+                  {[1, 2, 3, 4, 5].map((value) => (
+                    <button
+                      key={value}
+                      onClick={() => handleAnswer(currentQ.id, value)}
+                      className={`p-4 rounded-lg border transition-all ${
+                        currentAnswer === value
+                          ? 'bg-primary text-primary-foreground border-primary'
+                          : 'bg-background border-border hover:border-primary/50'
+                      }`}
+                    >
+                      <div className="text-2xl font-bold">{value}</div>
+                    </button>
+                  ))}
+                </div>
+              )}
               
-              <div className="flex justify-between text-xs text-muted-foreground">
-                <span>1</span>
-                <span>5</span>
-              </div>
+              {!currentQ.id.startsWith('qualify_') && (
+                <div className="flex justify-between text-xs text-muted-foreground">
+                  <span>1</span>
+                  <span>5</span>
+                </div>
+              )}
             </div>
           </div>
         </div>
 
         {/* Navigation */}
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row justify-between gap-4">
           <Button
             variant="outline"
             onClick={handlePrevious}
             disabled={currentQuestion === 0}
+            className="w-full sm:w-auto px-6 py-3"
           >
             Previous
           </Button>
@@ -768,7 +874,7 @@ export function SignalStrengthQuiz() {
           <Button
             onClick={handleNext}
             disabled={currentAnswer === 0}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 w-full sm:w-auto px-6 py-3"
           >
             {currentQuestion === quizQuestions.length - 1 ? (
               <>
@@ -857,8 +963,8 @@ function QuizResults({ scores, email }: { scores: { customer: number; talent: nu
   const archetype = determineArchetype(scores)
 
   return (
-    <div className="max-w-4xl mx-auto px-4 md:px-6 py-8 md:py-12">
-      <div className="space-y-6 md:space-y-8">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-12">
+      <div className="space-y-4 sm:space-y-6 md:space-y-8">
         {/* Score Header */}
         <div className="text-center space-y-3 md:space-y-4">
           <div className="inline-flex items-center px-4 py-2 bg-green-500/10 rounded-full border border-green-500/20 mb-4">
@@ -889,34 +995,34 @@ function QuizResults({ scores, email }: { scores: { customer: number; talent: nu
         </div>
 
         {/* Individual Scores */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-          <div className="bg-muted/5 border border-border/20 rounded-xl p-4 md:p-6 text-center">
-            <h3 className="text-sm font-medium text-muted-foreground mb-2">Customer Magnetism</h3>
-            <div className={`text-2xl md:text-3xl font-bold ${getScoreColor(scores.customer)}`}>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6">
+          <div className="bg-muted/5 border border-border/20 rounded-xl p-3 sm:p-4 md:p-6 text-center">
+            <h3 className="text-xs sm:text-sm font-medium text-muted-foreground mb-2">Customer Magnetism</h3>
+            <div className={`text-xl sm:text-2xl md:text-3xl font-bold ${getScoreColor(scores.customer)}`}>
               {scores.customer}/10
             </div>
             <div className="text-xs text-muted-foreground mt-1">{getScoreLabel(scores.customer, "customer")}</div>
           </div>
           
-          <div className="bg-muted/5 border border-border/20 rounded-xl p-4 md:p-6 text-center">
-            <h3 className="text-sm font-medium text-muted-foreground mb-2">Talent Appeal</h3>
-            <div className={`text-2xl md:text-3xl font-bold ${getScoreColor(scores.talent)}`}>
+          <div className="bg-muted/5 border border-border/20 rounded-xl p-3 sm:p-4 md:p-6 text-center">
+            <h3 className="text-xs sm:text-sm font-medium text-muted-foreground mb-2">Talent Appeal</h3>
+            <div className={`text-xl sm:text-2xl md:text-3xl font-bold ${getScoreColor(scores.talent)}`}>
               {scores.talent}/10
             </div>
             <div className="text-xs text-muted-foreground mt-1">{getScoreLabel(scores.talent, "talent")}</div>
           </div>
           
-          <div className="bg-muted/5 border border-border/20 rounded-xl p-4 md:p-6 text-center">
-            <h3 className="text-sm font-medium text-muted-foreground mb-2">Investor Readiness</h3>
-            <div className={`text-2xl md:text-3xl font-bold ${getScoreColor(scores.investor)}`}>
+          <div className="bg-muted/5 border border-border/20 rounded-xl p-3 sm:p-4 md:p-6 text-center">
+            <h3 className="text-xs sm:text-sm font-medium text-muted-foreground mb-2">Investor Readiness</h3>
+            <div className={`text-xl sm:text-2xl md:text-3xl font-bold ${getScoreColor(scores.investor)}`}>
               {scores.investor}/10
             </div>
             <div className="text-xs text-muted-foreground mt-1">{getScoreLabel(scores.investor, "investor")}</div>
           </div>
           
-          <div className="bg-muted/5 border border-border/20 rounded-xl p-4 md:p-6 text-center">
-            <h3 className="text-sm font-medium text-muted-foreground mb-2">Story Consistency</h3>
-            <div className={`text-2xl md:text-3xl font-bold ${getScoreColor(scores.consistency)}`}>
+          <div className="bg-muted/5 border border-border/20 rounded-xl p-3 sm:p-4 md:p-6 text-center">
+            <h3 className="text-xs sm:text-sm font-medium text-muted-foreground mb-2">Story Consistency</h3>
+            <div className={`text-xl sm:text-2xl md:text-3xl font-bold ${getScoreColor(scores.consistency)}`}>
               {scores.consistency}/10
             </div>
             <div className="text-xs text-muted-foreground mt-1">{getScoreLabel(scores.consistency, "consistency")}</div>
@@ -1078,7 +1184,7 @@ function QuizResults({ scores, email }: { scores: { customer: number; talent: nu
             rel="noopener noreferrer"
             className="inline-block"
           >
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 shadow-lg mb-4">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base sm:text-lg px-6 sm:px-8 py-4 sm:py-6 shadow-lg mb-4 w-full sm:w-auto">
               CLAIM MY EMERGENCY {archetype.name.toUpperCase()} AUDIT
             </Button>
           </a>

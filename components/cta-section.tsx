@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export function CTASection() {
   return (
-    <section className="w-full pt-20 md:pt-60 lg:pt-60 pb-10 md:pb-20 px-5 relative flex flex-col justify-center items-center overflow-visible">
+    <section className="w-full pt-20 sm:pt-32 md:pt-40 lg:pt-48 pb-16 sm:pb-20 lg:pb-24 px-4 sm:px-6 lg:px-8 relative flex flex-col justify-center items-center overflow-visible">
       <div className="absolute inset-0 top-[-90px]">
         <svg
           className="w-full h-full"
@@ -103,26 +103,26 @@ export function CTASection() {
       </div>
       <div className="relative z-10 flex flex-col justify-start items-center gap-9 max-w-4xl mx-auto">
         <div className="flex flex-col justify-start items-center gap-4 text-center">
-          <h2 className="text-foreground text-4xl md:text-5xl lg:text-[68px] font-semibold leading-tight md:leading-tight lg:leading-[76px] break-words max-w-[435px]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight md:leading-tight lg:leading-[76px] break-words max-w-[435px] text-center">
             Your Founder Story Is Your Ultimate Growth Lever
           </h2>
-          <p className="text-muted-foreground text-sm md:text-base font-medium leading-[18.20px] md:leading-relaxed break-words max-w-2xl">
+          <p className="text-sm sm:text-base md:text-lg font-medium leading-relaxed break-words max-w-2xl text-center">
             Don't leave it untold.
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link href="/quiz" rel="noopener noreferrer">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center w-full max-w-2xl">
+          <Link href="/quiz" rel="noopener noreferrer" className="w-full sm:w-auto">
             <Button
-              className="px-[30px] py-2 bg-primary text-primary-foreground text-base font-medium leading-6 rounded-[99px] shadow-[0px_0px_0px_4px_rgba(255,255,255,0.13)] hover:bg-primary/90 transition-all duration-200"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-primary text-primary-foreground text-base sm:text-lg font-medium leading-6 rounded-full shadow-lg hover:shadow-xl hover:bg-primary/90 transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               size="lg"
             >
               Take the Free Quiz →
             </Button>
           </Link>
-          <Link href="/audit" rel="noopener noreferrer">
+          <Link href="/audit" rel="noopener noreferrer" className="w-full sm:w-auto">
             <Button
               variant="outline"
-              className="px-[30px] py-2 border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground text-base font-medium leading-6 rounded-[99px] transition-all duration-200"
+              className="px-6 sm:px-8 py-3 sm:py-4 border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground text-base sm:text-lg font-medium leading-6 rounded-full transition-all duration-300 hover:scale-105 w-full sm:w-auto"
               size="lg"
             >
               Book My Free Signal DNA Audit →
