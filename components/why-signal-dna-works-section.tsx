@@ -1,5 +1,5 @@
 import React from "react"
-import { Target, Bot, Zap, Shield } from "lucide-react"
+import { Target, Bot, Zap, Shield, Users, Film, Star } from "lucide-react"
 
 export function WhySignalDNAWorksSection() {
   return (
@@ -8,9 +8,56 @@ export function WhySignalDNAWorksSection() {
         <div className="space-y-12">
           <div className="text-center space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              Why Signal DNA Works
+              Why AuthentikStudio Works
             </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Most storytelling agencies learned from marketing books.<br />
+              Most founder coaches never built documentary-quality narratives.
+            </p>
           </div>
+
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 rounded-xl p-8 border border-primary/20">
+            <h3 className="text-2xl font-bold text-center mb-6">We're the rare combination:</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="text-center space-y-3">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
+                  <Users className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground">Direct founder experience</h4>
+                  <p className="text-sm text-muted-foreground">Aaron Abke, J-Griff success stories</p>
+                </div>
+              </div>
+              
+              <div className="text-center space-y-3">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
+                  <Film className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground">Documentary production quality</h4>
+                  <p className="text-sm text-muted-foreground">John's 15+ years with National Geographic, BBC, Discovery</p>
+                </div>
+              </div>
+              
+              <div className="text-center space-y-3">
+                <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto">
+                  <Star className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground">Authentic vulnerability focus</h4>
+                  <p className="text-sm text-muted-foreground">Not generic "hero's journey" templates</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+            <div className="text-center">
+              <div className="bg-muted/5 border border-border/20 rounded-xl p-6 max-w-3xl mx-auto">
+                <p className="text-xl font-light text-foreground italic">
+                  "The result: Founder stories that feel both deeply authentic AND documentary-quality compelling."
+                </p>
+              </div>
+            </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-muted/5 border border-border/20 rounded-xl p-8">

@@ -3,7 +3,7 @@ import { FounderCrisisSection } from "@/components/founder-crisis-section"
 import { SignalDNAIntroSection } from "@/components/signal-dna-intro-section"
 import { JGriffHighlight } from "@/components/j-griff-highlight"
 import { SignalStrengthQuizSection } from "@/components/signal-strength-quiz-section"
-import { SignalDNAIntensiveSection } from "@/components/signal-dna-intensive-section"
+import { PricingSection } from "@/components/pricing-section"
 import { FoundersCircleSection } from "@/components/founders-circle-section"
 import { WhySignalDNAWorksSection } from "@/components/why-signal-dna-works-section"
 import { TestimonialGridSection } from "@/components/testimonial-grid-section"
@@ -62,7 +62,7 @@ export default function LandingPage() {
         
         {/* 7. CORE OFFER - Signal DNA Intensive */}
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-6 md:px-8 py-16 md:py-20" delay={0.4}>
-          <SignalDNAIntensiveSection />
+          <PricingSection />
         </AnimatedSection>
         
         {/* 8. GROUP OFFER - Founders Circle */}

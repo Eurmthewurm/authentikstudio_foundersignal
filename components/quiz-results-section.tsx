@@ -54,10 +54,10 @@ export function QuizResultsSection() {
             </div>
 
             {/* Clear Signal */}
-            <div className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-8">
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-8">
               <div className="flex items-center gap-3 mb-4">
-                <CheckCircle className="w-6 h-6 text-blue-600" />
-                <h3 className="text-xl font-bold text-blue-600">Clear Signal (31-40)</h3>
+                <CheckCircle className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-bold text-primary">Clear Signal (31-40)</h3>
               </div>
               <p className="text-muted-foreground mb-4">
                 Solid foundation, but not unforgettable yet. You're clear but need more emotional impact and memorability.

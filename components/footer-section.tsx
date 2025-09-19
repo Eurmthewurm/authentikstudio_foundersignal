@@ -14,7 +14,7 @@ export function FooterSection() {
       {/* Working Links Only */}
       <div className="flex items-center justify-center gap-8">
         <Link href="/quiz" className="text-foreground text-sm font-normal hover:underline">
-          Signal Strength Quiz
+          Complete Founder Story Assessment
         </Link>
         <Link href="/audit" className="text-foreground text-sm font-normal hover:underline">
           Free Signal DNA Audit

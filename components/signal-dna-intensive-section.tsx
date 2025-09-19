@@ -1,5 +1,5 @@
 import React from "react"
-import { Calendar, CheckCircle, Zap, Target, Shield, ArrowRight } from "lucide-react"
+import { Calendar, CheckCircle, Zap, Target, Shield, ArrowRight, Film, Camera, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -10,10 +10,10 @@ export function SignalDNAIntensiveSection() {
         <div className="space-y-12">
           <div className="text-center space-y-6">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              From Invisible to Irresistible in 72 Hours
+              The AuthentikStudio Method
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              For founders who are ready, the next step is our Signal DNA Discovery™ Intensive. This is a 1:1 engagement where we uncover, engineer, and amplify your founder story so you can command attention everywhere.
+              You get the best of both worlds: Deep founder understanding + documentary production quality.
             </p>
             <div className="bg-muted/5 border border-border/20 rounded-xl p-6 max-w-4xl mx-auto">
               <p className="text-lg text-muted-foreground italic">
@@ -24,41 +24,41 @@ export function SignalDNAIntensiveSection() {
           </div>
 
           <div className="space-y-8">
-            {/* Day 1 */}
+            {/* Step 1 */}
             <div className="bg-muted/5 border border-border/20 rounded-xl p-8 hover:bg-muted/10 transition-all duration-300 group">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Calendar className="w-6 h-6 text-primary" />
+                  <Users className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">Day 1: Deep Story Archaeology</h3>
-                  <p className="text-muted-foreground">AI + psychology analysis</p>
+                  <h3 className="text-2xl font-bold">Step 1: Story Archaeology</h3>
+                  <p className="text-muted-foreground">Ermo's expertise in founder psychology</p>
                 </div>
               </div>
             </div>
 
-            {/* Day 2 */}
+            {/* Step 2 */}
             <div className="bg-muted/5 border border-border/20 rounded-xl p-8 hover:bg-muted/10 transition-all duration-300 group">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Calendar className="w-6 h-6 text-primary" />
+                  <Film className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">Day 2: Signal Engineering</h3>
-                  <p className="text-muted-foreground">Narrative + positioning</p>
+                  <h3 className="text-2xl font-bold">Step 2: Cinematic Engineering</h3>
+                  <p className="text-muted-foreground">John's documentary storytelling mastery</p>
                 </div>
               </div>
             </div>
 
-            {/* Day 3 */}
+            {/* Step 3 */}
             <div className="bg-muted/5 border border-border/20 rounded-xl p-8 hover:bg-muted/10 transition-all duration-300 group">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                  <Calendar className="w-6 h-6 text-primary" />
+                  <Zap className="w-6 h-6 text-primary" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold">Day 3: Signal Amplification</h3>
-                  <p className="text-muted-foreground">Multi-platform + investor pitch upgrade</p>
+                  <h3 className="text-2xl font-bold">Step 3: Strategic Amplification</h3>
+                  <p className="text-muted-foreground">Combined 20+ years experience</p>
                 </div>
               </div>
             </div>
@@ -86,7 +86,7 @@ export function SignalDNAIntensiveSection() {
               </div>
               <div className="flex items-center gap-3">
                 <CheckCircle className="w-5 h-5 text-primary" />
-                <span>30-day follow-up session</span>
+                <span>30-day story optimization guarantee</span>
               </div>
             </div>
           </div>
@@ -95,14 +95,14 @@ export function SignalDNAIntensiveSection() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-muted/5 border border-border/20 rounded-xl p-8">
               <h3 className="text-xl font-bold mb-4">Investment</h3>
-              <p className="text-2xl font-bold text-primary mb-2">Starting from €3,000</p>
-              <p className="text-sm text-muted-foreground mb-4">(founder rate)</p>
+              <p className="text-2xl font-bold text-primary mb-2">€12,500</p>
+              <p className="text-sm text-muted-foreground mb-4">Complete Signal DNA Intensive</p>
               <div className="bg-primary/5 border border-primary/10 rounded-lg p-4">
                 <p className="text-sm text-muted-foreground mb-2">
-                  <strong className="text-primary">Most founders spend €50k+ to raise a round.</strong>
+                  <strong className="text-primary">40+ hours of 1:1 story development</strong>
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  Your Signal DNA Intensive helps you unlock that funding faster, for a fraction of the cost.
+                  Documentary filmmaker collaboration + proven methodology that generated €6M for J-Griff
                 </p>
               </div>
             </div>

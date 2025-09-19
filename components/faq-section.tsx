@@ -6,6 +6,11 @@ import { ChevronDown } from "lucide-react"
 
 const faqData = [
   {
+    question: "How is this different from other storytelling agencies?",
+    answer:
+      "Most agencies learned storytelling from marketing books. We combine Ermo's direct founder experience (Aaron Abke, J-Griff successes) with John's 15+ years creating stories for National Geographic, BBC, and Discovery. While others optimize LinkedIn posts, we apply documentary-quality narrative psychology. The J-Griff case study (€6M revenue increase) proves the difference.",
+  },
+  {
     question: "How is this different from regular brand storytelling?",
     answer:
       "Signal DNA goes deeper than surface-level storytelling. We identify the psychological and emotional patterns that make YOU specifically compelling, not just your company.",

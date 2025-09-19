@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import { Play, ExternalLink, X } from "lucide-react"
+import Image from "next/image"
 
 export function JGriffHighlight() {
   const [isVideoOpen, setIsVideoOpen] = useState(false)
@@ -39,8 +40,14 @@ export function JGriffHighlight() {
             {/* Attribution with Photo */}
             <div className="flex items-center justify-center gap-4 mb-8 relative z-10">
               {/* J-Griff Photo */}
-              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center border-2 border-primary/20">
-                <span className="text-primary font-bold text-xl">JG</span>
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
+                <Image
+                  src="/images/avatars/cameron-williamson.png"
+                  alt="J-Griff"
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="text-left">
                 <div className="text-foreground font-semibold text-lg">J-Griff</div>
@@ -56,9 +63,18 @@ export function JGriffHighlight() {
             
             {/* Video Thumbnail with Play Button */}
             <div className="relative mb-8">
-              <div className="w-full h-48 bg-gradient-to-br from-primary/10 to-primary/5 rounded-xl border border-primary/20 flex items-center justify-center group-hover:from-primary/15 group-hover:to-primary/10 transition-all duration-300">
+              <div className="w-full h-48 rounded-xl border border-primary/20 flex items-center justify-center overflow-hidden relative">
+                {/* Background Image */}
+                <Image
+                  src="/images/avatars/cameron-williamson.png"
+                  alt="J-Griff video thumbnail"
+                  fill
+                  className="object-cover"
+                />
+                {/* Dark overlay for better contrast */}
+                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300"></div>
                 {/* Play Button */}
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 relative z-10">
                   <Play className="w-6 h-6 text-primary-foreground ml-1" />
                 </div>
               </div>
