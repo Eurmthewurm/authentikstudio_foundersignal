@@ -102,7 +102,7 @@ export function Header() {
             {/* CTA Section */}
             <div className="flex items-center gap-4">
               <Link href="/audit" className="hidden md:block">
-                <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 hover:scale-105 group">
+                <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 group !shadow-none">
                   <span className="relative z-10">FREE Audit</span>
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
@@ -155,7 +155,7 @@ export function Header() {
                     
                     <div className="pt-4 mt-4 border-t border-border/50">
                       <Link href="/audit" className="block">
-                        <Button className="w-full bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-6 py-3 rounded-full font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300">
+                        <Button className="w-full bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 !shadow-none">
                           FREE Audit
                         </Button>
                       </Link>
