@@ -55,6 +55,24 @@ export function HeroSection() {
             <span className="text-foreground font-medium"> Discover your founder archetype in just 2 minutes.</span>
           </p>
           
+          {/* 3-Step Progress Visual */}
+          <div className="flex items-center justify-center gap-4 md:gap-8 mt-8">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
+              <span className="text-sm font-medium text-foreground">Take Quiz</span>
+            </div>
+            <div className="w-8 h-0.5 bg-primary/30"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
+              <span className="text-sm font-medium text-muted-foreground">Get Report</span>
+            </div>
+            <div className="w-8 h-0.5 bg-primary/30"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
+              <span className="text-sm font-medium text-muted-foreground">Book Call</span>
+            </div>
+          </div>
+          
           
           {/* Premium Quote Card */}
           <div className="relative max-w-4xl mx-auto">
@@ -71,30 +89,29 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-6 md:gap-8 mt-8 md:mt-12 items-center justify-center">
-          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
-            <Link href="/quiz" rel="noopener noreferrer" className="w-full sm:w-auto">
-              <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full sm:w-auto">
-                <span className="relative z-10">Discover Your Founder Archetype</span>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-              </Button>
-            </Link>
-            <p className="text-sm text-muted-foreground font-medium text-center">
-              Free 2-Minute Assessment • No Credit Card Required
-            </p>
-          </div>
-          
-          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
-            <Link href="/audit" rel="noopener noreferrer" className="w-full sm:w-auto">
-              <Button className="relative bg-gradient-to-r from-accent to-accent/80 text-accent-foreground hover:from-accent/90 hover:to-accent px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-accent/20 group overflow-hidden w-full sm:w-auto">
-                <span className="relative z-10">Book FREE Strategy Call</span>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-              </Button>
-            </Link>
-            <p className="text-sm text-muted-foreground font-medium text-center">
-              Personalized Story Analysis
-            </p>
-          </div>
+        {/* Primary CTA - Quiz */}
+        <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
+          <Link href="/quiz" rel="noopener noreferrer" className="w-full">
+            <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full">
+              <span className="relative z-10">Discover Your Story (2-min quiz)</span>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+            </Button>
+          </Link>
+          <p className="text-sm text-muted-foreground font-medium text-center">
+            Free Assessment • No Credit Card Required • Instant Results
+          </p>
+        </div>
+        
+        {/* Secondary CTA - Audit */}
+        <div className="flex flex-col items-center gap-3 w-full max-w-sm mx-auto mt-6">
+          <Link href="/audit" rel="noopener noreferrer" className="w-full">
+            <Button variant="outline" className="w-full bg-transparent border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105">
+              Request Free Audit
+            </Button>
+          </Link>
+          <p className="text-xs text-muted-foreground font-medium text-center">
+            Personalized Story Analysis & Strategy Session
+          </p>
         </div>
         
         {/* Trusted by Founders & Brands */}
@@ -111,6 +128,14 @@ export function HeroSection() {
             <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">J-Griff</div>
             <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">Signal DNA</div>
           </div>
+        </div>
+        
+        {/* Scroll Guidance */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-primary/50 rounded-full mt-2 animate-pulse"></div>
+          </div>
+          <p className="text-xs text-muted-foreground font-medium">Scroll to explore</p>
         </div>
       </div>
     </section>

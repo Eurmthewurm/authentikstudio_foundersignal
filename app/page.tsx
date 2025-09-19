@@ -4,6 +4,8 @@ import { SignalDNAIntroSection } from "@/components/signal-dna-intro-section"
 import { JGriffHighlight } from "@/components/j-griff-highlight"
 import { SignalStrengthQuizSection } from "@/components/signal-strength-quiz-section"
 import { PricingSection } from "@/components/pricing-section"
+import { EmergingPatternsVisualization } from "@/components/emerging-patterns-visualization"
+import { SecondaryConversions } from "@/components/secondary-conversions"
 import { ContentStrategySection } from "@/components/content-strategy-section"
 import { ReferralEcosystemSection } from "@/components/referral-ecosystem-section"
 import { CustomerSuccessWorkflowSection } from "@/components/customer-success-workflow-section"
@@ -69,6 +71,16 @@ export default function LandingPage() {
         {/* 7. CORE OFFER - Signal DNA Intensive */}
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.4}>
           <PricingSection />
+        </AnimatedSection>
+        
+        {/* 7.1. EMERGING PATTERNS DATA VISUALIZATION */}
+        <AnimatedSection className="relative z-10" delay={0.45}>
+          <EmergingPatternsVisualization />
+        </AnimatedSection>
+        
+        {/* 7.2. SECONDARY CONVERSION OPTIONS */}
+        <AnimatedSection className="relative z-10" delay={0.5}>
+          <SecondaryConversions />
         </AnimatedSection>
         
         {/* STRATEGIC FOUNDATION SECTIONS */}
