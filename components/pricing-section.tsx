@@ -413,7 +413,7 @@ export function PricingSection() {
                 <div className="text-sm text-green-500 dark:text-green-400">Say they'd invest again at double the price</div>
               </div>
             </div>
-            <p className="text-center text-sm italic text-green-500 dark:text-green-400 mt-6 text-lg">
+            <p className="text-center text-lg italic text-green-500 dark:text-green-400 mt-6">
               *"The documentary approach creates stories that feel both deeply authentic AND cinematically compelling."*
             </p>
           </div>
