@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Header } from "./header"
-import { QuizPreviewPopup } from "./quiz-preview-popup"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -56,8 +55,6 @@ export function HeroSection() {
             <span className="text-foreground font-medium"> Discover your founder archetype in just 2 minutes.</span>
           </p>
           
-          {/* Quiz Preview Banner */}
-          <QuizPreviewPopup />
           
           {/* Premium Quote Card */}
           <div className="relative max-w-4xl mx-auto">

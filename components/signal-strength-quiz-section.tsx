@@ -72,10 +72,10 @@ export function SignalStrengthQuizSection() {
             </p>
             <div className="bg-background/50 border border-primary/10 rounded-lg p-4 mb-6">
               <p className="text-primary font-semibold">
-                Ready for the next step?
+                Ready to discover your founder archetype?
               </p>
               <p className="text-muted-foreground">
-                Book a free multi-audience audit to unlock compound returns across your entire ecosystem.
+                Take our free 2-minute assessment to unlock your story's potential.
               </p>
             </div>
             <Link href="/quiz">
