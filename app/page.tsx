@@ -4,6 +4,12 @@ import { SignalDNAIntroSection } from "@/components/signal-dna-intro-section"
 import { JGriffHighlight } from "@/components/j-griff-highlight"
 import { SignalStrengthQuizSection } from "@/components/signal-strength-quiz-section"
 import { PricingSection } from "@/components/pricing-section"
+import { ContentStrategySection } from "@/components/content-strategy-section"
+import { ReferralEcosystemSection } from "@/components/referral-ecosystem-section"
+import { CustomerSuccessWorkflowSection } from "@/components/customer-success-workflow-section"
+import { SalesEnablementSection } from "@/components/sales-enablement-section"
+import { ThoughtLeadershipSection } from "@/components/thought-leadership-section"
+import { CompetitiveMonitoringSection } from "@/components/competitive-monitoring-section"
 import { FoundersCircleSection } from "@/components/founders-circle-section"
 import { WhySignalDNAWorksSection } from "@/components/why-signal-dna-works-section"
 import { TestimonialGridSection } from "@/components/testimonial-grid-section"
@@ -65,34 +71,66 @@ export default function LandingPage() {
           <PricingSection />
         </AnimatedSection>
         
-        {/* 8. GROUP OFFER - Founders Circle */}
+        {/* STRATEGIC FOUNDATION SECTIONS */}
+        
+        {/* 7.1. CONTENT & SEO STRATEGY */}
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.425}>
+          <ContentStrategySection />
+        </AnimatedSection>
+        
+        {/* 7.2. REFERRAL & AFFILIATE ECOSYSTEM */}
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.45}>
+          <ReferralEcosystemSection />
+        </AnimatedSection>
+        
+        {/* 7.3. CUSTOMER SUCCESS WORKFLOW */}
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.475}>
+          <CustomerSuccessWorkflowSection />
+        </AnimatedSection>
+        
+        {/* 7.4. SALES ENABLEMENT & TRAINING */}
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.5}>
+          <SalesEnablementSection />
+        </AnimatedSection>
+        
+        {/* 7.5. THOUGHT LEADERSHIP CADENCE */}
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.525}>
+          <ThoughtLeadershipSection />
+        </AnimatedSection>
+        
+        {/* 7.6. COMPETITIVE MONITORING */}
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.55}>
+          <CompetitiveMonitoringSection />
+        </AnimatedSection>
+        
+        {/* 8. GROUP OFFER - Founders Circle */}
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.575}>
           <FoundersCircleSection />
         </AnimatedSection>
         
         {/* 9. CREDIBILITY - About You */}
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.5}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.6}>
           <div id="about-you">
             <AboutYouSection />
           </div>
         </AnimatedSection>
         
         {/* 10. URGENCY + SCARCITY - Combined */}
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.55}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.625}>
           <UrgencySection />
         </AnimatedSection>
         
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.575}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.65}>
           <ScarcityGuaranteeSection />
         </AnimatedSection>
         
         {/* 11. OBJECTION HANDLING - FAQ */}
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.6}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.675}>
           <FAQSection />
         </AnimatedSection>
         
         {/* 12. FINAL CLOSE - CTA */}
-        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.65}>
+        <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.7}>
           <CTASection />
         </AnimatedSection>
         
