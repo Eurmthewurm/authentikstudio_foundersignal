@@ -114,8 +114,8 @@ export function ContentStrategySection() {
               Take Free Quiz
               <ArrowRight className="w-4 h-4" />
             </Link>
-            <Link href="/audit" className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-primary text-primary rounded-xl font-semibold hover:bg-primary/10 transition-colors duration-300">
-              Book Free Audit
+            <Link href="/quiz-linkedin" className="inline-flex items-center gap-2 px-6 py-3 bg-card border border-primary text-primary rounded-xl font-semibold hover:bg-primary/10 transition-colors duration-300">
+              LinkedIn Version
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

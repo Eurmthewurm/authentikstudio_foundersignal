@@ -28,6 +28,10 @@ export default function QuizPage() {
         return "As Seen on YouTube: Discover Your Founder Archetype"
       case 'reddit':
         return "r/startups Founders: What's Your Archetype?"
+      case 'linkedin':
+        return "LinkedIn Founders: Discover Your Signal DNA Archetype"
+      case 'linkedin-campaign':
+        return "Professional Founders: Unlock Your Leadership Story"
       default:
         return "Discover Your Founder Archetype in 2 Minutes"
     }
