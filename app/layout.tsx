@@ -4,6 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import { Analytics as GoogleAnalytics } from '@/components/analytics'
 import { PerformanceMonitor } from '@/components/performance-monitor'
+import { GDPRConsentBanner } from '@/components/gdpr-consent-banner'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -89,6 +90,7 @@ export default function RootLayout({
         <Analytics />
         <GoogleAnalytics />
         <PerformanceMonitor />
+        <GDPRConsentBanner />
       </body>
     </html>
   )
