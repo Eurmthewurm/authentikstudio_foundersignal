@@ -42,7 +42,7 @@ export function JGriffHighlight() {
               {/* J-Griff Photo */}
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
                 <Image
-                  src="/images/avatars/cameron-williamson.png"
+                  src="/images/j-griff-headshot.jpg"
                   alt="J-Griff"
                   width={64}
                   height={64}
@@ -66,7 +66,7 @@ export function JGriffHighlight() {
               <div className="w-full h-48 rounded-xl border border-primary/20 flex items-center justify-center overflow-hidden relative">
                 {/* Background Image */}
                 <Image
-                  src="/images/avatars/cameron-williamson.png"
+                  src="/images/j-griff-headshot.jpg"
                   alt="J-Griff video thumbnail"
                   fill
                   className="object-cover"
