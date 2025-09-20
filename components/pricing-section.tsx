@@ -30,8 +30,8 @@ export function PricingSection() {
           </div>
         </div>
 
-        {/* Pricing Cards */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-16">
+        {/* Simplified CTA Hierarchy */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-16">
           {/* Signal DNA Snapshot - Free Entry */}
           <div className="bg-card border border-primary/20 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-lg hover:border-primary/40 flex flex-col">
             <div className="text-center mb-4">
@@ -81,11 +81,11 @@ export function PricingSection() {
             </Link>
           </div>
 
-          {/* Signal DNA Audit - Mid-Level Intensive */}
+          {/* Signal DNA Audit - Primary Offer */}
           <div className="bg-card border-2 border-primary rounded-2xl p-4 relative lg:scale-105 hover:scale-110 transition-all duration-300 hover:shadow-2xl flex flex-col">
             <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
               <span className="bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-semibold">
-                MOST POPULAR
+                RECOMMENDED NEXT STEP
               </span>
             </div>
             
@@ -95,9 +95,9 @@ export function PricingSection() {
                 <span className="text-4xl font-bold text-primary">FREE</span>
                 <span className="text-lg line-through text-muted-foreground">€500</span>
               </div>
-              <p className="text-sm text-muted-foreground">Limited to first 50 founders this month</p>
+              <p className="text-sm text-muted-foreground">45-minute personalized story analysis</p>
               <div className="bg-red-500/20 px-3 py-1 rounded-full inline-block mt-2">
-                <span className="text-xs font-semibold text-red-600">47 spots taken</span>
+                <span className="text-xs font-semibold text-red-600">Only 3 spots remaining this month</span>
               </div>
             </div>
 
@@ -106,33 +106,33 @@ export function PricingSection() {
               <ul className="space-y-1 text-sm">
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>15-minute AI-powered story analysis</span>
+                  <span>Complete Signal DNA analysis across all audiences</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Personalized Signal DNA report</span>
+                  <span>Your €2M+ revenue story discovery</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Competitive differentiation blueprint</span>
+                  <span>3 specific blind spots identified</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>90-day quick-win action plan</span>
+                  <span>90-day transformation roadmap</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Founder Signal Playbook (25+ templates)</span>
+                  <span>Signal DNA Playbook (25+ templates)</span>
                 </li>
               </ul>
             </div>
 
             <div className="mb-4">
-              <h4 className="font-semibold text-foreground mb-2">Outcomes You Can Expect:</h4>
+              <h4 className="font-semibold text-foreground mb-2">Expected Outcomes:</h4>
               <ul className="space-y-1 text-sm text-muted-foreground">
-                <li>• Clear roadmap for story improvement</li>
-                <li>• Specific blind spots identified</li>
-                <li>• Ready-to-use templates and frameworks</li>
+                <li>• Clear roadmap for legendary status</li>
+                <li>• Specific story improvements identified</li>
+                <li>• Ready-to-implement action plan</li>
               </ul>
             </div>
 
@@ -142,61 +142,44 @@ export function PricingSection() {
               </Button>
             </Link>
           </div>
+        </div>
 
-          {/* Signature Signal DNA Intensive - Flagship */}
-          <div className="bg-card border border-primary/20 rounded-2xl p-4 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-primary/50 flex flex-col">
-            <div className="text-center mb-4">
-              <div className="inline-flex items-center px-3 py-1 bg-primary/10 rounded-full text-xs font-semibold text-primary mb-3">
-                FLAGSHIP PROGRAM
+        {/* Clear Progression Path */}
+        <div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 mb-8">
+          <h3 className="text-2xl font-bold text-primary mb-6 text-center">Your Path to Legendary Status</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-primary">1</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Signature Signal DNA Intensive</h3>
-              <div className="text-4xl font-bold text-primary mb-2">€12,500</div>
-              <p className="text-sm text-muted-foreground">Transform from invisible to legendary in 90 days</p>
-              <div className="bg-yellow-500/20 px-3 py-1 rounded-full inline-block mt-2">
-                <span className="text-xs font-semibold text-yellow-600">Only 2 spots remaining</span>
+              <h4 className="text-lg font-bold text-foreground mb-2">Start with Quiz</h4>
+              <p className="text-sm text-muted-foreground mb-4">Discover your founder archetype and get instant insights</p>
+              <Link href="/quiz">
+                <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                  Take Free Quiz →
+                </Button>
+              </Link>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-primary">2</span>
               </div>
+              <h4 className="text-lg font-bold text-foreground mb-2">Book Your Audit</h4>
+              <p className="text-sm text-muted-foreground mb-4">Get personalized analysis and transformation roadmap</p>
+              <Link href="/audit">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                  Claim FREE Audit →
+                </Button>
+              </Link>
             </div>
-
-            <div className="mb-4 flex-grow">
-              <h4 className="font-semibold text-foreground mb-2">What You Get:</h4>
-              <ul className="space-y-1 text-sm">
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>3 intensive founder psychology sessions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Documentary filmmaker collaboration</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Multi-audience story optimization</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>30-day story evolution support</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                  <span>Private founder legend community access</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mb-4">
-              <h4 className="font-semibold text-foreground mb-2">Outcomes You Can Expect:</h4>
-              <ul className="space-y-1 text-sm text-muted-foreground">
-                <li>• €6M+ revenue increase (like J-Griff)</li>
-                <li>• 1M+ authentic following growth</li>
-                <li>• Legendary founder status in your space</li>
-              </ul>
-            </div>
-
-            <Link href="/audit">
-              <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-3 rounded-xl shadow-none">
-                Apply for Intensive →
-              </Button>
-            </Link>
+          </div>
+          
+          <div className="mt-6 p-4 bg-background/50 border border-primary/10 rounded-lg">
+            <p className="text-sm text-center text-muted-foreground">
+              <strong className="text-primary">For serious founders ready to become legendary:</strong> 
+              After your audit, we'll discuss our Signature Signal DNA Intensive program (€12,500) 
+              for complete transformation in 90 days. Only 2 spots remaining this quarter.
+            </p>
           </div>
         </div>
 

@@ -141,15 +141,23 @@ export function HeroSection() {
         <div className="mt-8 md:mt-10 lg:mt-12">
           <p className="text-xs md:text-sm text-muted-foreground font-medium tracking-[0.2em] uppercase mb-6 md:mb-8">TRUSTED BY FOUNDERS & BRANDS</p>
           <div className="flex items-center justify-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 opacity-70 flex-wrap">
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">BBC</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">National Geographic</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">Discovery</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">Black Magic</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">Arte</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">David Attenborough</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">Aaron Abke</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">J-Griff</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5">Signal DNA</div>
+            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Documentary storytelling for BBC's flagship programs">BBC</div>
+            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Nature documentary narrative consulting">National Geographic</div>
+            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Science communication storytelling">Discovery</div>
+            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Cinematic storytelling techniques">Black Magic</div>
+            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="European documentary production">Arte</div>
+            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Legendary nature storyteller collaboration">David Attenborough</div>
+            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="1M+ follower growth through authentic storytelling">Aaron Abke</div>
+            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="€6M revenue growth in 18 months">J-Griff</div>
+          </div>
+          
+          {/* Specific Results */}
+          <div className="mt-6 bg-primary/5 border border-primary/20 rounded-xl p-4 max-w-4xl mx-auto">
+            <p className="text-sm text-muted-foreground text-center">
+              <strong className="text-primary">Documentary storytelling expertise</strong> applied to founder narratives: 
+              BBC documentaries, National Geographic series, Discovery Channel productions, and 
+              <strong className="text-primary">€6M+ in founder revenue growth</strong> across our client portfolio.
+            </p>
           </div>
         </div>
         

@@ -58,7 +58,9 @@ export function JGriffHighlight() {
             
             {/* Subtext */}
             <p className="text-muted-foreground text-base max-w-2xl mx-auto mb-8 leading-relaxed relative z-10">
-              The Signal DNA framework transformed how J-Griff communicates his value proposition, leading to 4x revenue growth in just 18 months.
+              <strong className="text-primary">Tech Founder Challenge:</strong> J-Griff struggled to differentiate his SaaS platform in a crowded market. 
+              <strong className="text-primary">Solution:</strong> Applied documentary storytelling techniques to his founder narrative, creating emotional connection with investors and customers.
+              <strong className="text-primary">Result:</strong> 4x revenue growth, Series A funding secured, and became the founder story that investors chase.
             </p>
             
             {/* Video Thumbnail with Play Button */}
