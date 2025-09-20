@@ -27,7 +27,7 @@ export function GDPRConsentBanner() {
   if (!showBanner) return null
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-card border-t border-primary/20 shadow-lg">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-gray-900 dark:bg-gray-900 border-t border-primary/20 shadow-lg">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <div className="flex items-start gap-3 flex-1">
