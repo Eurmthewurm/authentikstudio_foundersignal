@@ -41,13 +41,11 @@ export default function QuizPage() {
   }
 
   const handleAnswer = (questionId: string, value: string) => {
-    setAnswers(prev => ({ ...prev, [questionId]: value }))
-    
-    // Provide immediate feedback based on answers
-    const currentAnswers = {...answers, [questionId]: value}
+    const newAnswers = { ...answers, [questionId]: value }
+    setAnswers(newAnswers)
     
     // Auto-advance after 3 questions to mini-insight
-    if (Object.keys(currentAnswers).length >= 3) {
+    if (Object.keys(newAnswers).length >= 3) {
       setTimeout(() => setCurrentStep(2), 800)
     }
   }
@@ -310,21 +308,36 @@ export default function QuizPage() {
               </div>
 
               {/* Next Steps */}
+              <div className="mb-6">
+                <p className="text-sm text-muted-foreground text-center mb-4">
+                  Choose your next step:
+                </p>
+              </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                <Button
-                  onClick={() => setCurrentStep(3)}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4 text-lg rounded-xl"
-                >
-                  Get My Complete Report →
-                </Button>
+                <div className="space-y-2">
+                  <Button
+                    onClick={() => setCurrentStep(3)}
+                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4 text-lg rounded-xl"
+                  >
+                    Get My Complete Report →
+                  </Button>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Based on your 3 answers
+                  </p>
+                </div>
                 
-                <Button
-                  variant="outline"
-                  onClick={() => setShowDeepDive(true)}
-                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold py-4 text-lg rounded-xl"
-                >
-                  Complete Your Signal DNA Profile
-                </Button>
+                <div className="space-y-2">
+                  <Button
+                    variant="outline"
+                    onClick={() => setShowDeepDive(true)}
+                    className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold py-4 text-lg rounded-xl"
+                  >
+                    Optional: Full Signal DNA Profile (10 Questions)
+                  </Button>
+                  <p className="text-xs text-muted-foreground text-center">
+                    Deeper analysis & detailed recommendations
+                  </p>
+                </div>
               </div>
               
               <p className="text-sm text-muted-foreground text-center">
