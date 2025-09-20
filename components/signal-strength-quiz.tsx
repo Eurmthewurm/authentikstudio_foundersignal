@@ -4,7 +4,7 @@ import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { Input } from "@/components/ui/input"
-import { ArrowRight, CheckCircle, Mail, Download, Clock, ExternalLink } from "lucide-react"
+import { ArrowRight, CheckCircle, Mail, Download, Clock, ExternalLink, Users, TrendingUp } from "lucide-react"
 import { trackQuizCompletion, trackLeadCapture } from "@/components/analytics"
 
 // Founder Archetype System
@@ -734,49 +734,114 @@ export function SignalStrengthQuiz() {
       <div className="space-y-4 sm:space-y-6 md:space-y-8">
         {/* Intro */}
         {currentQuestion === 0 && (
-          <div className="text-center space-y-4 md:space-y-6">
+          <div className="text-center space-y-6 md:space-y-8">
             <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground">
-              Discover Your Founder Archetype:
+              Discover Your Founder Archetype
             </h1>
-            <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-primary">
-              Are You Legendary or Invisible?
-            </h2>
-            <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto px-4">
-              This 2-minute assessment reveals:
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Take our 2-minute assessment to unlock your unique storytelling DNA
             </p>
-            
-            <div className="max-w-2xl mx-auto space-y-3">
-              <div className="flex items-center gap-3 text-left">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">Which of the 7 Founder Archetypes you embody</span>
+
+            {/* Quiz Preview Stats */}
+            <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto">
+              <div className="text-center p-4 bg-primary/5 rounded-lg border border-primary/10">
+                <Clock className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-sm font-semibold text-primary">2 Minutes</div>
+                <div className="text-xs text-muted-foreground">Completion Time</div>
               </div>
-              <div className="flex items-center gap-3 text-left">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">Your story's hidden strengths (that investors notice)</span>
+              <div className="text-center p-4 bg-primary/5 rounded-lg border border-primary/10">
+                <Users className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-sm font-semibold text-primary">2,847</div>
+                <div className="text-xs text-muted-foreground">Founders Tested</div>
               </div>
-              <div className="flex items-center gap-3 text-left">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">The exact blind spots keeping you invisible</span>
-              </div>
-              <div className="flex items-center gap-3 text-left">
-                <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground">Your personalized roadmap to legendary status</span>
+              <div className="text-center p-4 bg-primary/5 rounded-lg border border-primary/10">
+                <TrendingUp className="w-6 h-6 text-primary mx-auto mb-2" />
+                <div className="text-sm font-semibold text-primary">89%</div>
+                <div className="text-xs text-muted-foreground">See Results</div>
               </div>
             </div>
-            
-            <div className="bg-muted/5 border border-border/20 rounded-xl p-6 max-w-2xl mx-auto">
-              <p className="text-sm text-muted-foreground mb-2">
-                <strong className="text-foreground">Over 1,000 founders</strong> completed this assessment.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Most discover story advantages they never knew they had.
-              </p>
+
+            {/* Sample Questions */}
+            <div className="space-y-4 max-w-3xl mx-auto">
+              <h3 className="text-lg font-semibold text-foreground">Sample Questions:</h3>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 bg-card border border-border rounded-lg text-left">
+                  <p className="font-medium text-foreground mb-3">What's your biggest challenge when pitching to investors?</p>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary/30 rounded-full"></div>
+                      <span>They don't understand my vision</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary/30 rounded-full"></div>
+                      <span>My story feels generic</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary/30 rounded-full"></div>
+                      <span>I can't build emotional connection</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="p-4 bg-card border border-border rounded-lg text-left">
+                  <p className="font-medium text-foreground mb-3">How do you currently communicate your Signal DNA?</p>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary/30 rounded-full"></div>
+                      <span>Through data and metrics</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary/30 rounded-full"></div>
+                      <span>Personal anecdotes</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="w-2 h-2 bg-primary/30 rounded-full"></div>
+                      <span>Company milestones</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            
-            <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-              <Clock className="w-4 h-4" />
-              <span>90 seconds to complete</span>
+
+            {/* What You'll Get */}
+            <div className="bg-primary/5 rounded-lg p-6 border border-primary/10 max-w-4xl mx-auto">
+              <h3 className="text-lg font-semibold text-primary mb-4">What You'll Discover:</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-medium text-foreground">Your Founder Archetype</div>
+                    <div className="text-sm text-muted-foreground">The storytelling pattern that resonates with your audience</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-medium text-foreground">Signal DNA Report</div>
+                    <div className="text-sm text-muted-foreground">Personalized insights for your unique Signal DNA</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-medium text-foreground">Competitive Edge</div>
+                    <div className="text-sm text-muted-foreground">How to differentiate from generic founders</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                  <div>
+                    <div className="font-medium text-foreground">Action Plan</div>
+                    <div className="text-sm text-muted-foreground">90-day roadmap to legendary status</div>
+                  </div>
+                </div>
+              </div>
             </div>
+
+            <p className="text-center text-sm text-muted-foreground">
+              100% Free • No Credit Card Required • Instant Results
+            </p>
           </div>
         )}
 
