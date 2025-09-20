@@ -44,8 +44,8 @@ export default function QuizPage() {
     const newAnswers = { ...answers, [questionId]: value }
     setAnswers(newAnswers)
     
-    // Auto-advance after 3 questions to mini-insight
-    if (Object.keys(newAnswers).length >= 3) {
+    // Auto-advance after 7 questions to mini-insight
+    if (Object.keys(newAnswers).length >= 7) {
       setTimeout(() => setCurrentStep(2), 800)
     }
   }
@@ -54,24 +54,37 @@ export default function QuizPage() {
     const revenue = answers.revenue
     const challenge = answers.biggest_challenge
     const timeline = answers.timeline
+    const companyStage = answers.company_stage
+    const teamSize = answers.team_size
+    const communicationStyle = answers.communication_style
+    const targetAudience = answers.target_audience
     
-    // Determine archetype based on answers
+    // Determine archetype based on comprehensive answers
     let archetype = "The Visionary Founder"
     let strength = "Future-focused vision"
     let blindSpot = "Customer accessibility"
     
-    if (revenue === 'under-100k' && challenge === 'investor_pitch') {
+    // Enhanced archetype logic based on all 7 questions
+    if (revenue === 'under-100k' && challenge === 'investor_pitch' && teamSize === 'solo') {
       archetype = "The Builder Founder"
       strength = "Technical excellence and product focus"
       blindSpot = "Investor appeal and emotional connection"
-    } else if (revenue === '1m-5m' && challenge === 'talent_attraction') {
+    } else if (revenue === '1m-5m' && challenge === 'talent_attraction' && teamSize === '6-20') {
       archetype = "The Executor Founder"
       strength = "Systematic results and proven execution"
       blindSpot = "Emotional depth and inspiration"
-    } else if (challenge === 'brand_differentiation') {
+    } else if (challenge === 'brand_differentiation' && communicationStyle === 'story_driven') {
       archetype = "The Challenger Founder"
       strength = "Unique perspective and market disruption"
       blindSpot = "Universal relatability and accessibility"
+    } else if (companyStage === 'idea' && targetAudience === 'investors') {
+      archetype = "The Pioneer Founder"
+      strength = "Innovation and market creation"
+      blindSpot = "Market validation and customer feedback"
+    } else if (teamSize === '20-plus' && communicationStyle === 'data_driven') {
+      archetype = "The Strategist Founder"
+      strength = "Analytical thinking and systematic approach"
+      blindSpot = "Human connection and emotional intelligence"
     }
     
     return {
@@ -158,6 +171,46 @@ export default function QuizPage() {
         { value: '6_months', label: '6 Months', desc: 'Steady progress' },
         { value: '12_months', label: '12 Months', desc: 'Long-term planning' }
       ]
+    },
+    {
+      id: 'company_stage',
+      question: "What stage is your company in?",
+      options: [
+        { value: 'idea', label: 'Idea Stage', desc: 'Pre-launch, validating concept' },
+        { value: 'mvp', label: 'MVP Stage', desc: 'Building first product' },
+        { value: 'growth', label: 'Growth Stage', desc: 'Scaling existing product' },
+        { value: 'expansion', label: 'Expansion Stage', desc: 'Entering new markets' }
+      ]
+    },
+    {
+      id: 'team_size',
+      question: "How many people are on your team?",
+      options: [
+        { value: 'solo', label: 'Just Me', desc: 'Solo founder' },
+        { value: '2-5', label: '2-5 People', desc: 'Small core team' },
+        { value: '6-20', label: '6-20 People', desc: 'Growing team' },
+        { value: '20-plus', label: '20+ People', desc: 'Established company' }
+      ]
+    },
+    {
+      id: 'communication_style',
+      question: "How do you prefer to communicate your vision?",
+      options: [
+        { value: 'data_driven', label: 'Data & Metrics', desc: 'Facts and numbers' },
+        { value: 'story_driven', label: 'Stories & Examples', desc: 'Narratives and cases' },
+        { value: 'vision_driven', label: 'Vision & Future', desc: 'Big picture thinking' },
+        { value: 'problem_driven', label: 'Problems & Solutions', desc: 'Pain points and fixes' }
+      ]
+    },
+    {
+      id: 'target_audience',
+      question: "Who is your primary audience?",
+      options: [
+        { value: 'investors', label: 'Investors', desc: 'VCs, angels, funding' },
+        { value: 'customers', label: 'Customers', desc: 'End users, buyers' },
+        { value: 'partners', label: 'Partners', desc: 'Strategic alliances' },
+        { value: 'employees', label: 'Team Members', desc: 'Internal stakeholders' }
+      ]
     }
   ]
 
@@ -178,7 +231,7 @@ export default function QuizPage() {
               <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-8">
                 <div className="text-center space-y-4">
                   <div className="flex items-center justify-center gap-4 text-lg font-semibold text-foreground">
-                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm">Just 3 Questions</span>
+                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm">Just 7 Questions</span>
                     <span className="text-muted-foreground">•</span>
                     <span className="bg-green-500/20 text-green-600 px-3 py-1 rounded-full text-sm">Under 2 Minutes</span>
                     <span className="text-muted-foreground">•</span>
@@ -224,13 +277,13 @@ export default function QuizPage() {
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-medium text-muted-foreground">Progress</span>
                   <span className="text-sm font-medium text-primary">
-                    Question {Object.keys(answers).length + 1} of 3
+                    Question {Object.keys(answers).length + 1} of 7
                   </span>
                 </div>
                 <div className="w-full bg-muted rounded-full h-2">
                   <div 
                     className="bg-primary h-2 rounded-full transition-all duration-500"
-                    style={{ width: `${((Object.keys(answers).length + 1) / 3) * 100}%` }}
+                    style={{ width: `${((Object.keys(answers).length + 1) / 7) * 100}%` }}
                   ></div>
                 </div>
               </div>
@@ -240,7 +293,7 @@ export default function QuizPage() {
                   Quick Questions First
                 </h2>
                 <p className="text-muted-foreground">
-                  Answer 3 quick questions to get instant insights about your founder archetype.
+                  Answer 7 quick questions to get instant insights about your founder archetype.
                 </p>
               </div>
 
@@ -286,11 +339,11 @@ export default function QuizPage() {
 
               {/* Progress indicator */}
               <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-8">
-                <span>Questions answered: {Object.keys(answers).length}/3</span>
+                <span>Questions answered: {Object.keys(answers).length}/7</span>
                 <div className="w-20 h-2 bg-primary/20 rounded-full overflow-hidden">
                   <div 
                     className="h-full bg-primary rounded-full transition-all duration-300"
-                    style={{ width: `${(Object.keys(answers).length / 3) * 100}%` }}
+                    style={{ width: `${(Object.keys(answers).length / 7) * 100}%` }}
                   />
                 </div>
               </div>
