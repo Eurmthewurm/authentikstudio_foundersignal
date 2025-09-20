@@ -51,22 +51,50 @@ export function HeroSection() {
             Reveal your founder archetype in just 2 minutes—and captivate customers, investors, and media.
           </p>
           
-          {/* 3-Step Progress Visual - Enhanced for Above-the-Fold Clarity */}
+          {/* Hero-Testimonial Combo - J-Griff testimonial next to hero title */}
+          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 mb-8">
+            <div className="flex items-center gap-4 bg-primary/5 border border-primary/20 rounded-xl p-4 lg:p-6">
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
+                <Image
+                  src="/images/j-griff-headshot.jpg"
+                  alt="J-Griff, Tech Founder who achieved €6M revenue growth"
+                  width={64}
+                  height={64}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-sm sm:text-base font-medium text-foreground mb-1">
+                  "Signal DNA 4×'d my revenue in 18 months."
+                </p>
+                <p className="text-xs text-primary font-semibold">— J-Griff</p>
+              </div>
+            </div>
+            
+            {/* Trust Logos - Partner logos as trust anchors */}
+            <div className="flex items-center gap-6 opacity-60">
+              <div className="text-2xl font-bold text-muted-foreground">BBC</div>
+              <div className="text-xl font-bold text-muted-foreground">NatGeo</div>
+              <div className="text-xl font-bold text-muted-foreground">Discovery</div>
+            </div>
+          </div>
+          
+          {/* Immediate Process Graphic - Concise 3-step graphic */}
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-8">
-            <div className="flex items-center justify-center gap-4 md:gap-8">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
-                <span className="text-sm font-medium text-foreground">Answer 7 quick questions (under 2 minutes)</span>
-            </div>
-            <div className="w-8 h-0.5 bg-primary/30"></div>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
-                <span className="text-sm font-medium text-muted-foreground">Receive your personalized Story Blueprint instantly</span>
-            </div>
-            <div className="w-8 h-0.5 bg-primary/30"></div>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
-                <span className="text-sm font-medium text-muted-foreground">Schedule your free Strategy Session</span>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">1</div>
+                <span className="text-sm font-medium text-foreground">Take 2-minute Quiz</span>
+              </div>
+              <div className="hidden sm:block w-8 h-0.5 bg-primary/30"></div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-lg">2</div>
+                <span className="text-sm font-medium text-muted-foreground">Get Instant Archetype</span>
+              </div>
+              <div className="hidden sm:block w-8 h-0.5 bg-primary/30"></div>
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-lg">3</div>
+                <span className="text-sm font-medium text-muted-foreground">Book Strategy Call</span>
               </div>
             </div>
           </div>
@@ -92,25 +120,11 @@ export function HeroSection() {
           </div>
           </details>
           
-          {/* Supporting Quote - Moved to Secondary Position */}
-          <div className="relative max-w-3xl mx-auto mt-8">
-            <div className="glass rounded-2xl p-6 md:p-8 border border-primary/10">
-              <div className="absolute top-3 left-3 w-6 h-6 bg-primary/10 rounded-full flex items-center justify-center">
-                <div className="w-2 h-2 bg-primary rounded-full"></div>
-              </div>
-              <p className="text-base sm:text-lg md:text-xl text-foreground italic leading-relaxed font-medium pl-4">
-                "Walk into any room and watch heads nod before you finish your first sentence."
-              </p>
-              <div className="mt-3 text-sm text-primary font-semibold pl-4">
-                — J-Griff, €2M to €8M Revenue Growth in 18 Months
-              </div>
-            </div>
-          </div>
         </div>
-          {/* Primary CTA - Quiz Only - Mobile Optimized */}
-          <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
+          {/* Prominent Above-the-Fold CTA */}
+          <div className="flex flex-col items-center gap-6 w-full max-w-lg mx-auto">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-8 sm:px-12 py-6 sm:py-7 rounded-2xl font-bold text-xl sm:text-2xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 group overflow-hidden w-full min-h-[70px] sm:min-h-[80px]">
+              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-12 sm:px-16 py-8 sm:py-9 rounded-2xl font-bold text-2xl sm:text-3xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 group overflow-hidden w-full min-h-[80px] sm:min-h-[90px]">
                 <span className="relative z-10 group-hover:scale-110 transition-transform duration-200">🎯 Get My Free Story Blueprint</span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 {/* Subtle pulsing ring animation */}
@@ -119,9 +133,27 @@ export function HeroSection() {
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400/20 to-green-300/20 scale-0 group-hover:scale-100 transition-transform duration-200 ease-out"></div>
               </Button>
             </Link>
-            <p className="text-sm sm:text-base text-muted-foreground font-medium text-center px-4">
-              Backed by 200+ founders • No credit card required • Instant results
+            
+            {/* Trust Indicators */}
+            <p className="text-base sm:text-lg text-muted-foreground font-medium text-center px-4">
+              200+ founders served • No credit card needed
             </p>
+            
+            {/* Streamlined Copy - Benefit-highlight bullets under CTA */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-4">
+              <div className="text-center p-3 bg-green-500/5 border border-green-500/20 rounded-lg">
+                <div className="text-sm font-semibold text-green-600 mb-1">✓ 2 Minutes</div>
+                <p className="text-xs text-muted-foreground">Discover Your Archetype</p>
+              </div>
+              <div className="text-center p-3 bg-blue-500/5 border border-blue-500/20 rounded-lg">
+                <div className="text-sm font-semibold text-blue-600 mb-1">✓ Instant Results</div>
+                <p className="text-xs text-muted-foreground">Strengths & Blind Spots</p>
+              </div>
+              <div className="text-center p-3 bg-purple-500/5 border border-purple-500/20 rounded-lg">
+                <div className="text-sm font-semibold text-purple-600 mb-1">✓ Free Blueprint</div>
+                <p className="text-xs text-muted-foreground">Personalized Strategy</p>
+              </div>
+            </div>
             
             {/* Secondary CTA for hesitant visitors */}
             <Link href="#how-it-works" className="text-sm text-primary hover:text-primary/80 font-medium underline underline-offset-4 transition-colors">
