@@ -135,8 +135,9 @@ export default function QuizPage() {
 
     setIsSubmitting(true)
     
-    // Track lead capture
-    trackLeadCapture(email, 'quiz')
+    try {
+      // Track lead capture
+      trackLeadCapture(email, 'quiz')
     
     // Track the submission with source
     if (typeof window !== 'undefined' && window.gtag) {
@@ -148,8 +149,52 @@ export default function QuizPage() {
       })
     }
 
+      // Get user's archetype data
+      const insight = getMiniInsight()
+      const firstName = email.split('@')[0].replace(/[._]/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
+
+      // Send immediate quiz results email
+      const emailResponse = await fetch('/api/send-quiz-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          firstName,
+          archetype: insight.archetype,
+          strength: insight.strength,
+          blindSpot: insight.blindSpot,
+          source: source || 'direct'
+        }),
+      })
+
+      if (emailResponse.ok) {
+        // Schedule nurture sequence emails
+        await fetch('/api/schedule-nurture-sequence', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email,
+            firstName,
+            archetype: insight.archetype,
+            strength: insight.strength,
+            blindSpot: insight.blindSpot,
+            source: source || 'direct'
+          }),
+        })
+      }
+
     // Redirect to the actual quiz with source tracking
     window.location.href = `/quiz-assessment?email=${encodeURIComponent(email)}&utm_source=${source || 'direct'}`
+      
+    } catch (error) {
+      console.error('Email sending error:', error)
+      // Still redirect even if email fails
+      window.location.href = `/quiz-assessment?email=${encodeURIComponent(email)}&utm_source=${source || 'direct'}`
+    }
   }
 
   const quickQuestions = [
