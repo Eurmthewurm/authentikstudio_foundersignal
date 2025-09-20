@@ -170,6 +170,40 @@ export default function QuizPage() {
       })
 
       if (emailResponse.ok) {
+        // Add lead to tracking system
+        await fetch('/api/leads', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email,
+            firstName,
+            archetype: insight.archetype,
+            strength: insight.strength,
+            blindSpot: insight.blindSpot,
+            source: source || 'direct',
+            quizAnswers: answers
+          }),
+        })
+
+        // Send lead notification to you
+        await fetch('/api/lead-notification', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email,
+            firstName,
+            archetype: insight.archetype,
+            strength: insight.strength,
+            blindSpot: insight.blindSpot,
+            source: source || 'direct',
+            quizAnswers: answers
+          }),
+        })
+
         // Schedule nurture sequence emails
         await fetch('/api/schedule-nurture-sequence', {
           method: 'POST',
