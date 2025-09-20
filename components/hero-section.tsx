@@ -54,18 +54,18 @@ export function HeroSection() {
           {/* 3-Step Progress Visual - Enhanced for Above-the-Fold Clarity */}
           <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-8">
             <div className="flex items-center justify-center gap-4 md:gap-8">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
                 <span className="text-sm font-medium text-foreground">Take 7-Question Assessment</span>
-              </div>
-              <div className="w-8 h-0.5 bg-primary/30"></div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
+            </div>
+            <div className="w-8 h-0.5 bg-primary/30"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
                 <span className="text-sm font-medium text-muted-foreground">See Your Archetype</span>
-              </div>
-              <div className="w-8 h-0.5 bg-primary/30"></div>
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
+            </div>
+            <div className="w-8 h-0.5 bg-primary/30"></div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
                 <span className="text-sm font-medium text-muted-foreground">Book Strategy Call</span>
               </div>
             </div>
@@ -77,19 +77,19 @@ export function HeroSection() {
               What you'll discover ↓
             </summary>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-              <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-                <h3 className="font-semibold text-foreground mb-2">Discover Your Archetype</h3>
-                <p className="text-sm text-muted-foreground">AI-powered analysis reveals your unique founder story pattern</p>
-              </div>
-              <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-                <h3 className="font-semibold text-foreground mb-2">Identify Strengths</h3>
-                <p className="text-sm text-muted-foreground">Uncover storytelling advantages you never knew you had</p>
-              </div>
-              <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-                <h3 className="font-semibold text-foreground mb-2">Spot Blind Spots</h3>
-                <p className="text-sm text-muted-foreground">Find gaps that prevent you from connecting with key audiences</p>
-              </div>
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <h3 className="font-semibold text-foreground mb-2">Discover Your Archetype</h3>
+              <p className="text-sm text-muted-foreground">AI-powered analysis reveals your unique founder story pattern</p>
             </div>
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <h3 className="font-semibold text-foreground mb-2">Identify Strengths</h3>
+              <p className="text-sm text-muted-foreground">Uncover storytelling advantages you never knew you had</p>
+            </div>
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <h3 className="font-semibold text-foreground mb-2">Spot Blind Spots</h3>
+              <p className="text-sm text-muted-foreground">Find gaps that prevent you from connecting with key audiences</p>
+            </div>
+          </div>
           </details>
           
           {/* Supporting Quote - Moved to Secondary Position */}
@@ -110,9 +110,13 @@ export function HeroSection() {
           {/* Primary CTA - Quiz Only - Mobile Optimized */}
           <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-8 sm:px-12 py-6 sm:py-7 rounded-2xl font-bold text-xl sm:text-2xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 glow group overflow-hidden w-full min-h-[70px] sm:min-h-[80px]">
-                <span className="relative z-10">🎯 Discover My Archetype</span>
+              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-8 sm:px-12 py-6 sm:py-7 rounded-2xl font-bold text-xl sm:text-2xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 glow group overflow-hidden w-full min-h-[70px] sm:min-h-[80px] animate-pulse hover:animate-none">
+                <span className="relative z-10 group-hover:scale-110 transition-transform duration-200">🎯 Discover My Archetype</span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                {/* Subtle pulsing ring animation */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-green-300/50 scale-105 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></div>
+                {/* Micro-bounce on hover */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400/20 to-green-300/20 scale-0 group-hover:scale-100 transition-transform duration-200 ease-out"></div>
               </Button>
             </Link>
             <p className="text-sm sm:text-base text-muted-foreground font-medium text-center px-4">
@@ -124,7 +128,7 @@ export function HeroSection() {
               Learn How It Works →
             </Link>
           </div>
-        
+          
         {/* Dynamic Counter */}
         <div className="mt-6 mb-4">
           <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary/5 border border-primary/20 rounded-full">
@@ -168,7 +172,7 @@ export function HeroSection() {
               <p className="text-sm text-muted-foreground">Craft narratives that compel prospects to act</p>
             </div>
           </div>
-        </div>
+          </div>
         
         {/* Enhanced Social Proof */}
         <div className="mt-8 md:mt-10 lg:mt-12">
