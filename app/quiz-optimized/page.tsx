@@ -42,10 +42,43 @@ export default function QuizPage() {
   const handleAnswer = (questionId: string, value: string) => {
     setAnswers(prev => ({ ...prev, [questionId]: value }))
     
+    // Provide immediate feedback based on answers
+    const currentAnswers = {...answers, [questionId]: value}
+    
     // Auto-advance after 3 questions to email capture
-    if (Object.keys({...answers, [questionId]: value}).length >= 3) {
+    if (Object.keys(currentAnswers).length >= 3) {
       setTimeout(() => setCurrentStep(2), 800)
     }
+  }
+
+  const getImmediateFeedback = () => {
+    const answerCount = Object.keys(answers).length
+    if (answerCount === 0) return null
+    
+    const revenue = answers.revenue
+    const challenge = answers.biggest_challenge
+    const timeline = answers.timeline
+    
+    if (answerCount === 1 && revenue) {
+      const strength = revenue === '5m-plus' ? 'Enterprise-level thinking' : 
+                      revenue === '1m-5m' ? 'Scaling mindset' : 
+                      revenue === '500k-1m' ? 'Growth orientation' : 'Early-stage agility'
+      return `Your top storytelling strength: ${strength}`
+    }
+    
+    if (answerCount === 2 && challenge) {
+      const insight = challenge === 'investor_pitch' ? 'You excel at technical details but need emotional connection' :
+                     challenge === 'customer_conversion' ? 'You understand your product deeply but struggle with customer pain points' :
+                     challenge === 'talent_attraction' ? 'You have vision but need to communicate culture and growth' :
+                     'You have unique insights but need to differentiate from competitors'
+      return `Key insight: ${insight}`
+    }
+    
+    if (answerCount === 3 && timeline) {
+      return `Perfect! Based on your timeline (${timeline}), we'll prioritize quick wins in your personalized report.`
+    }
+    
+    return null
   }
 
   const handleEmailSubmit = async (e: React.FormEvent) => {
@@ -177,6 +210,17 @@ export default function QuizPage() {
                   </div>
                 </div>
               ))}
+
+              {/* Immediate Feedback */}
+              {getImmediateFeedback() && (
+                <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 mt-6">
+                  <div className="flex items-center gap-2 mb-2">
+                    <CheckCircle className="w-4 h-4 text-green-600" />
+                    <span className="text-green-600 font-semibold text-sm">Instant Insight</span>
+                  </div>
+                  <p className="text-sm text-green-700 dark:text-green-300">{getImmediateFeedback()}</p>
+                </div>
+              )}
 
               {/* Progress indicator */}
               <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground mt-8">

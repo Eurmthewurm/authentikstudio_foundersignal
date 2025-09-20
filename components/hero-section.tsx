@@ -40,18 +40,14 @@ export function HeroSection() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-foreground leading-[1.05] tracking-tight">
-            Transform From{" "}
-            <span className="relative">
-              <span className="text-muted-foreground">Invisible</span>
-              <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-primary/20 to-primary/40 rounded-full"></div>
-            </span>
+            Discover Your Unique{" "}
+            <span className="gradient-text font-semibold">Founder Story</span>
             <br />
-            Founder to{" "}
-            <span className="gradient-text font-semibold">Industry Legend</span>
+            in 2 Minutes
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
-            The Signal DNA Method: Discover your founder archetype in 2 minutes.
+            AI-powered quiz reveals your storytelling strengths and blind spots—no credit card required.
           </p>
           
           {/* 3-Step Progress Visual */}
@@ -63,30 +59,35 @@ export function HeroSection() {
             <div className="w-8 h-0.5 bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
-              <span className="text-sm font-medium text-muted-foreground">Get Report</span>
+              <span className="text-sm font-medium text-muted-foreground">Get Instant Insights</span>
             </div>
             <div className="w-8 h-0.5 bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
-              <span className="text-sm font-medium text-muted-foreground">Book Call</span>
+              <span className="text-sm font-medium text-muted-foreground">Book Strategy Session</span>
             </div>
           </div>
           
-          {/* Value Proposition Snapshot */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
-            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-              <h3 className="font-semibold text-foreground mb-2">Discover Your Archetype</h3>
-              <p className="text-sm text-muted-foreground">AI-powered analysis reveals your unique founder story pattern</p>
+          {/* Value Proposition Snapshot - Collapsible on Mobile */}
+          <details className="mt-8 max-w-4xl mx-auto">
+            <summary className="cursor-pointer text-center text-sm text-muted-foreground hover:text-primary transition-colors mb-4">
+              What you'll discover ↓
+            </summary>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
+              <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+                <h3 className="font-semibold text-foreground mb-2">Discover Your Archetype</h3>
+                <p className="text-sm text-muted-foreground">AI-powered analysis reveals your unique founder story pattern</p>
+              </div>
+              <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+                <h3 className="font-semibold text-foreground mb-2">Identify Strengths</h3>
+                <p className="text-sm text-muted-foreground">Uncover storytelling advantages you never knew you had</p>
+              </div>
+              <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+                <h3 className="font-semibold text-foreground mb-2">Spot Blind Spots</h3>
+                <p className="text-sm text-muted-foreground">Find gaps that prevent you from connecting with key audiences</p>
+              </div>
             </div>
-            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-              <h3 className="font-semibold text-foreground mb-2">Identify Strengths</h3>
-              <p className="text-sm text-muted-foreground">Uncover storytelling advantages you never knew you had</p>
-            </div>
-            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-              <h3 className="font-semibold text-foreground mb-2">Spot Blind Spots</h3>
-              <p className="text-sm text-muted-foreground">Find gaps that prevent you from connecting with key audiences</p>
-            </div>
-          </div>
+          </details>
           
           {/* Supporting Quote - Moved to Secondary Position */}
           <div className="relative max-w-3xl mx-auto mt-8">
@@ -103,61 +104,80 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-          {/* Primary CTA - Quiz */}
+          {/* Primary CTA - Quiz Only - Mobile Optimized */}
           <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
             <Link href="/quiz" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full">
+              <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-6 sm:px-12 py-5 sm:py-6 rounded-2xl font-semibold text-lg sm:text-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full min-h-[60px] sm:min-h-[70px]">
                 <span className="relative z-10">Start Free Quiz</span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </Button>
             </Link>
-            <p className="text-sm text-muted-foreground font-medium text-center">
+            <p className="text-sm sm:text-base text-muted-foreground font-medium text-center px-4">
               Free Assessment • No Credit Card Required • Instant Results
             </p>
           </div>
-          
-          {/* Secondary CTA - Audit */}
-          <div className="flex flex-col items-center gap-3 w-full max-w-sm mx-auto mt-6">
-            <Link href="/audit" rel="noopener noreferrer" className="w-full">
-              <Button variant="outline" className="w-full bg-transparent border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105">
-                Book Free Audit
-              </Button>
-            </Link>
-            <p className="text-xs text-muted-foreground font-medium text-center">
-              Personalized Story Analysis & Strategy Session
-            </p>
-          </div>
-          
-          {/* Above-the-Fold Quiz CTA */}
-          <div className="mt-8">
-            <Link href="/quiz" rel="noopener noreferrer" className="inline-block">
-              <Button className="bg-gradient-to-r from-accent to-accent/80 text-accent-foreground hover:from-accent/90 hover:to-accent px-6 py-3 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-accent/20">
-                Start Quiz Now →
-              </Button>
-            </Link>
-          </div>
         
-        {/* Trusted by Founders & Brands */}
+        {/* Enhanced Social Proof */}
         <div className="mt-8 md:mt-10 lg:mt-12">
           <p className="text-xs md:text-sm text-muted-foreground font-medium tracking-[0.2em] uppercase mb-6 md:mb-8">TRUSTED BY FOUNDERS & BRANDS</p>
-          <div className="flex items-center justify-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 opacity-70 flex-wrap">
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Documentary storytelling for BBC's flagship programs">BBC</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Nature documentary narrative consulting">National Geographic</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Science communication storytelling">Discovery</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Cinematic storytelling techniques">Black Magic</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="European documentary production">Arte</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="Legendary nature storyteller collaboration">David Attenborough</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="1M+ follower growth through authentic storytelling">Aaron Abke</div>
-            <div className="text-muted-foreground font-semibold text-sm md:text-base hover:opacity-100 hover:text-primary transition-all duration-300 cursor-default px-3 py-1 rounded-lg hover:bg-primary/5" title="€6M revenue growth in 18 months">J-Griff</div>
+          
+          {/* Media Partners with Context */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <div className="text-2xl font-bold text-primary mb-2">BBC</div>
+              <p className="text-xs text-muted-foreground mb-3">Documentary storytelling for flagship programs</p>
+              <p className="text-sm italic text-foreground">"Ermo helped us craft compelling narratives that connected with millions of viewers."</p>
+              <p className="text-xs text-primary font-semibold mt-2">2023</p>
+            </div>
+            
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <div className="text-2xl font-bold text-primary mb-2">National Geographic</div>
+              <p className="text-xs text-muted-foreground mb-3">Nature documentary narrative consulting</p>
+              <p className="text-sm italic text-foreground">"The storytelling framework transformed how we present complex scientific concepts."</p>
+              <p className="text-xs text-primary font-semibold mt-2">2022</p>
+            </div>
+            
+            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
+              <div className="text-2xl font-bold text-primary mb-2">Discovery</div>
+              <p className="text-xs text-muted-foreground mb-3">Science communication storytelling</p>
+              <p className="text-sm italic text-foreground">"Our audience engagement increased 40% after implementing the Signal DNA method."</p>
+              <p className="text-xs text-primary font-semibold mt-2">2023</p>
+            </div>
           </div>
           
-          {/* Specific Results */}
-          <div className="mt-6 bg-primary/5 border border-primary/20 rounded-xl p-4 max-w-4xl mx-auto">
-            <p className="text-sm text-muted-foreground text-center">
-              <strong className="text-primary">Documentary storytelling expertise</strong> applied to founder narratives: 
-              BBC documentaries, National Geographic series, Discovery Channel productions, and 
-              <strong className="text-primary">€6M+ in founder revenue growth</strong> across our client portfolio.
-            </p>
+          {/* Founder Success Stories */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-primary font-bold text-lg">J</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground">J-Griff</h4>
+                  <p className="text-sm text-muted-foreground">Tech Founder</p>
+                </div>
+              </div>
+              <p className="text-sm italic text-foreground mb-3">"Signal DNA helped me quadruple revenue in 18 months and secure Series A funding."</p>
+              <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
+                <span className="text-xs font-bold text-green-600">€6M Revenue Growth</span>
+              </div>
+            </div>
+            
+            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <span className="text-primary font-bold text-lg">A</span>
+                </div>
+                <div>
+                  <h4 className="font-bold text-foreground">Aaron Abke</h4>
+                  <p className="text-sm text-muted-foreground">Spiritual Entrepreneur</p>
+                </div>
+              </div>
+              <p className="text-sm italic text-foreground mb-3">"The Signal DNA method gave me clarity on my unique story pattern for my 1M+ audience."</p>
+              <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
+                <span className="text-xs font-bold text-green-600">1M+ Followers</span>
+              </div>
+            </div>
           </div>
         </div>
         

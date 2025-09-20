@@ -43,10 +43,11 @@ export function JGriffHighlight() {
               <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
                 <Image
                   src="/images/j-griff-headshot.jpg"
-                  alt="J-Griff"
+                  alt="J-Griff, Tech Founder who achieved €6M revenue growth using Signal DNA method"
                   width={64}
                   height={64}
                   className="w-full h-full object-cover"
+                  priority
                 />
               </div>
               <div className="text-left">
@@ -69,9 +70,10 @@ export function JGriffHighlight() {
                 {/* Background Image */}
                 <Image
                   src="/images/j-griff-headshot.jpg"
-                  alt="J-Griff video thumbnail"
+                  alt="J-Griff success story video thumbnail - Tech founder who achieved €6M revenue growth"
                   fill
                   className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 {/* Dark overlay for better contrast */}
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-all duration-300"></div>
