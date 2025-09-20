@@ -554,7 +554,7 @@ export function SignalStrengthQuiz() {
       setScores({ customer: customerScore, talent: talentScore, investor: investorScore, consistency: consistencyScore })
       
       // Track quiz completion
-      trackQuizCompletion(totalScores)
+      trackQuizCompletion('Signal Strength Assessment', answers)
       
       setShowEmailCapture(true)
     }
