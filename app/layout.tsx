@@ -3,8 +3,10 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import { Analytics as GoogleAnalytics } from '@/components/analytics'
-import { PerformanceMonitor } from '@/components/performance-monitor'
+import { PerformanceMonitor, UptimeMonitor, ErrorMonitor, PerformanceBudgetMonitor } from '@/components/performance-monitor'
 import { GDPRConsentBanner } from '@/components/gdpr-consent-banner'
+import { FeedbackWidget } from '@/components/feedback-system'
+import { ErrorBoundary } from '@/components/error-handler'
 import Script from 'next/script'
 import './globals.css'
 
@@ -87,15 +89,21 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={`${GeistSans.className} antialiased`}>
-        {children}
-        <Analytics />
-        <GoogleAnalytics />
-        <PerformanceMonitor />
-        <GDPRConsentBanner />
-        <Script
-          src="https://assets.calendly.com/assets/external/widget.js"
-          strategy="lazyOnload"
-        />
+        <ErrorBoundary>
+          {children}
+          <Analytics />
+          <GoogleAnalytics />
+          <PerformanceMonitor />
+          <UptimeMonitor />
+          <ErrorMonitor />
+          <PerformanceBudgetMonitor />
+          <GDPRConsentBanner />
+          <FeedbackWidget />
+          <Script
+            src="https://assets.calendly.com/assets/external/widget.js"
+            strategy="lazyOnload"
+          />
+        </ErrorBoundary>
       </body>
     </html>
   )

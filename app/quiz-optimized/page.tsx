@@ -8,6 +8,7 @@ import { FunnelHeader } from "@/components/funnel-header"
 import { FunnelFooter } from "@/components/funnel-footer"
 import { CheckCircle, Clock, Users } from "lucide-react"
 import Image from "next/image"
+import { trackQuizStart, trackQuizProgress, trackQuizCompletion, trackLeadCapture, trackCTAClick } from "@/components/analytics"
 
 export default function QuizPage() {
   const [currentStep, setCurrentStep] = useState(0) // 0 = intro, 1 = quick questions, 2 = mini-insight, 3 = email capture, 4 = optional deep dive
@@ -44,8 +45,16 @@ export default function QuizPage() {
     const newAnswers = { ...answers, [questionId]: value }
     setAnswers(newAnswers)
     
+    // Track quiz progress
+    const currentQuestion = Object.keys(newAnswers).length
+    trackQuizProgress(currentQuestion, 7)
+    
     // Auto-advance after 7 questions to mini-insight
     if (Object.keys(newAnswers).length >= 7) {
+      // Track quiz completion
+      const insight = getMiniInsight()
+      trackQuizCompletion(insight.archetype, newAnswers)
+      
       setTimeout(() => setCurrentStep(2), 800)
     }
   }
@@ -125,6 +134,9 @@ export default function QuizPage() {
     if (!email || !consent) return
 
     setIsSubmitting(true)
+    
+    // Track lead capture
+    trackLeadCapture(email, 'quiz')
     
     // Track the submission with source
     if (typeof window !== 'undefined' && window.gtag) {
@@ -222,10 +234,10 @@ export default function QuizPage() {
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           {/* Step 0: Intro */}
           {currentStep === 0 && (
-            <div className="mb-12">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
-                {getDynamicHeadline()}
-              </h1>
+          <div className="mb-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 leading-tight">
+              {getDynamicHeadline()}
+            </h1>
               
               {/* Clear Framing */}
               <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-8">
@@ -243,20 +255,23 @@ export default function QuizPage() {
                   </p>
                 </div>
               </div>
-              
-              <div className="text-lg sm:text-xl text-muted-foreground mb-8 space-y-4">
-                <div className="flex items-center justify-center gap-2 text-sm">
-                  <Users className="w-4 h-4 text-primary" />
+            
+            <div className="text-lg sm:text-xl text-muted-foreground mb-8 space-y-4">
+              <div className="flex items-center justify-center gap-2 text-sm">
+                <Users className="w-4 h-4 text-primary" />
                   <span>2,847+ founders completed this assessment</span>
-                </div>
-                <div className="flex items-center justify-center gap-2 text-sm">
-                  <CheckCircle className="w-4 h-4 text-primary" />
+              </div>
+              <div className="flex items-center justify-center gap-2 text-sm">
+                <CheckCircle className="w-4 h-4 text-primary" />
                   <span>Most discover story advantages they never knew they had</span>
                 </div>
               </div>
 
               <Button
-                onClick={() => setCurrentStep(1)}
+                onClick={() => {
+                  trackQuizStart()
+                  setCurrentStep(1)
+                }}
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4 text-lg rounded-xl mb-4"
               >
                 Start Your Free Story Assessment →
@@ -454,34 +469,34 @@ export default function QuizPage() {
                   You're a <span className="font-semibold text-primary">{getMiniInsight().archetype}</span>! 
                   Enter your email to receive your personalized report with actionable recommendations delivered instantly.
                 </p>
-              </div>
+          </div>
 
-              {/* Form Section */}
-              <div className="bg-card border border-primary/20 rounded-2xl p-8 mb-8">
+          {/* Form Section */}
+          <div className="bg-card border border-primary/20 rounded-2xl p-8 mb-8">
                 <form onSubmit={handleEmailSubmit} className="space-y-6">
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="Enter your email address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-3 text-lg rounded-xl border-primary/20 focus:border-primary"
-                      required
-                    />
-                  </div>
-                  
-                  <div className="flex items-start gap-3">
-                    <Checkbox
-                      id="consent"
-                      checked={consent}
-                      onCheckedChange={(checked) => setConsent(checked as boolean)}
-                      className="mt-1"
-                    />
-                    <label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed">
-                      I consent to receiving personalized Signal DNA insights and founder storytelling tips via email. 
-                      I can unsubscribe anytime. <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>
-                    </label>
-                  </div>
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-4 py-3 text-lg rounded-xl border-primary/20 focus:border-primary"
+                  required
+                />
+              </div>
+              
+              <div className="flex items-start gap-3">
+                <Checkbox
+                  id="consent"
+                  checked={consent}
+                  onCheckedChange={(checked) => setConsent(checked as boolean)}
+                  className="mt-1"
+                />
+                <label htmlFor="consent" className="text-sm text-muted-foreground leading-relaxed">
+                  I consent to receiving personalized Signal DNA insights and founder storytelling tips via email. 
+                  I can unsubscribe anytime. <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>
+                </label>
+              </div>
                   
                   {/* Privacy Note */}
                   <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
@@ -489,16 +504,16 @@ export default function QuizPage() {
                       <strong>We respect your privacy.</strong> We'll only send you valuable insights and tips. 
                       Unsubscribe anytime with one click.
                     </p>
-                  </div>
-                  
-                  <Button
-                    type="submit"
-                    disabled={!email || !consent || isSubmitting}
-                    className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4 text-lg rounded-xl"
-                  >
+              </div>
+              
+              <Button
+                type="submit"
+                disabled={!email || !consent || isSubmitting}
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4 text-lg rounded-xl"
+              >
                     {isSubmitting ? "Sending Your Report..." : "Get My Complete Report →"}
-                  </Button>
-                </form>
+              </Button>
+            </form>
               </div>
 
               {/* What You'll Get */}

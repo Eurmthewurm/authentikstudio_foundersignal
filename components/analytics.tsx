@@ -23,6 +23,19 @@ export function Analytics() {
           gtag('config', '${GA_TRACKING_ID}', {
             page_title: document.title,
             page_location: window.location.href,
+            enhanced_ecommerce: true,
+            custom_map: {
+              'dimension1': 'quiz_progress',
+              'dimension2': 'archetype_type',
+              'dimension3': 'traffic_source'
+            }
+          });
+          
+          // Enhanced funnel tracking
+          gtag('event', 'page_view', {
+            event_category: 'funnel',
+            event_label: 'landing_page_view',
+            value: 1
           });
         `}
       </Script>
@@ -30,29 +43,104 @@ export function Analytics() {
   )
 }
 
-// Track quiz completion
-export function trackQuizCompletion(scores: any) {
+// Comprehensive funnel tracking functions
+export function trackQuizStart() {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'quiz_started', {
+      event_category: 'funnel',
+      event_label: 'quiz_initiation',
+      value: 1
+    })
+  }
+}
+
+export function trackQuizProgress(questionNumber: number, totalQuestions: number) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'quiz_progress', {
+      event_category: 'engagement',
+      event_label: `question_${questionNumber}_of_${totalQuestions}`,
+      value: Math.round((questionNumber / totalQuestions) * 100),
+      custom_map: {
+        question_number: questionNumber,
+        total_questions: totalQuestions
+      }
+    })
+  }
+}
+
+export function trackQuizCompletion(archetype: string, answers: any) {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'quiz_completed', {
-      event_category: 'engagement',
-      event_label: 'founder_story_quiz',
-      value: scores.total || 0,
+      event_category: 'conversion',
+      event_label: 'quiz_finished',
+      value: 1,
       custom_map: {
-        customer_score: scores.customerAttraction || 0,
-        talent_score: scores.talentAttraction || 0,
-        investor_score: scores.investorAttraction || 0,
+        archetype_type: archetype,
+        total_questions_answered: Object.keys(answers).length
       }
     })
   }
 }
 
 // Track lead capture
-export function trackLeadCapture(email: string) {
+export function trackLeadCapture(email: string, source: string = 'quiz') {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', 'lead_captured', {
       event_category: 'conversion',
       event_label: 'email_signup',
+      value: 1,
+      custom_map: {
+        lead_source: source,
+        email_domain: email.split('@')[1]
+      }
+    })
+  }
+}
+
+// Track CTA clicks
+export function trackCTAClick(ctaText: string, location: string) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'cta_click', {
+      event_category: 'engagement',
+      event_label: ctaText,
+      value: 1,
+      custom_map: {
+        cta_location: location,
+        cta_text: ctaText
+      }
+    })
+  }
+}
+
+// Track strategy call booking
+export function trackStrategyCallBooking() {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'strategy_call_booked', {
+      event_category: 'conversion',
+      event_label: 'call_scheduling',
       value: 1
+    })
+  }
+}
+
+// Track video engagement
+export function trackVideoPlay(videoTitle: string) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'video_play', {
+      event_category: 'engagement',
+      event_label: videoTitle,
+      value: 1
+    })
+  }
+}
+
+// Track scroll depth
+export function trackScrollDepth(depth: number) {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'scroll', {
+      event_category: 'engagement',
+      event_label: `${depth}%_scroll`,
+      value: depth
     })
   }
 }

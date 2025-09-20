@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { X, Shield, Cookie } from "lucide-react"
+import { trackCTAClick } from "./analytics"
 
 export function GDPRConsentBanner() {
   const [showBanner, setShowBanner] = useState(false)
@@ -16,11 +17,33 @@ export function GDPRConsentBanner() {
 
   const handleAccept = () => {
     localStorage.setItem('gdpr-consent', 'accepted')
+    trackCTAClick('Accept All', 'gdpr_banner')
+    
+    // Track consent acceptance
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'consent_accepted', {
+        event_category: 'compliance',
+        event_label: 'gdpr_consent',
+        value: 1
+      })
+    }
+    
     setShowBanner(false)
   }
 
   const handleDecline = () => {
     localStorage.setItem('gdpr-consent', 'declined')
+    trackCTAClick('Decline', 'gdpr_banner')
+    
+    // Track consent decline
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'consent_declined', {
+        event_category: 'compliance',
+        event_label: 'gdpr_consent',
+        value: 1
+      })
+    }
+    
     setShowBanner(false)
   }
 
@@ -37,8 +60,7 @@ export function GDPRConsentBanner() {
             <div className="flex-1">
               <h3 className="font-semibold text-foreground mb-1">We respect your privacy</h3>
               <p className="text-sm text-muted-foreground">
-                We use cookies and similar technologies to provide, protect, and improve our services. 
-                By clicking "Accept All", you consent to our use of cookies for analytics, personalization, and marketing.
+                We use cookies to personalize and protect your experience. 
                 <a href="/privacy" className="text-primary hover:underline ml-1">Learn more</a>
               </p>
             </div>

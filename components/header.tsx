@@ -112,7 +112,7 @@ export function Header() {
               {/* Scarcity Badge */}
               <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full">
                 <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                <span className="text-red-600 text-xs font-semibold">3 spots left</span>
+                <span className="text-red-600 text-xs font-semibold">Only 2 founder spots left this quarter—apply now</span>
               </div>
 
               {/* Mobile Menu */}
@@ -167,7 +167,7 @@ export function Header() {
                       </Link>
                       <div className="flex items-center justify-center gap-2 px-3 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full">
                         <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-                        <span className="text-red-600 text-xs font-semibold">3 spots left this month</span>
+                        <span className="text-red-600 text-xs font-semibold">Only 2 founder spots left this quarter—apply now</span>
                       </div>
                     </div>
                   </nav>

@@ -40,15 +40,15 @@ export function HeroSection() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-foreground leading-[1.05] tracking-tight">
-            Go from{" "}
-            <span className="text-muted-foreground">Overlooked Founder</span>
+            Transform from{" "}
+            <span className="text-muted-foreground">Invisible Founder</span>
             <br />
             to{" "}
-            <span className="gradient-text font-semibold">Unforgettable Storyteller</span>
+            <span className="gradient-text font-semibold">Industry Legend</span>
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light mb-8">
-            Uncover your unique founder archetype in 2 minutes—then turn that story into client-winning content.
+            Reveal your founder archetype in just 2 minutes—and captivate customers, investors, and media.
           </p>
           
           {/* 3-Step Progress Visual - Enhanced for Above-the-Fold Clarity */}
@@ -56,17 +56,17 @@ export function HeroSection() {
             <div className="flex items-center justify-center gap-4 md:gap-8">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
-                <span className="text-sm font-medium text-foreground">Take 7-Question Assessment</span>
+                <span className="text-sm font-medium text-foreground">Answer 7 quick questions (under 2 minutes)</span>
             </div>
             <div className="w-8 h-0.5 bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
-                <span className="text-sm font-medium text-muted-foreground">See Your Archetype</span>
+                <span className="text-sm font-medium text-muted-foreground">Receive your personalized Story Blueprint instantly</span>
             </div>
             <div className="w-8 h-0.5 bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
-                <span className="text-sm font-medium text-muted-foreground">Book Strategy Call</span>
+                <span className="text-sm font-medium text-muted-foreground">Schedule your free Strategy Session</span>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@ export function HeroSection() {
           <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
               <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-8 sm:px-12 py-6 sm:py-7 rounded-2xl font-bold text-xl sm:text-2xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 glow group overflow-hidden w-full min-h-[70px] sm:min-h-[80px] animate-pulse hover:animate-none">
-                <span className="relative z-10 group-hover:scale-110 transition-transform duration-200">🎯 Discover My Archetype</span>
+                <span className="relative z-10 group-hover:scale-110 transition-transform duration-200">🎯 Get My Free Story Blueprint</span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 {/* Subtle pulsing ring animation */}
                 <div className="absolute inset-0 rounded-2xl border-2 border-green-300/50 scale-105 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></div>
@@ -125,7 +125,7 @@ export function HeroSection() {
             
             {/* Secondary CTA for hesitant visitors */}
             <Link href="#how-it-works" className="text-sm text-primary hover:text-primary/80 font-medium underline underline-offset-4 transition-colors">
-              Learn How It Works →
+              See How It Works →
             </Link>
           </div>
           
@@ -149,7 +149,7 @@ export function HeroSection() {
                 </svg>
               </div>
               <h3 className="font-semibold text-foreground mb-2">Clarity</h3>
-              <p className="text-sm text-muted-foreground">Identify your signature founder archetype instantly</p>
+              <p className="text-sm text-muted-foreground">Pinpoint your one-of-a-kind founder archetype in seconds</p>
             </div>
             
             <div className="text-center p-6 bg-card/50 border border-primary/10 rounded-xl">
@@ -159,7 +159,7 @@ export function HeroSection() {
                 </svg>
               </div>
               <h3 className="font-semibold text-foreground mb-2">Connection</h3>
-              <p className="text-sm text-muted-foreground">Speak in a way that resonates with your ideal audience</p>
+              <p className="text-sm text-muted-foreground">Speak in a voice that sparks trust and engagement</p>
             </div>
             
             <div className="text-center p-6 bg-card/50 border border-primary/10 rounded-xl">
@@ -169,7 +169,7 @@ export function HeroSection() {
                 </svg>
               </div>
               <h3 className="font-semibold text-foreground mb-2">Conversion</h3>
-              <p className="text-sm text-muted-foreground">Craft narratives that compel prospects to act</p>
+              <p className="text-sm text-muted-foreground">Turn your story into a magnetic client-attraction engine</p>
             </div>
           </div>
           </div>
@@ -214,7 +214,7 @@ export function HeroSection() {
                   <p className="text-sm text-muted-foreground">Tech Founder</p>
                 </div>
               </div>
-              <p className="text-sm italic text-foreground mb-3">"Signal DNA helped me quadruple revenue in 18 months and secure Series A funding."</p>
+              <p className="text-sm italic text-foreground mb-3">"Authentik Studio's Signal DNA method 4×'d my revenue in 18 months—and landed my Series A."</p>
               <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
                 <span className="text-xs font-bold text-green-600">€6M Revenue Growth</span>
               </div>
@@ -254,7 +254,7 @@ export function HeroSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground">J-Griff</h4>
-                    <p className="text-sm text-muted-foreground">Tech Founder</p>
+                    <p className="text-sm text-muted-foreground">SaaS Founder</p>
                   </div>
                 </div>
                 <div className="space-y-3 mb-4">
@@ -267,7 +267,7 @@ export function HeroSection() {
                     <span className="text-sm font-semibold text-green-600">€8M Revenue</span>
                   </div>
                 </div>
-                <p className="text-sm italic text-foreground mb-3">"Signal DNA helped me quadruple revenue in 18 months and secure Series A funding."</p>
+                <p className="text-sm italic text-foreground mb-3">"Authentik Studio's Signal DNA method 4×'d my revenue in 18 months—and landed my Series A."</p>
                 <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
                   <span className="text-xs font-bold text-green-600">300% Revenue Growth</span>
                 </div>
