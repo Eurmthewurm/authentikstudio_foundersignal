@@ -65,7 +65,7 @@ export function HeroSection() {
               </div>
               <div>
                 <p className="text-sm sm:text-base font-medium text-foreground mb-1">
-                  "Signal DNA 4×'d my revenue in 18 months."
+                  "Signal DNA transformed how I connect with my conscious entrepreneur audience."
                 </p>
                 <p className="text-xs text-primary font-semibold">— J-Griff</p>
               </div>
@@ -153,8 +153,8 @@ export function HeroSection() {
                 <div className="text-sm font-semibold text-purple-600 mb-1">✓ Free Blueprint</div>
                 <p className="text-xs text-muted-foreground">Personalized Strategy</p>
               </div>
-            </div>
-            
+          </div>
+          
             {/* Secondary CTA for hesitant visitors */}
             <Link href="#how-it-works" className="text-sm text-primary hover:text-primary/80 font-medium underline underline-offset-4 transition-colors">
               See How It Works →
@@ -243,12 +243,12 @@ export function HeroSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-foreground">J-Griff</h4>
-                  <p className="text-sm text-muted-foreground">Tech Founder</p>
+                  <p className="text-sm text-muted-foreground">Conscious Business Coach</p>
                 </div>
               </div>
-              <p className="text-sm italic text-foreground mb-3">"Authentik Studio's Signal DNA method 4×'d my revenue in 18 months—and landed my Series A."</p>
+              <p className="text-sm italic text-foreground mb-3">"Signal DNA helped me articulate my sovereignty journey and connect with high-level conscious entrepreneurs."</p>
               <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
-                <span className="text-xs font-bold text-green-600">€6M Revenue Growth</span>
+                <span className="text-xs font-bold text-green-600">13+ Years Coaching</span>
               </div>
             </div>
             
@@ -286,22 +286,22 @@ export function HeroSection() {
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground">J-Griff</h4>
-                    <p className="text-sm text-muted-foreground">SaaS Founder</p>
+                    <p className="text-sm text-muted-foreground">Conscious Business Coach</p>
                   </div>
                 </div>
                 <div className="space-y-3 mb-4">
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">Before:</span>
-                    <span className="text-sm font-semibold text-red-600">€2M Revenue</span>
+                    <span className="text-sm font-semibold text-red-600">$50K Debt</span>
                   </div>
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-muted-foreground">After:</span>
-                    <span className="text-sm font-semibold text-green-600">€8M Revenue</span>
+                    <span className="text-sm font-semibold text-green-600">Multi-7-Figure Business</span>
                   </div>
                 </div>
-                <p className="text-sm italic text-foreground mb-3">"Authentik Studio's Signal DNA method 4×'d my revenue in 18 months—and landed my Series A."</p>
+                <p className="text-sm italic text-foreground mb-3">"Signal DNA helped me articulate my sovereignty journey and connect with high-level conscious entrepreneurs."</p>
                 <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
-                  <span className="text-xs font-bold text-green-600">300% Revenue Growth</span>
+                  <span className="text-xs font-bold text-green-600">13+ Years Success</span>
                 </div>
               </div>
               

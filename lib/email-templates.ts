@@ -133,21 +133,21 @@ export function getEmail2(userData: UserData): EmailTemplate {
       <div class="content">
         <p>Hi ${userData.firstName},</p>
         
-        <p>When J-Griff came to us, he was at €2M ARR—and struggling to break through. By applying his <span class="highlight">Visionary Navigator</span> archetype with our Signal DNA method, here's what happened in just 18 months:</p>
+        <p>When J-Griff came to us, he was building his conscious business coaching practice—and struggling to articulate his unique sovereignty journey. By applying his <span class="highlight">Visionary Navigator</span> archetype with our Signal DNA method, here's what happened:</p>
         
         <div class="case-study">
           <h3>🚀 Strategic Transformation:</h3>
           <ul>
-            <li><strong>Strategic Narrative Shift:</strong> We reframed his founder story around a compelling "sovereignty journey," connecting deeply with investors and customers.</li>
-            <li><strong>Emotional Hooks:</strong> Introduced targeted emotional moments from his past sacrifices to humanize his brand.</li>
-            <li><strong>Consistent Messaging Framework:</strong> Developed a repeatable storytelling playbook for pitches, presentations, and media features.</li>
+            <li><strong>Strategic Narrative Shift:</strong> We reframed his founder story around his compelling "sovereignty journey," connecting deeply with conscious entrepreneurs seeking authentic wealth.</li>
+            <li><strong>Emotional Hooks:</strong> Introduced targeted emotional moments from his $50K debt to multi-7-figure transformation to humanize his brand.</li>
+            <li><strong>Consistent Messaging Framework:</strong> Developed a repeatable storytelling playbook for The Level Up Collective, conscious wealth education, and spiritual entrepreneurship.</li>
           </ul>
         </div>
         
         <div class="metrics">
           <h3>📊 The Results:</h3>
-          <p><strong>€8M ARR</strong> • <strong>Series A Funding Secured</strong> • <strong>Flood of High-Quality Leads</strong></p>
-          <p><em>All within 18 months</em></p>
+          <p><strong>Multi-7-Figure Business</strong> • <strong>The Level Up Collective Launched</strong> • <strong>High-Level Conscious Entrepreneurs Attracted</strong></p>
+          <p><em>13+ years of sustained success</em></p>
         </div>
         
         <p>This same Signal DNA playbook can power your growth. Let's map it out in your <strong>FREE Strategy Session</strong>:</p>
@@ -175,15 +175,15 @@ export function getEmail2(userData: UserData): EmailTemplate {
   const text = `
 Hi ${userData.firstName},
 
-When J-Griff came to us, he was at €2M ARR—and struggling to break through. By applying his Visionary Navigator archetype with our Signal DNA method, here's what happened in just 18 months:
+When J-Griff came to us, he was building his conscious business coaching practice—and struggling to articulate his unique sovereignty journey. By applying his Visionary Navigator archetype with our Signal DNA method, here's what happened:
 
 Strategic Transformation:
-- Strategic Narrative Shift: We reframed his founder story around a compelling "sovereignty journey," connecting deeply with investors and customers.
-- Emotional Hooks: Introduced targeted emotional moments from his past sacrifices to humanize his brand.
-- Consistent Messaging Framework: Developed a repeatable storytelling playbook for pitches, presentations, and media features.
+- Strategic Narrative Shift: We reframed his founder story around his compelling "sovereignty journey," connecting deeply with conscious entrepreneurs seeking authentic wealth.
+- Emotional Hooks: Introduced targeted emotional moments from his $50K debt to multi-7-figure transformation to humanize his brand.
+- Consistent Messaging Framework: Developed a repeatable storytelling playbook for The Level Up Collective, conscious wealth education, and spiritual entrepreneurship.
 
-The Results: €8M ARR • Series A Funding Secured • Flood of High-Quality Leads
-All within 18 months
+The Results: Multi-7-Figure Business • The Level Up Collective Launched • High-Level Conscious Entrepreneurs Attracted
+13+ years of sustained success
 
 This same Signal DNA playbook can power your growth. Let's map it out in your FREE Strategy Session:
 Reserve Your Spot: https://calendly.com/authentikstudio/strategy-session
