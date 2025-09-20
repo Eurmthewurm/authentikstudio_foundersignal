@@ -1,8 +1,26 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
+    // Check if Supabase is configured
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      return NextResponse.json({
+        sequences: [],
+        analytics: {
+          total: 0,
+          active: 0,
+          completed: 0,
+          byStep: { step1: 0, step2: 0, step3: 0, step4: 0, step5: 0 },
+          recentSequences: [],
+          conversionRate: '0.00'
+        },
+        lastUpdated: new Date().toISOString()
+      })
+    }
+
     // Simple authentication check
     const authHeader = request.headers.get('authorization')
     if (authHeader !== `Bearer ${process.env.ADMIN_TOKEN || 'admin123'}`) {

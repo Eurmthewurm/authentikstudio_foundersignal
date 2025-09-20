@@ -1,8 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { supabase } from '@/lib/supabase'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   try {
+    // Check if Supabase is configured
+    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+      return NextResponse.json({
+        quizStarts: 0,
+        quizCompletions: 0,
+        completionRate: 0,
+        auditSubmissions: 0,
+        conversionRate: 0,
+        topSources: [],
+        alerts: [{
+          type: 'info',
+          message: 'Supabase not configured - using mock data',
+          timestamp: new Date().toLocaleString()
+        }]
+      })
+    }
+
     const client = supabase()
     
     // Get quiz starts (last 24 hours)
