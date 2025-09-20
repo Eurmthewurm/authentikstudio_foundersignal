@@ -503,6 +503,28 @@ export function SignalStrengthQuiz() {
 
   const handleAnswer = (questionId: string, value: number) => {
     setAnswers(prev => ({ ...prev, [questionId]: value }))
+    
+    // Auto-advance to next question after a short delay
+    setTimeout(() => {
+      if (currentQuestion < quizQuestions.length - 1) {
+        setCurrentQuestion(prev => prev + 1)
+      } else {
+        // Calculate scores for each audience
+        const customerScore = (answers.customer_1 || 0) + (answers.customer_2 || 0)
+        const talentScore = (answers.talent_1 || 0) + (answers.talent_2 || 0)
+        const investorScore = (answers.investor_1 || 0) + (answers.investor_2 || 0)
+        const consistencyScore = (answers.consistency_1 || 0) + (answers.consistency_2 || 0)
+        
+        setScores({
+          customer: customerScore,
+          talent: talentScore,
+          investor: investorScore,
+          consistency: consistencyScore
+        })
+        
+        setCurrentQuestion(prev => prev + 1)
+      }
+    }, 500) // 500ms delay for better UX
   }
 
   const handleNext = () => {
@@ -860,7 +882,7 @@ export function SignalStrengthQuiz() {
           </div>
         </div>
 
-        {/* Navigation */}
+        {/* Navigation - Hide Next button since answers auto-advance */}
         <div className="flex flex-col sm:flex-row justify-between gap-4">
           <Button
             variant="outline"
@@ -871,23 +893,16 @@ export function SignalStrengthQuiz() {
             Previous
           </Button>
           
-          <Button
-            onClick={handleNext}
-            disabled={currentAnswer === 0}
-            className="flex items-center gap-2 w-full sm:w-auto px-6 py-3"
-          >
-            {currentQuestion === quizQuestions.length - 1 ? (
-              <>
-                <CheckCircle className="w-4 h-4" />
-                Get My Results
-              </>
-            ) : (
-              <>
-                Next
-                <ArrowRight className="w-4 h-4" />
-              </>
-            )}
-          </Button>
+          {/* Show progress indicator instead of Next button */}
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span>Question {currentQuestion + 1} of {quizQuestions.length}</span>
+            <div className="w-20 h-2 bg-primary/20 rounded-full overflow-hidden">
+              <div 
+                className="h-full bg-primary rounded-full transition-all duration-300"
+                style={{ width: `${((currentQuestion + 1) / quizQuestions.length) * 100}%` }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -30,7 +30,7 @@ export function QuizPreviewPopup() {
         </div>
       </DialogTrigger>
       
-      <DialogContent className="max-w-2xl bg-background border border-primary/20 rounded-2xl max-h-[90vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl bg-white dark:bg-gray-900 border border-primary/20 rounded-2xl max-h-[90vh] overflow-y-auto shadow-2xl">
         <DialogHeader className="text-center pb-6">
           <DialogTitle className="text-2xl sm:text-3xl font-bold text-primary mb-4">
             Discover Your Founder Archetype

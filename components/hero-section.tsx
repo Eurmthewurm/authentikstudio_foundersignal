@@ -103,30 +103,39 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-        {/* Primary CTA - Quiz */}
-        <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
-          <Link href="/quiz" rel="noopener noreferrer" className="w-full">
-            <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full">
-              <span className="relative z-10">Start Free Quiz</span>
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-            </Button>
-          </Link>
-          <p className="text-sm text-muted-foreground font-medium text-center">
-            Free Assessment • No Credit Card Required • Instant Results
-          </p>
-        </div>
-        
-        {/* Secondary CTA - Audit */}
-        <div className="flex flex-col items-center gap-3 w-full max-w-sm mx-auto mt-6">
-          <Link href="/audit" rel="noopener noreferrer" className="w-full">
-            <Button variant="outline" className="w-full bg-transparent border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105">
-              Book Free Audit
-            </Button>
-          </Link>
-          <p className="text-xs text-muted-foreground font-medium text-center">
-            Personalized Story Analysis & Strategy Session
-          </p>
-        </div>
+          {/* Primary CTA - Quiz */}
+          <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
+            <Link href="/quiz" rel="noopener noreferrer" className="w-full">
+              <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 sm:px-12 py-4 sm:py-5 rounded-2xl font-semibold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full">
+                <span className="relative z-10">Start Free Quiz</span>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+              </Button>
+            </Link>
+            <p className="text-sm text-muted-foreground font-medium text-center">
+              Free Assessment • No Credit Card Required • Instant Results
+            </p>
+          </div>
+          
+          {/* Secondary CTA - Audit */}
+          <div className="flex flex-col items-center gap-3 w-full max-w-sm mx-auto mt-6">
+            <Link href="/audit" rel="noopener noreferrer" className="w-full">
+              <Button variant="outline" className="w-full bg-transparent border border-primary/40 text-primary hover:bg-primary hover:text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium text-sm sm:text-base transition-all duration-300 hover:scale-105">
+                Book Free Audit
+              </Button>
+            </Link>
+            <p className="text-xs text-muted-foreground font-medium text-center">
+              Personalized Story Analysis & Strategy Session
+            </p>
+          </div>
+          
+          {/* Above-the-Fold Quiz CTA */}
+          <div className="mt-8">
+            <Link href="/quiz" rel="noopener noreferrer" className="inline-block">
+              <Button className="bg-gradient-to-r from-accent to-accent/80 text-accent-foreground hover:from-accent/90 hover:to-accent px-6 py-3 rounded-full font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 border border-accent/20">
+                Start Quiz Now →
+              </Button>
+            </Link>
+          </div>
         
         {/* Trusted by Founders & Brands */}
         <div className="mt-8 md:mt-10 lg:mt-12">
