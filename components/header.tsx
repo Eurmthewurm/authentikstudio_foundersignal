@@ -100,14 +100,20 @@ export function Header() {
             </div>
 
             {/* CTA Section */}
-            <div className="flex items-center gap-4">
-              <Link href="/audit" className="hidden md:block">
-                <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-8 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 group !shadow-none">
-                  <span className="relative z-10">FREE Audit</span>
+            <div className="flex items-center gap-3">
+              <Link href="/quiz-optimized" className="hidden md:block">
+                <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-6 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 group !shadow-none">
+                  <span className="relative z-10">Start Free Quiz</span>
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 </Button>
               </Link>
+              
+              {/* Scarcity Badge */}
+              <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                <span className="text-red-600 text-xs font-semibold">3 spots left</span>
+              </div>
 
               {/* Mobile Menu */}
               <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -153,12 +159,16 @@ export function Header() {
                       </Link>
                     ))}
                     
-                    <div className="pt-4 mt-4 border-t border-border/50">
-                      <Link href="/audit" className="block">
+                    <div className="pt-4 mt-4 border-t border-border/50 space-y-3">
+                      <Link href="/quiz-optimized" className="block">
                         <Button className="w-full bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-6 py-3 rounded-full font-semibold text-sm transition-all duration-300 !shadow-none">
-                          FREE Audit
+                          Start Free Quiz
                         </Button>
                       </Link>
+                      <div className="flex items-center justify-center gap-2 px-3 py-1.5 bg-red-500/10 border border-red-500/20 rounded-full">
+                        <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                        <span className="text-red-600 text-xs font-semibold">3 spots left this month</span>
+                      </div>
                     </div>
                   </nav>
                 </SheetContent>

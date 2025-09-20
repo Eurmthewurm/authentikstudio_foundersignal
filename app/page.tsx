@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/hero-section"
+import { CondensedFAQ } from "@/components/condensed-faq"
 import { FounderCrisisSection } from "@/components/founder-crisis-section"
 import { SignalDNAIntroSection } from "@/components/signal-dna-intro-section"
 import { JGriffHighlight } from "@/components/j-griff-highlight"
@@ -23,6 +24,9 @@ export default function LandingPage() {
         <main className="max-w-[1320px] mx-auto relative">
           <HeroSection />
         </main>
+        
+        {/* Quick FAQ - Above the Fold */}
+        <CondensedFAQ />
         
         {/* 1. PROBLEM - Founder Crisis */}
         <AnimatedSection className="relative z-10 max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24" delay={0.1}>

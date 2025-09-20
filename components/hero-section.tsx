@@ -117,6 +117,16 @@ export function HeroSection() {
             </p>
           </div>
         
+        {/* Dynamic Counter */}
+        <div className="mt-6 mb-4">
+          <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary/5 border border-primary/20 rounded-full">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-sm font-semibold text-primary">
+              <span className="text-lg font-bold">1,247+</span> Founders Assessed This Month
+            </span>
+          </div>
+        </div>
+        
         {/* Enhanced Social Proof */}
         <div className="mt-8 md:mt-10 lg:mt-12">
           <p className="text-xs md:text-sm text-muted-foreground font-medium tracking-[0.2em] uppercase mb-6 md:mb-8">TRUSTED BY FOUNDERS & BRANDS</p>
@@ -186,8 +196,14 @@ export function HeroSection() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-primary font-bold text-lg">J</span>
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+                    <Image
+                      src="/images/j-griff-headshot.jpg"
+                      alt="J-Griff, Tech Founder who achieved €6M revenue growth"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground">J-Griff</h4>
@@ -212,8 +228,14 @@ export function HeroSection() {
               
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                    <span className="text-primary font-bold text-lg">A</span>
+                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+                    <Image
+                      src="/images/aaron-abke-headshot.jpg"
+                      alt="Aaron Abke, Spiritual Entrepreneur who grew to 1M+ followers"
+                      width={48}
+                      height={48}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground">Aaron Abke</h4>
@@ -238,7 +260,7 @@ export function HeroSection() {
               
               <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center border-2 border-primary/20">
                     <span className="text-primary font-bold text-lg">S</span>
                   </div>
                   <div>
