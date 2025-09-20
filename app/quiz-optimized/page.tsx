@@ -10,12 +10,13 @@ import { CheckCircle, Clock, Users } from "lucide-react"
 import Image from "next/image"
 
 export default function QuizPage() {
-  const [currentStep, setCurrentStep] = useState(0) // 0 = intro, 1 = first questions, 2 = email capture
+  const [currentStep, setCurrentStep] = useState(0) // 0 = intro, 1 = quick questions, 2 = mini-insight, 3 = email capture, 4 = optional deep dive
   const [email, setEmail] = useState("")
   const [consent, setConsent] = useState(false)
   const [source, setSource] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [answers, setAnswers] = useState({})
+  const [showDeepDive, setShowDeepDive] = useState(false)
 
   useEffect(() => {
     // Get URL parameters
@@ -45,9 +46,41 @@ export default function QuizPage() {
     // Provide immediate feedback based on answers
     const currentAnswers = {...answers, [questionId]: value}
     
-    // Auto-advance after 3 questions to email capture
+    // Auto-advance after 3 questions to mini-insight
     if (Object.keys(currentAnswers).length >= 3) {
       setTimeout(() => setCurrentStep(2), 800)
+    }
+  }
+
+  const getMiniInsight = () => {
+    const revenue = answers.revenue
+    const challenge = answers.biggest_challenge
+    const timeline = answers.timeline
+    
+    // Determine archetype based on answers
+    let archetype = "The Visionary Founder"
+    let strength = "Future-focused vision"
+    let blindSpot = "Customer accessibility"
+    
+    if (revenue === 'under-100k' && challenge === 'investor_pitch') {
+      archetype = "The Builder Founder"
+      strength = "Technical excellence and product focus"
+      blindSpot = "Investor appeal and emotional connection"
+    } else if (revenue === '1m-5m' && challenge === 'talent_attraction') {
+      archetype = "The Executor Founder"
+      strength = "Systematic results and proven execution"
+      blindSpot = "Emotional depth and inspiration"
+    } else if (challenge === 'brand_differentiation') {
+      archetype = "The Challenger Founder"
+      strength = "Unique perspective and market disruption"
+      blindSpot = "Universal relatability and accessibility"
+    }
+    
+    return {
+      archetype,
+      strength,
+      blindSpot,
+      timeline: timeline || '90 days'
     }
   }
 
@@ -57,7 +90,6 @@ export default function QuizPage() {
     
     const revenue = answers.revenue
     const challenge = answers.biggest_challenge
-    const timeline = answers.timeline
     
     if (answerCount === 1 && revenue) {
       const strength = revenue === '5m-plus' ? 'Enterprise-level thinking' : 
@@ -72,10 +104,6 @@ export default function QuizPage() {
                      challenge === 'talent_attraction' ? 'You have vision but need to communicate culture and growth' :
                      'You have unique insights but need to differentiate from competitors'
       return `Key insight: ${insight}`
-    }
-    
-    if (answerCount === 3 && timeline) {
-      return `Perfect! Based on your timeline (${timeline}), we'll prioritize quick wins in your personalized report.`
     }
     
     return null
@@ -235,8 +263,78 @@ export default function QuizPage() {
             </div>
           )}
 
-          {/* Step 2: Email Capture */}
+          {/* Step 2: Mini-Insight */}
           {currentStep === 2 && (
+            <div className="mb-12">
+              <div className="mb-8">
+                <div className="inline-flex items-center px-4 py-2 bg-green-500/10 rounded-full border border-green-500/20 mb-4">
+                  <CheckCircle className="w-4 h-4 text-green-600 mr-2" />
+                  <span className="text-green-600 font-medium text-sm">Quick Win Complete!</span>
+                </div>
+                
+                <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
+                  Here's Your Top Storytelling Strength
+                </h2>
+              </div>
+
+              {/* Mini-Insight Card */}
+              <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 mb-8">
+                {(() => {
+                  const insight = getMiniInsight()
+                  return (
+                    <div className="text-center space-y-6">
+                      <div className="inline-flex items-center px-4 py-2 bg-primary/20 rounded-full border border-primary/30">
+                        <span className="text-primary font-semibold text-lg">{insight.archetype}</span>
+                      </div>
+                      
+                      <div className="space-y-4">
+                        <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-6">
+                          <h3 className="text-lg font-bold text-green-600 mb-2">Your Superpower</h3>
+                          <p className="text-green-700 dark:text-green-300">{insight.strength}</p>
+                        </div>
+                        
+                        <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-6">
+                          <h3 className="text-lg font-bold text-yellow-600 mb-2">Your Blind Spot</h3>
+                          <p className="text-yellow-700 dark:text-yellow-300">{insight.blindSpot}</p>
+                        </div>
+                      </div>
+                      
+                      <div className="bg-primary/10 border border-primary/20 rounded-lg p-4">
+                        <p className="text-sm text-primary font-semibold">
+                          Based on your timeline ({insight.timeline}), we'll prioritize quick wins in your personalized report.
+                        </p>
+                      </div>
+                    </div>
+                  )
+                })()}
+              </div>
+
+              {/* Next Steps */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <Button
+                  onClick={() => setCurrentStep(3)}
+                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4 text-lg rounded-xl"
+                >
+                  Get My Complete Report →
+                </Button>
+                
+                <Button
+                  variant="outline"
+                  onClick={() => setShowDeepDive(true)}
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold py-4 text-lg rounded-xl"
+                >
+                  Complete Your Signal DNA Profile
+                </Button>
+              </div>
+              
+              <p className="text-sm text-muted-foreground text-center">
+                Get your personalized insights delivered to your email in 2 minutes
+              </p>
+            </div>
+          )}
+
+          {/* Step 3: Email Capture */}
+          {currentStep === 3 && (
             <div className="mb-12">
               <div className="mb-8">
                 <div className="inline-flex items-center px-4 py-2 bg-green-500/10 rounded-full border border-green-500/20 mb-4">
@@ -277,6 +375,14 @@ export default function QuizPage() {
                       I consent to receiving personalized Signal DNA insights and founder storytelling tips via email. 
                       I can unsubscribe anytime. <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a>
                     </label>
+                  </div>
+                  
+                  {/* Privacy Note */}
+                  <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
+                    <p className="text-sm text-blue-700 dark:text-blue-300">
+                      <strong>We respect your privacy.</strong> We'll only send you valuable insights and tips. 
+                      Unsubscribe anytime with one click.
+                    </p>
                   </div>
                   
                   <Button

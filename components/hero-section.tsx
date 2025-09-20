@@ -54,17 +54,17 @@ export function HeroSection() {
           <div className="flex items-center justify-center gap-4 md:gap-8 mt-8">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
-              <span className="text-sm font-medium text-foreground">Take Quiz</span>
+              <span className="text-sm font-medium text-foreground">Take 3-Question Quick Quiz</span>
             </div>
             <div className="w-8 h-0.5 bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
-              <span className="text-sm font-medium text-muted-foreground">Get Instant Insights</span>
+              <span className="text-sm font-medium text-muted-foreground">See Your Top Insight</span>
             </div>
             <div className="w-8 h-0.5 bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
-              <span className="text-sm font-medium text-muted-foreground">Book Strategy Session</span>
+              <span className="text-sm font-medium text-muted-foreground">Book Your Strategy Call</span>
             </div>
           </div>
           
@@ -176,6 +176,90 @@ export function HeroSection() {
               <p className="text-sm italic text-foreground mb-3">"The Signal DNA method gave me clarity on my unique story pattern for my 1M+ audience."</p>
               <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
                 <span className="text-xs font-bold text-green-600">1M+ Followers</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Success Stories Block */}
+          <div className="mt-8">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-8">Success Stories</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-bold text-lg">J</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground">J-Griff</h4>
+                    <p className="text-sm text-muted-foreground">Tech Founder</p>
+                  </div>
+                </div>
+                <div className="space-y-3 mb-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Before:</span>
+                    <span className="text-sm font-semibold text-red-600">€2M Revenue</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">After:</span>
+                    <span className="text-sm font-semibold text-green-600">€8M Revenue</span>
+                  </div>
+                </div>
+                <p className="text-sm italic text-foreground mb-3">"Signal DNA helped me quadruple revenue in 18 months and secure Series A funding."</p>
+                <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
+                  <span className="text-xs font-bold text-green-600">300% Revenue Growth</span>
+                </div>
+              </div>
+              
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-bold text-lg">A</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground">Aaron Abke</h4>
+                    <p className="text-sm text-muted-foreground">Spiritual Entrepreneur</p>
+                  </div>
+                </div>
+                <div className="space-y-3 mb-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Before:</span>
+                    <span className="text-sm font-semibold text-red-600">500K Followers</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">After:</span>
+                    <span className="text-sm font-semibold text-green-600">1M+ Followers</span>
+                  </div>
+                </div>
+                <p className="text-sm italic text-foreground mb-3">"The Signal DNA method gave me clarity on my unique story pattern for authentic growth."</p>
+                <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
+                  <span className="text-xs font-bold text-green-600">100% Follower Growth</span>
+                </div>
+              </div>
+              
+              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span className="text-primary font-bold text-lg">S</span>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground">Sarah Chen</h4>
+                    <p className="text-sm text-muted-foreground">SaaS Founder</p>
+                  </div>
+                </div>
+                <div className="space-y-3 mb-4">
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">Before:</span>
+                    <span className="text-sm font-semibold text-red-600">30% Close Rate</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="text-sm text-muted-foreground">After:</span>
+                    <span className="text-sm font-semibold text-green-600">90% Close Rate</span>
+                  </div>
+                </div>
+                <p className="text-sm italic text-foreground mb-3">"I went from struggling to explain my vision to closing deals in 15 minutes."</p>
+                <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
+                  <span className="text-xs font-bold text-green-600">200% Close Rate ↑</span>
+                </div>
               </div>
             </div>
           </div>
