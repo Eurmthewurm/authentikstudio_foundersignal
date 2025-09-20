@@ -21,8 +21,8 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-background/95"></div>
         {/* Subtle animated background elements */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/2 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/1 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/2 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-primary/1 rounded-full blur-3xl"></div>
       </div>
 
       {/* Header positioned at top */}
@@ -110,7 +110,7 @@ export function HeroSection() {
           {/* Primary CTA - Quiz Only - Mobile Optimized */}
           <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-8 sm:px-12 py-6 sm:py-7 rounded-2xl font-bold text-xl sm:text-2xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 glow group overflow-hidden w-full min-h-[70px] sm:min-h-[80px] animate-pulse hover:animate-none">
+              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-8 sm:px-12 py-6 sm:py-7 rounded-2xl font-bold text-xl sm:text-2xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 group overflow-hidden w-full min-h-[70px] sm:min-h-[80px]">
                 <span className="relative z-10 group-hover:scale-110 transition-transform duration-200">🎯 Get My Free Story Blueprint</span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 {/* Subtle pulsing ring animation */}
