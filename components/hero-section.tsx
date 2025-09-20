@@ -47,25 +47,27 @@ export function HeroSection() {
             <span className="gradient-text font-semibold">Unforgettable Storyteller</span>
           </h1>
           
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light mb-8">
             Uncover your unique founder archetype in 2 minutes—then turn that story into client-winning content.
           </p>
           
-          {/* 3-Step Progress Visual */}
-          <div className="flex items-center justify-center gap-4 md:gap-8 mt-8">
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
-              <span className="text-sm font-medium text-foreground">Take 3-Question Quick Quiz</span>
-            </div>
-            <div className="w-8 h-0.5 bg-primary/30"></div>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
-              <span className="text-sm font-medium text-muted-foreground">See Your Top Insight</span>
-            </div>
-            <div className="w-8 h-0.5 bg-primary/30"></div>
-            <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
-              <span className="text-sm font-medium text-muted-foreground">Book Your Strategy Call</span>
+          {/* 3-Step Progress Visual - Enhanced for Above-the-Fold Clarity */}
+          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-8">
+            <div className="flex items-center justify-center gap-4 md:gap-8">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-sm">1</div>
+                <span className="text-sm font-medium text-foreground">Take 7-Question Assessment</span>
+              </div>
+              <div className="w-8 h-0.5 bg-primary/30"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">2</div>
+                <span className="text-sm font-medium text-muted-foreground">See Your Archetype</span>
+              </div>
+              <div className="w-8 h-0.5 bg-primary/30"></div>
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-sm">3</div>
+                <span className="text-sm font-medium text-muted-foreground">Book Strategy Call</span>
+              </div>
             </div>
           </div>
           
@@ -108,8 +110,8 @@ export function HeroSection() {
           {/* Primary CTA - Quiz Only - Mobile Optimized */}
           <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-6 sm:px-12 py-5 sm:py-6 rounded-2xl font-semibold text-lg sm:text-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full min-h-[60px] sm:min-h-[70px]">
-                <span className="relative z-10">Start Your Free Story Assessment</span>
+              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-8 sm:px-12 py-6 sm:py-7 rounded-2xl font-bold text-xl sm:text-2xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 glow group overflow-hidden w-full min-h-[70px] sm:min-h-[80px]">
+                <span className="relative z-10">🎯 Discover My Archetype</span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </Button>
             </Link>

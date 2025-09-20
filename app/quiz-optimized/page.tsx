@@ -272,17 +272,17 @@ export default function QuizPage() {
           {/* Step 1: Quick Questions */}
           {currentStep === 1 && (
             <div className="mb-12">
-              {/* Progress Bar */}
+              {/* Progress Bar - Enhanced for Mobile */}
               <div className="mb-8">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-sm font-medium text-muted-foreground">Progress</span>
-                  <span className="text-sm font-medium text-primary">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-base font-medium text-muted-foreground">Progress</span>
+                  <span className="text-base font-bold text-primary">
                     Question {Object.keys(answers).length + 1} of 7
                   </span>
                 </div>
-                <div className="w-full bg-muted rounded-full h-2">
+                <div className="w-full bg-muted rounded-full h-3">
                   <div 
-                    className="bg-primary h-2 rounded-full transition-all duration-500"
+                    className="bg-gradient-to-r from-green-500 to-green-600 h-3 rounded-full transition-all duration-500 shadow-sm"
                     style={{ width: `${((Object.keys(answers).length + 1) / 7) * 100}%` }}
                   ></div>
                 </div>
