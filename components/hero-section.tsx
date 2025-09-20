@@ -120,7 +120,6 @@ export function HeroSection() {
           </div>
           </details>
           
-        </div>
           {/* Prominent Above-the-Fold CTA */}
           <div className="flex flex-col items-center gap-6 w-full max-w-lg mx-auto">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
@@ -364,6 +363,8 @@ export function HeroSection() {
               </div>
             </div>
           </div>
+        </div>
+        
         </div>
         
         {/* Scroll Guidance */}
