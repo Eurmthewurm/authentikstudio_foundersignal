@@ -93,7 +93,7 @@ export default function QuizPage() {
       const strength = revenue === '5m-plus' ? 'Enterprise-level thinking' : 
                       revenue === '1m-5m' ? 'Scaling mindset' : 
                       revenue === '500k-1m' ? 'Growth orientation' : 'Early-stage agility'
-      return `Your top storytelling strength: ${strength}`
+      return `Interesting—this reveals you favor ${strength.toLowerCase()} storytelling.`
     }
     
     if (answerCount === 2 && challenge) {
@@ -174,29 +174,44 @@ export default function QuizPage() {
                 {getDynamicHeadline()}
               </h1>
               
+              {/* Clear Framing */}
+              <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-8">
+                <div className="text-center space-y-4">
+                  <div className="flex items-center justify-center gap-4 text-lg font-semibold text-foreground">
+                    <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm">Just 3 Questions</span>
+                    <span className="text-muted-foreground">•</span>
+                    <span className="bg-green-500/20 text-green-600 px-3 py-1 rounded-full text-sm">Under 2 Minutes</span>
+                    <span className="text-muted-foreground">•</span>
+                    <span className="bg-blue-500/20 text-blue-600 px-3 py-1 rounded-full text-sm">Instant Results</span>
+                  </div>
+                  
+                  <p className="text-lg text-muted-foreground">
+                    Receive a tailored founder-story blueprint that reveals your unique archetype and storytelling strengths
+                  </p>
+                </div>
+              </div>
+              
               <div className="text-lg sm:text-xl text-muted-foreground mb-8 space-y-4">
-                <p>This 2-minute assessment reveals:</p>
                 <div className="flex items-center justify-center gap-2 text-sm">
                   <Users className="w-4 h-4 text-primary" />
-                  <span>2,847 founders completed this assessment.</span>
+                  <span>2,847+ founders completed this assessment</span>
                 </div>
                 <div className="flex items-center justify-center gap-2 text-sm">
                   <CheckCircle className="w-4 h-4 text-primary" />
-                  <span>Most discover story advantages they never knew they had.</span>
+                  <span>Most discover story advantages they never knew they had</span>
                 </div>
-                <p className="text-sm">Get instant insights before we personalize your recommendations.</p>
               </div>
 
               <Button
                 onClick={() => setCurrentStep(1)}
                 className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-semibold py-4 text-lg rounded-xl mb-4"
               >
-                Start Assessment →
+                Start Your Free Story Assessment →
               </Button>
               
               <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
                 <Clock className="w-4 h-4" />
-                <span>90 seconds to complete</span>
+                <span>Takes under 2 minutes • No credit card required</span>
               </div>
             </div>
           )}
@@ -204,6 +219,22 @@ export default function QuizPage() {
           {/* Step 1: Quick Questions */}
           {currentStep === 1 && (
             <div className="mb-12">
+              {/* Progress Bar */}
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-muted-foreground">Progress</span>
+                  <span className="text-sm font-medium text-primary">
+                    Question {Object.keys(answers).length + 1} of 3
+                  </span>
+                </div>
+                <div className="w-full bg-muted rounded-full h-2">
+                  <div 
+                    className="bg-primary h-2 rounded-full transition-all duration-500"
+                    style={{ width: `${((Object.keys(answers).length + 1) / 3) * 100}%` }}
+                  ></div>
+                </div>
+              </div>
+              
               <div className="mb-8">
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
                   Quick Questions First
@@ -218,19 +249,19 @@ export default function QuizPage() {
                   <h3 className="text-xl font-semibold text-foreground mb-4">
                     {q.question}
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {q.options.map((option) => (
                       <button
                         key={option.value}
                         onClick={() => handleAnswer(q.id, option.value)}
-                        className={`p-4 rounded-xl border text-left transition-all ${
+                        className={`p-5 sm:p-4 rounded-xl border text-left transition-all min-h-[80px] sm:min-h-[70px] ${
                           answers[q.id] === option.value
-                            ? 'bg-primary text-primary-foreground border-primary'
-                            : 'bg-card border-border hover:border-primary/50'
+                            ? 'bg-primary text-primary-foreground border-primary shadow-lg'
+                            : 'bg-card border-border hover:border-primary/50 hover:shadow-md'
                         }`}
                       >
-                        <div className="font-semibold">{option.label}</div>
-                        <div className="text-sm opacity-80">{option.desc}</div>
+                        <div className="font-semibold text-base sm:text-sm">{option.label}</div>
+                        <div className="text-sm opacity-80 mt-1">{option.desc}</div>
                       </button>
                     ))}
                   </div>
@@ -239,12 +270,17 @@ export default function QuizPage() {
 
               {/* Immediate Feedback */}
               {getImmediateFeedback() && (
-                <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-4 mt-6">
-                  <div className="flex items-center gap-2 mb-2">
-                    <CheckCircle className="w-4 h-4 text-green-600" />
+                <div className="bg-gradient-to-r from-green-500/10 to-blue-500/10 border border-green-500/20 rounded-xl p-6 mt-6">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center">
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                    </div>
                     <span className="text-green-600 font-semibold text-sm">Instant Insight</span>
                   </div>
-                  <p className="text-sm text-green-700 dark:text-green-300">{getImmediateFeedback()}</p>
+                  <p className="text-sm text-green-700 dark:text-green-300 font-medium">{getImmediateFeedback()}</p>
+                  <div className="mt-3 text-xs text-green-600/80">
+                    💡 This is just a preview—your full archetype report will reveal much more
+                  </div>
                 </div>
               )}
 
@@ -271,8 +307,11 @@ export default function QuizPage() {
                 </div>
                 
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                  Here's Your Top Storytelling Strength
+                  🎉 You're a <span className="text-primary">{getMiniInsight().archetype}</span>!
                 </h2>
+                <p className="text-muted-foreground text-lg">
+                  This is just a preview—get your complete story blueprint emailed instantly
+                </p>
               </div>
 
               {/* Mini-Insight Card */}
@@ -356,10 +395,11 @@ export default function QuizPage() {
                 </div>
                 
                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-4">
-                  Get Your Complete Signal DNA Report
+                  Get Your Complete Story Blueprint
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Based on your answers, we've identified your founder archetype. Enter your email to receive your personalized report with actionable recommendations.
+                  You're a <span className="font-semibold text-primary">{getMiniInsight().archetype}</span>! 
+                  Enter your email to receive your personalized report with actionable recommendations delivered instantly.
                 </p>
               </div>
 
