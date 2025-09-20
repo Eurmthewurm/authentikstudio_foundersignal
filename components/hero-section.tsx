@@ -40,14 +40,15 @@ export function HeroSection() {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light text-foreground leading-[1.05] tracking-tight">
-            Discover Your Unique{" "}
-            <span className="gradient-text font-semibold">Founder Story</span>
+            Go from{" "}
+            <span className="text-muted-foreground">Overlooked Founder</span>
             <br />
-            in 2 Minutes
+            to{" "}
+            <span className="gradient-text font-semibold">Unforgettable Storyteller</span>
           </h1>
           
           <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-light">
-            AI-powered quiz reveals your storytelling strengths and blind spots—no credit card required.
+            Uncover your unique founder archetype in 2 minutes—then turn that story into client-winning content.
           </p>
           
           {/* 3-Step Progress Visual */}
@@ -106,15 +107,20 @@ export function HeroSection() {
         </div>
           {/* Primary CTA - Quiz Only - Mobile Optimized */}
           <div className="flex flex-col items-center gap-4 w-full max-w-md mx-auto">
-            <Link href="/quiz" rel="noopener noreferrer" className="w-full">
+            <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
               <Button className="relative bg-gradient-to-r from-primary to-primary-dark text-primary-foreground hover:from-primary-dark hover:to-primary px-6 sm:px-12 py-5 sm:py-6 rounded-2xl font-semibold text-lg sm:text-xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border border-primary/20 glow group overflow-hidden w-full min-h-[60px] sm:min-h-[70px]">
-                <span className="relative z-10">Start Free Quiz</span>
+                <span className="relative z-10">Start Your Free Story Assessment</span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
               </Button>
             </Link>
             <p className="text-sm sm:text-base text-muted-foreground font-medium text-center px-4">
-              Free Assessment • No Credit Card Required • Instant Results
+              Backed by 200+ founders • No credit card required • Instant results
             </p>
+            
+            {/* Secondary CTA for hesitant visitors */}
+            <Link href="#how-it-works" className="text-sm text-primary hover:text-primary/80 font-medium underline underline-offset-4 transition-colors">
+              Learn How It Works →
+            </Link>
           </div>
         
         {/* Dynamic Counter */}
@@ -124,6 +130,41 @@ export function HeroSection() {
             <span className="text-sm font-semibold text-primary">
               <span className="text-lg font-bold">1,247+</span> Founders Assessed This Month
             </span>
+          </div>
+        </div>
+        
+        {/* Three-Column Benefits with Icons */}
+        <div className="mt-8 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="text-center p-6 bg-card/50 border border-primary/10 rounded-xl">
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-foreground mb-2">Clarity</h3>
+              <p className="text-sm text-muted-foreground">Identify your signature founder archetype instantly</p>
+            </div>
+            
+            <div className="text-center p-6 bg-card/50 border border-primary/10 rounded-xl">
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-foreground mb-2">Connection</h3>
+              <p className="text-sm text-muted-foreground">Speak in a way that resonates with your ideal audience</p>
+            </div>
+            
+            <div className="text-center p-6 bg-card/50 border border-primary/10 rounded-xl">
+              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-foreground mb-2">Conversion</h3>
+              <p className="text-sm text-muted-foreground">Craft narratives that compel prospects to act</p>
+            </div>
           </div>
         </div>
         
