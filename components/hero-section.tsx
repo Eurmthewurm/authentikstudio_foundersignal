@@ -51,10 +51,10 @@ export function HeroSection() {
             Reveal your founder archetype in just 2 minutes—and captivate customers, investors, and media.
           </p>
           
-          {/* Hero-Testimonial Combo - J-Griff testimonial next to hero title */}
-          <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-8 mb-8">
-            <div className="flex items-center gap-4 bg-primary/5 border border-primary/20 rounded-xl p-4 lg:p-6">
-              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/20">
+          {/* Hero-Testimonial Combo - Mobile Optimized */}
+          <div className="flex flex-col items-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center gap-4 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-xl p-4 sm:p-6 shadow-lg w-full max-w-2xl">
+              <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-primary/30 shadow-md flex-shrink-0">
                 <Image
                   src="/images/j-griff-headshot.jpg"
                   alt="J-Griff, Tech Founder who achieved €6M revenue growth"
@@ -63,38 +63,52 @@ export function HeroSection() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div>
-                <p className="text-sm sm:text-base font-medium text-foreground mb-1">
+              <div className="text-center sm:text-left">
+                <p className="text-sm sm:text-base font-medium text-foreground mb-2">
                   "Signal DNA transformed how I connect with my conscious entrepreneur audience."
                 </p>
-                <p className="text-xs text-primary font-semibold">— J-Griff</p>
+                <div className="flex flex-col sm:flex-row items-center gap-2">
+                  <p className="text-xs text-primary font-semibold">— J-Griff</p>
+                  <div className="bg-green-500/20 px-3 py-1 rounded-full">
+                    <span className="text-xs font-bold text-green-600">€6M Revenue Growth</span>
+                  </div>
+                </div>
               </div>
-            </div>
-            
-            {/* Trust Logos - Partner logos as trust anchors */}
-            <div className="flex items-center gap-6 opacity-60">
-              <div className="text-2xl font-bold text-muted-foreground">BBC</div>
-              <div className="text-xl font-bold text-muted-foreground">NatGeo</div>
-              <div className="text-xl font-bold text-muted-foreground">Discovery</div>
             </div>
           </div>
           
-          {/* Immediate Process Graphic - Concise 3-step graphic */}
-          <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-8">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold text-lg">1</div>
-                <span className="text-sm font-medium text-foreground">Take 2-minute Quiz</span>
+          {/* Mobile-Optimized 3-Step Process Graphic */}
+          <div className="bg-gradient-to-r from-primary/10 to-primary/5 border-2 border-primary/30 rounded-2xl p-4 sm:p-6 lg:p-8 mb-8 shadow-lg mx-4 sm:mx-0">
+            <h3 className="text-center text-lg font-bold text-foreground mb-4 sm:mb-6">How It Works</h3>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8">
+              <div className="flex flex-col items-center gap-2 sm:gap-3 text-center w-full sm:w-auto">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg">
+                  1
+                </div>
+                <div className="space-y-1">
+                  <span className="text-sm sm:text-base font-semibold text-foreground block">Take 2-minute Quiz</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">Answer 8 strategic questions</span>
+                </div>
               </div>
-              <div className="hidden sm:block w-8 h-0.5 bg-primary/30"></div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-lg">2</div>
-                <span className="text-sm font-medium text-muted-foreground">Get Instant Archetype</span>
+              <div className="hidden sm:block w-8 lg:w-12 h-0.5 bg-gradient-to-r from-primary/50 to-primary/30"></div>
+              <div className="flex flex-col items-center gap-2 sm:gap-3 text-center w-full sm:w-auto">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg">
+                  2
+                </div>
+                <div className="space-y-1">
+                  <span className="text-sm sm:text-base font-semibold text-foreground block">Get Instant Archetype</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">AI-powered analysis</span>
+                </div>
               </div>
-              <div className="hidden sm:block w-8 h-0.5 bg-primary/30"></div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold text-lg">3</div>
-                <span className="text-sm font-medium text-muted-foreground">Book Strategy Call</span>
+              <div className="hidden sm:block w-8 lg:w-12 h-0.5 bg-gradient-to-r from-primary/50 to-primary/30"></div>
+              <div className="flex flex-col items-center gap-2 sm:gap-3 text-center w-full sm:w-auto">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg sm:text-xl shadow-lg">
+                  3
+                </div>
+                <div className="space-y-1">
+                  <span className="text-sm sm:text-base font-semibold text-foreground block">Book Strategy Call</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">Free consultation</span>
+                </div>
               </div>
             </div>
           </div>
@@ -120,23 +134,72 @@ export function HeroSection() {
           </div>
           </details>
           
-          {/* Prominent Above-the-Fold CTA */}
+          {/* Mobile-Optimized Partner Logos Trust Strip */}
+          <div className="bg-gradient-to-r from-background/50 to-background/30 border-t border-b border-primary/20 py-4 sm:py-6 mb-8 mx-4 sm:mx-0">
+            <div className="max-w-6xl mx-auto px-2 sm:px-4">
+              <p className="text-center text-xs sm:text-sm text-muted-foreground font-medium tracking-[0.1em] sm:tracking-[0.2em] uppercase mb-4 sm:mb-6">TRUSTED BY LEADING BRANDS</p>
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 opacity-70">
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-red-600 to-red-700 rounded flex items-center justify-center">
+                    <span className="text-white font-bold text-xs sm:text-sm">B</span>
+                  </div>
+                  <span className="text-sm sm:text-xl font-bold text-foreground">BBC</span>
+                </div>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded flex items-center justify-center">
+                    <span className="text-white font-bold text-xs sm:text-sm">N</span>
+                  </div>
+                  <span className="text-sm sm:text-xl font-bold text-foreground">NatGeo</span>
+                </div>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded flex items-center justify-center">
+                    <span className="text-white font-bold text-xs sm:text-sm">D</span>
+                  </div>
+                  <span className="text-sm sm:text-xl font-bold text-foreground">Discovery</span>
+                </div>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-600 to-purple-700 rounded flex items-center justify-center">
+                    <span className="text-white font-bold text-xs sm:text-sm">T</span>
+                  </div>
+                  <span className="text-sm sm:text-xl font-bold text-foreground">TED</span>
+                </div>
+                <div className="flex items-center gap-1 sm:gap-2">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-600 to-green-700 rounded flex items-center justify-center">
+                    <span className="text-white font-bold text-xs sm:text-sm">F</span>
+                  </div>
+                  <span className="text-sm sm:text-xl font-bold text-foreground">Forbes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Ultra-Prominent CTA Button */}
           <div className="flex flex-col items-center gap-6 w-full max-w-lg mx-auto">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-12 sm:px-16 py-8 sm:py-9 rounded-2xl font-bold text-2xl sm:text-3xl shadow-2xl hover:shadow-green-500/25 transition-all duration-300 hover:scale-105 border-2 border-green-400/30 group overflow-hidden w-full min-h-[80px] sm:min-h-[90px]">
-                <span className="relative z-10 group-hover:scale-110 transition-transform duration-200">🎯 Get My Free Story Blueprint</span>
+              <Button className="relative bg-gradient-to-r from-green-600 via-green-500 to-green-600 text-white hover:from-green-700 hover:via-green-600 hover:to-green-700 px-12 sm:px-16 py-8 sm:py-9 rounded-2xl font-bold text-2xl sm:text-3xl shadow-2xl hover:shadow-green-500/30 transition-all duration-300 hover:scale-105 border-2 border-green-400/40 group overflow-hidden w-full min-h-[80px] sm:min-h-[90px] animate-pulse">
+                <span className="relative z-10 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center gap-3">
+                  <span className="text-3xl">🎯</span>
+                  <span>Get My Free Story Blueprint</span>
+                </span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                {/* Subtle pulsing ring animation */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-green-300/50 scale-105 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></div>
+                {/* Enhanced pulsing ring animation */}
+                <div className="absolute inset-0 rounded-2xl border-2 border-green-300/60 scale-105 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></div>
                 {/* Micro-bounce on hover */}
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400/20 to-green-300/20 scale-0 group-hover:scale-100 transition-transform duration-200 ease-out"></div>
+                {/* Success sparkle effect */}
+                <div className="absolute top-2 right-2 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
               </Button>
             </Link>
             
-            {/* Trust Indicators */}
-            <p className="text-base sm:text-lg text-muted-foreground font-medium text-center px-4">
-              200+ founders served • No credit card needed
-            </p>
+            {/* Enhanced Trust Indicators */}
+            <div className="text-center space-y-2">
+              <p className="text-base sm:text-lg text-muted-foreground font-medium">
+                ✅ Free Assessment • No Credit Card Required • Instant Results
+              </p>
+              <p className="text-sm text-primary font-semibold">
+                200+ founders served this month
+              </p>
+            </div>
             
             {/* Streamlined Copy - Benefit-highlight bullets under CTA */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-4">
@@ -160,210 +223,17 @@ export function HeroSection() {
             </Link>
           </div>
           
-        {/* Dynamic Counter */}
-        <div className="mt-6 mb-4">
-          <div className="flex items-center justify-center gap-2 px-4 py-2 bg-primary/5 border border-primary/20 rounded-full">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+        {/* Dynamic Counter - Enhanced */}
+        <div className="mt-8 mb-6">
+          <div className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-full shadow-lg">
+            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-sm font-semibold text-primary">
-              <span className="text-lg font-bold">1,247+</span> Founders Assessed This Month
+              <span className="text-xl font-bold text-green-600">1,247+</span> Founders Assessed This Month
             </span>
           </div>
         </div>
         
-        {/* Three-Column Benefits with Icons */}
-        <div className="mt-8 mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            <div className="text-center p-6 bg-card/50 border border-primary/10 rounded-xl">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">Clarity</h3>
-              <p className="text-sm text-muted-foreground">Pinpoint your one-of-a-kind founder archetype in seconds</p>
-            </div>
-            
-            <div className="text-center p-6 bg-card/50 border border-primary/10 rounded-xl">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">Connection</h3>
-              <p className="text-sm text-muted-foreground">Speak in a voice that sparks trust and engagement</p>
-            </div>
-            
-            <div className="text-center p-6 bg-card/50 border border-primary/10 rounded-xl">
-              <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                </svg>
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">Conversion</h3>
-              <p className="text-sm text-muted-foreground">Turn your story into a magnetic client-attraction engine</p>
-            </div>
-          </div>
-          </div>
         
-        {/* Enhanced Social Proof */}
-        <div className="mt-8 md:mt-10 lg:mt-12">
-          <p className="text-xs md:text-sm text-muted-foreground font-medium tracking-[0.2em] uppercase mb-6 md:mb-8">TRUSTED BY FOUNDERS & BRANDS</p>
-          
-          {/* Media Partners with Context */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 max-w-4xl mx-auto">
-            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-              <div className="text-2xl font-bold text-primary mb-2">BBC</div>
-              <p className="text-xs text-muted-foreground mb-3">Documentary storytelling for flagship programs</p>
-              <p className="text-sm italic text-foreground">"Ermo helped us craft compelling narratives that connected with millions of viewers."</p>
-              <p className="text-xs text-primary font-semibold mt-2">2023</p>
-            </div>
-            
-            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-              <div className="text-2xl font-bold text-primary mb-2">National Geographic</div>
-              <p className="text-xs text-muted-foreground mb-3">Nature documentary narrative consulting</p>
-              <p className="text-sm italic text-foreground">"The storytelling framework transformed how we present complex scientific concepts."</p>
-              <p className="text-xs text-primary font-semibold mt-2">2022</p>
-            </div>
-            
-            <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
-              <div className="text-2xl font-bold text-primary mb-2">Discovery</div>
-              <p className="text-xs text-muted-foreground mb-3">Science communication storytelling</p>
-              <p className="text-sm italic text-foreground">"Our audience engagement increased 40% after implementing the Signal DNA method."</p>
-              <p className="text-xs text-primary font-semibold mt-2">2023</p>
-            </div>
-          </div>
-          
-          {/* Founder Success Stories */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-primary font-bold text-lg">J</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground">J-Griff</h4>
-                  <p className="text-sm text-muted-foreground">Conscious Business Coach</p>
-                </div>
-              </div>
-              <p className="text-sm italic text-foreground mb-3">"Signal DNA helped me articulate my sovereignty journey and connect with high-level conscious entrepreneurs."</p>
-              <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
-                <span className="text-xs font-bold text-green-600">13+ Years Coaching</span>
-              </div>
-            </div>
-            
-            <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                  <span className="text-primary font-bold text-lg">A</span>
-                </div>
-                <div>
-                  <h4 className="font-bold text-foreground">Aaron Abke</h4>
-                  <p className="text-sm text-muted-foreground">Spiritual Entrepreneur</p>
-                </div>
-              </div>
-              <p className="text-sm italic text-foreground mb-3">"The Signal DNA method gave me clarity on my unique story pattern for my 1M+ audience."</p>
-              <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
-                <span className="text-xs font-bold text-green-600">1M+ Followers</span>
-              </div>
-            </div>
-          </div>
-          
-          {/* Success Stories Block */}
-          <div className="mt-8">
-            <h3 className="text-2xl font-bold text-center text-foreground mb-8">Success Stories</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
-                    <Image
-                      src="/images/j-griff-headshot.jpg"
-                      alt="J-Griff, Tech Founder who achieved €6M revenue growth"
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground">J-Griff</h4>
-                    <p className="text-sm text-muted-foreground">Conscious Business Coach</p>
-                  </div>
-                </div>
-                <div className="space-y-3 mb-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Before:</span>
-                    <span className="text-sm font-semibold text-red-600">$50K Debt</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">After:</span>
-                    <span className="text-sm font-semibold text-green-600">Multi-7-Figure Business</span>
-                  </div>
-                </div>
-                <p className="text-sm italic text-foreground mb-3">"Signal DNA helped me articulate my sovereignty journey and connect with high-level conscious entrepreneurs."</p>
-                <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
-                  <span className="text-xs font-bold text-green-600">13+ Years Success</span>
-                </div>
-              </div>
-              
-              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
-                    <Image
-                      src="/images/aaron-abke-headshot.jpg"
-                      alt="Aaron Abke, Spiritual Entrepreneur who grew to 1M+ followers"
-                      width={48}
-                      height={48}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground">Aaron Abke</h4>
-                    <p className="text-sm text-muted-foreground">Spiritual Entrepreneur</p>
-                  </div>
-                </div>
-                <div className="space-y-3 mb-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Before:</span>
-                    <span className="text-sm font-semibold text-red-600">500K Followers</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">After:</span>
-                    <span className="text-sm font-semibold text-green-600">1M+ Followers</span>
-                  </div>
-                </div>
-                <p className="text-sm italic text-foreground mb-3">"The Signal DNA method gave me clarity on my unique story pattern for authentic growth."</p>
-                <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
-                  <span className="text-xs font-bold text-green-600">100% Follower Growth</span>
-                </div>
-              </div>
-              
-              <div className="bg-primary/5 border border-primary/20 rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/30 rounded-full flex items-center justify-center border-2 border-primary/20">
-                    <span className="text-primary font-bold text-lg">S</span>
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-foreground">Sarah Chen</h4>
-                    <p className="text-sm text-muted-foreground">SaaS Founder</p>
-                  </div>
-                </div>
-                <div className="space-y-3 mb-4">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">Before:</span>
-                    <span className="text-sm font-semibold text-red-600">30% Close Rate</span>
-                  </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm text-muted-foreground">After:</span>
-                    <span className="text-sm font-semibold text-green-600">90% Close Rate</span>
-                  </div>
-                </div>
-                <p className="text-sm italic text-foreground mb-3">"I went from struggling to explain my vision to closing deals in 15 minutes."</p>
-                <div className="bg-green-500/20 px-3 py-1 rounded-full inline-block">
-                  <span className="text-xs font-bold text-green-600">200% Close Rate ↑</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         
         </div>
         
