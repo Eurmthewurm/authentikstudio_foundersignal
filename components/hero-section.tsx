@@ -173,13 +173,13 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Ultra-Prominent CTA Button */}
-          <div className="flex flex-col items-center gap-6 w-full max-w-lg mx-auto">
+          {/* Mobile-Optimized CTA Button */}
+          <div className="flex flex-col items-center gap-4 sm:gap-6 w-full max-w-lg mx-auto px-4 sm:px-0">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-green-600 via-green-500 to-green-600 text-white hover:from-green-700 hover:via-green-600 hover:to-green-700 px-12 sm:px-16 py-8 sm:py-9 rounded-2xl font-bold text-2xl sm:text-3xl shadow-2xl hover:shadow-green-500/30 transition-all duration-300 hover:scale-105 border-2 border-green-400/40 group overflow-hidden w-full min-h-[80px] sm:min-h-[90px] animate-pulse">
-                <span className="relative z-10 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center gap-3">
-                  <span className="text-3xl">🎯</span>
-                  <span>Get My Free Story Blueprint</span>
+              <Button className="relative bg-gradient-to-r from-green-600 via-green-500 to-green-600 text-white hover:from-green-700 hover:via-green-600 hover:to-green-700 px-6 sm:px-12 lg:px-16 py-6 sm:py-8 lg:py-9 rounded-2xl font-bold text-lg sm:text-2xl lg:text-3xl shadow-2xl hover:shadow-green-500/30 transition-all duration-300 hover:scale-105 border-2 border-green-400/40 group overflow-hidden w-full min-h-[60px] sm:min-h-[80px] lg:min-h-[90px] animate-pulse">
+                <span className="relative z-10 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center gap-2 sm:gap-3">
+                  <span className="text-xl sm:text-2xl lg:text-3xl">🎯</span>
+                  <span className="leading-tight">Get My Free Story Blueprint</span>
                 </span>
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
                 {/* Enhanced pulsing ring animation */}
@@ -191,29 +191,29 @@ export function HeroSection() {
               </Button>
             </Link>
             
-            {/* Enhanced Trust Indicators */}
+            {/* Mobile-Optimized Trust Indicators */}
             <div className="text-center space-y-2">
-              <p className="text-base sm:text-lg text-muted-foreground font-medium">
+              <p className="text-sm sm:text-base lg:text-lg text-muted-foreground font-medium">
                 ✅ Free Assessment • No Credit Card Required • Instant Results
               </p>
-              <p className="text-sm text-primary font-semibold">
+              <p className="text-xs sm:text-sm text-primary font-semibold">
                 200+ founders served this month
               </p>
             </div>
             
-            {/* Streamlined Copy - Benefit-highlight bullets under CTA */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full mt-4">
-              <div className="text-center p-3 bg-green-500/5 border border-green-500/20 rounded-lg">
-                <div className="text-sm font-semibold text-green-600 mb-1">✓ 2 Minutes</div>
-                <p className="text-xs text-muted-foreground">Discover Your Archetype</p>
+            {/* Mobile-Optimized Benefit Bullets */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 w-full mt-4">
+              <div className="text-center p-3 sm:p-4 bg-green-500/5 border border-green-500/20 rounded-lg">
+                <div className="text-sm sm:text-base font-semibold text-green-600 mb-1">✓ 2 Minutes</div>
+                <p className="text-xs sm:text-sm text-muted-foreground">Discover Your Archetype</p>
               </div>
-              <div className="text-center p-3 bg-blue-500/5 border border-blue-500/20 rounded-lg">
-                <div className="text-sm font-semibold text-blue-600 mb-1">✓ Instant Results</div>
-                <p className="text-xs text-muted-foreground">Strengths & Blind Spots</p>
+              <div className="text-center p-3 sm:p-4 bg-blue-500/5 border border-blue-500/20 rounded-lg">
+                <div className="text-sm sm:text-base font-semibold text-blue-600 mb-1">✓ Instant Results</div>
+                <p className="text-xs sm:text-sm text-muted-foreground">Strengths & Blind Spots</p>
               </div>
-              <div className="text-center p-3 bg-purple-500/5 border border-purple-500/20 rounded-lg">
-                <div className="text-sm font-semibold text-purple-600 mb-1">✓ Free Blueprint</div>
-                <p className="text-xs text-muted-foreground">Personalized Strategy</p>
+              <div className="text-center p-3 sm:p-4 bg-purple-500/5 border border-purple-500/20 rounded-lg">
+                <div className="text-sm sm:text-base font-semibold text-purple-600 mb-1">✓ Free Blueprint</div>
+                <p className="text-xs sm:text-sm text-muted-foreground">Personalized Strategy</p>
               </div>
           </div>
           
@@ -223,12 +223,12 @@ export function HeroSection() {
             </Link>
           </div>
           
-        {/* Dynamic Counter - Enhanced */}
-        <div className="mt-8 mb-6">
-          <div className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-full shadow-lg">
-            <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-semibold text-primary">
-              <span className="text-xl font-bold text-green-600">1,247+</span> Founders Assessed This Month
+        {/* Mobile-Optimized Dynamic Counter */}
+        <div className="mt-6 sm:mt-8 mb-4 sm:mb-6 px-4 sm:px-0">
+          <div className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-full shadow-lg">
+            <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse"></div>
+            <span className="text-xs sm:text-sm font-semibold text-primary">
+              <span className="text-lg sm:text-xl font-bold text-green-600">1,247+</span> Founders Assessed This Month
             </span>
           </div>
         </div>
