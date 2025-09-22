@@ -176,13 +176,12 @@ export function HeroSection() {
           {/* Mobile-Optimized CTA Button */}
           <div className="flex flex-col items-center gap-4 sm:gap-6 w-full max-w-lg mx-auto px-4 sm:px-0">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-6 sm:px-12 lg:px-16 py-6 sm:py-8 lg:py-9 rounded-2xl font-bold text-lg sm:text-2xl lg:text-3xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-2 border-green-400/30 group overflow-hidden w-full min-h-[60px] sm:min-h-[80px] lg:min-h-[90px]">
-                <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
-                  <span className="text-xl sm:text-2xl lg:text-3xl">🎯</span>
-                  <span className="leading-tight">Get My Free Story Blueprint</span>
-                </span>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
-              </Button>
+                <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-6 sm:px-12 lg:px-16 py-6 sm:py-8 lg:py-9 rounded-2xl font-bold text-lg sm:text-2xl lg:text-3xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-2 border-green-400/30 w-full min-h-[60px] sm:min-h-[80px] lg:min-h-[90px]">
+                  <span className="flex items-center justify-center gap-2 sm:gap-3">
+                    <span className="text-xl sm:text-2xl lg:text-3xl">🎯</span>
+                    <span className="leading-tight">Get My Free Story Blueprint</span>
+                  </span>
+                </Button>
             </Link>
             
             {/* Mobile-Optimized Trust Indicators */}
