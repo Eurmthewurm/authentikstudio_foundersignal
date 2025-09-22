@@ -97,7 +97,7 @@ export function HeroSection() {
                 </div>
                 <div className="space-y-1">
                   <span className="text-sm sm:text-base font-semibold text-foreground block">Get Instant Archetype</span>
-                  <span className="text-xs sm:text-sm text-muted-foreground">AI-powered analysis</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">Expert-crafted analysis</span>
                 </div>
               </div>
               <div className="hidden sm:block w-8 lg:w-12 h-0.5 bg-gradient-to-r from-primary/50 to-primary/30"></div>
@@ -121,7 +121,7 @@ export function HeroSection() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
             <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
               <h3 className="font-semibold text-foreground mb-2">Discover Your Archetype</h3>
-              <p className="text-sm text-muted-foreground">AI-powered analysis reveals your unique founder story pattern</p>
+              <p className="text-sm text-muted-foreground">Expert-crafted analysis reveals your unique founder story pattern</p>
             </div>
             <div className="text-center p-4 bg-card/50 border border-primary/10 rounded-xl">
               <h3 className="font-semibold text-foreground mb-2">Identify Strengths</h3>
@@ -176,18 +176,12 @@ export function HeroSection() {
           {/* Mobile-Optimized CTA Button */}
           <div className="flex flex-col items-center gap-4 sm:gap-6 w-full max-w-lg mx-auto px-4 sm:px-0">
             <Link href="/quiz-optimized" rel="noopener noreferrer" className="w-full">
-              <Button className="relative bg-gradient-to-r from-green-600 via-green-500 to-green-600 text-white hover:from-green-700 hover:via-green-600 hover:to-green-700 px-6 sm:px-12 lg:px-16 py-6 sm:py-8 lg:py-9 rounded-2xl font-bold text-lg sm:text-2xl lg:text-3xl shadow-2xl hover:shadow-green-500/30 transition-all duration-300 hover:scale-105 border-2 border-green-400/40 group overflow-hidden w-full min-h-[60px] sm:min-h-[80px] lg:min-h-[90px] animate-pulse">
-                <span className="relative z-10 group-hover:scale-110 transition-transform duration-200 flex items-center justify-center gap-2 sm:gap-3">
+              <Button className="relative bg-gradient-to-r from-green-600 to-green-500 text-white hover:from-green-700 hover:to-green-600 px-6 sm:px-12 lg:px-16 py-6 sm:py-8 lg:py-9 rounded-2xl font-bold text-lg sm:text-2xl lg:text-3xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] border-2 border-green-400/30 group overflow-hidden w-full min-h-[60px] sm:min-h-[80px] lg:min-h-[90px]">
+                <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                   <span className="text-xl sm:text-2xl lg:text-3xl">🎯</span>
                   <span className="leading-tight">Get My Free Story Blueprint</span>
                 </span>
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
-                {/* Enhanced pulsing ring animation */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-green-300/60 scale-105 opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300"></div>
-                {/* Micro-bounce on hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-green-400/20 to-green-300/20 scale-0 group-hover:scale-100 transition-transform duration-200 ease-out"></div>
-                {/* Success sparkle effect */}
-                <div className="absolute top-2 right-2 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
               </Button>
             </Link>
             
@@ -197,7 +191,7 @@ export function HeroSection() {
                 ✅ Free Assessment • No Credit Card Required • Instant Results
               </p>
               <p className="text-xs sm:text-sm text-primary font-semibold">
-                200+ founders served this month
+                1,247+ founders served with expert storytelling analysis
               </p>
             </div>
             
@@ -228,21 +222,13 @@ export function HeroSection() {
           <div className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/30 rounded-full shadow-lg">
             <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-500 rounded-full animate-pulse"></div>
             <span className="text-xs sm:text-sm font-semibold text-primary">
-              <span className="text-lg sm:text-xl font-bold text-green-600">1,247+</span> Founders Assessed This Month
+              <span className="text-lg sm:text-xl font-bold text-green-600">1,247+</span> Founders Served This Month
             </span>
           </div>
         </div>
         
         
         
-        </div>
-        
-        {/* Scroll Guidance */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-primary/50 rounded-full mt-2 animate-pulse"></div>
-          </div>
-          <p className="text-xs text-muted-foreground font-medium">Scroll to explore</p>
         </div>
       </div>
     </section>
